@@ -1,2 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<html>
+  <head>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 50%;
+      }
+      .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+    </style>
+  </head>
+  <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+    <div id="map"></div>
+
+<% content_for(:after_js) do %>
+
+<script type="text/javascript" src="autocomplete.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjxOsy8vrEh0TCr5XjPV_T4-V7rE3Zq_8&signed_in=true&libraries=places&callback=initMap" async defer></script>
+<% end %>
+
+  </body>
+</html>
