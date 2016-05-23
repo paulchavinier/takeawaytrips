@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="main">
+  <div class="homepage-hero-module">
+      <div class="video-container">
+          <div class="home-logo text-center">
+            <%= image_tag "Logowhite.png" %>
+            <%= form_tag("#", method: "get", class: "form-inline") do %>
+              <%= text_field_tag :q, nil, class: 'form-control', placeholder: "Search for a city to travel", onfocus: "myFunction(this)" %>
+              <%= submit_tag("Search", class: "form_submit btn btn-home")  %>
+            <% end %>
+          </div>
+          <video autoplay loop class="fillWidth">
+              <source src="http://res.cloudinary.com/constantdesfosse/video/upload/ac_none/v1464025377/NEW_YORK_PEOPLE_SLOW_MOTION_online-video-cutter.com_iramws.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+              <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+          <div class="poster hidden">
+              <img src="PATH_TO_JPEG" alt="">
+          </div>
+      </div>
+  </div>
+</div>
