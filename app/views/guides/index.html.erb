@@ -1,0 +1,11 @@
+<h3>Your guides</h3>
+
+
+<% current_user.guides.each do |guide| %>
+  <ul>
+    <li>
+    <p><%= guide.name %></p>
+    <p><%= guide.description %></p>
+    </li>
+  </ul>
+<% end %>
