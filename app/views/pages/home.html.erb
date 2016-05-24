@@ -34,33 +34,5 @@
 </div>
 
 
+<%= render 'shared/modal' %>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Create your guide board</h4>
-      </div>
-      <div class="modal-body">
-        <% if @guide.errors.any? %>
-          <ul>
-            <%@guide.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        <% end %>
-        <%= simple_form_for @guide do |f| %>
-          <%= f.input :name, label: "Enter the name of your guide board", input_html: { placeholder: "Cocktails bar in NYC" } %>
-          <%= f.input :description, label: "Please give a detailed description of your offer" %>
-          <%= f.input :place, label: "If your guide board is for a city or a country, put the name here !" %>
-          <%= f.submit class: "btn btn-primary" %>
-      <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>

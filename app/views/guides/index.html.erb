@@ -1,11 +1,11 @@
 <h3>Your guides</h3>
 
+<div class="container">
+  <%= render 'shared/card_guides' %>
+</div>
 
-<% current_user.guides.each do |guide| %>
-  <ul>
-    <li>
-    <p><%= guide.name %></p>
-    <p><%= guide.description %></p>
-    </li>
-  </ul>
-<% end %>
+<button type="button" class="btn btn-danger center-block" data-toggle="modal" data-target="#myModal">
+ Create my guide board
+</button>
+
+<%= render 'shared/modal' %>
