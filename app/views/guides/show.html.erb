@@ -23,9 +23,9 @@
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
           handler.getMap().setZoom(6);
+          markers = handler.removeMarkers(markers);
         });
       })
-    <% raise %>
     <% end %>
   <% end %>
 
