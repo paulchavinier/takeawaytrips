@@ -1,12 +1,12 @@
 <% current_user.guides.each do |guide| %>
   <div class="col-xs-12 col-md-4">
     <div class="border">
-      <ul>
-        <li>
-        <p><%= guide.name %></p>
-        <p><%= guide.description %></p>
-        </li>
-      </ul>
+        <ul>
+          <li>
+          <p><%= link_to guide.name, guide_path(guide) %></p>
+          <p><%= guide.description %></p>
+          </li>
+        </ul>
       <%= link_to 'Show', guide_path(guide) %> | <%= link_to 'update', edit_guide_path(guide) %>
     </div>
   </div>

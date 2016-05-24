@@ -17,7 +17,7 @@
         <%= simple_form_for @guide do |f| %>
           <%= f.input :name, label: "Enter the name of your guide board", input_html: { placeholder: "Cocktails bar in NYC" } %>
           <%= f.input :description, label: "Please give a detailed description of your offer" %>
-          <%= f.input :place, label: "If your guide board is for a city or a country, put the name here !" %>
+          <%= f.input :place, label: "Do you have a city or country in mind ?", input_html: { id: :user_input_autocomplete_address } %>
           <%= f.submit class: "btn btn-primary" %>
       <% end %>
       </div>
@@ -26,4 +26,5 @@
       </div>
     </div>
   </div>
+
 </div>
