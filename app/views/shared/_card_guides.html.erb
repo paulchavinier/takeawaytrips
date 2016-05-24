@@ -7,7 +7,7 @@
           <p><%= guide.description %></p>
           </li>
         </ul>
-      <%= link_to 'Show', guide_path(guide) %> | <%= link_to 'update', edit_guide_path(guide) %>
+      <%= link_to 'update', edit_guide_path(guide) %> | <%= link_to 'Delete', guide, method: :delete %>
     </div>
   </div>
 <% end %>

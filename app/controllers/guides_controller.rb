@@ -7,7 +7,7 @@ class GuidesController < ApplicationController
   end
 
   def create
-    @guide = Guide.new(offer_params)
+    @guide = Guide.new(guide_params)
     @guide.user_id = current_user.id
     if @guide.save
       redirect_to guides_path
@@ -22,10 +22,19 @@ class GuidesController < ApplicationController
   def edit
   end
 
+  def update
+    @guide.update(guide_params)
+    redirect_to @guide
+  end
+
+  def destroy
+    @guide.destroy
+    redirect_to :back
+  end
 
   private
 
-  def offer_params
+  def guide_params
     params.require(:guide).permit(:name, :description, :place, :latitude, :longitude)
   end
 
