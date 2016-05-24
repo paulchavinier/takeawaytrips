@@ -17,6 +17,15 @@ class GuidesController < ApplicationController
   end
 
   def show
+    @cards = @guide.cards
+    @markers = Gmaps4rails.build_markers(@cards) do |card, marker|
+      marker.lat card.latitude
+      marker.lng card.longitude
+    end
+    @markersguide = Gmaps4rails.build_markers(@guide) do |guide, marker|
+      marker.lat guide.latitude
+      marker.lng guide.longitude
+    end
   end
 
   def edit
