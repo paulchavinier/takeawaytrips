@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:edit, :update, :destroy]
+  before_action :set_card, only: [:edit, :update, :destroy, :show]
 
   def index
     @cards = Card.all
@@ -28,7 +28,6 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.find(params[:id])
   end
 
   def destroy
