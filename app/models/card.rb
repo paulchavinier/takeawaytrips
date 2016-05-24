@@ -1,8 +1,7 @@
 class Card < ActiveRecord::Base
-  belongs_to :guide
+  belongs_to :guide, dependent: :destroy
 
   validates :name, presence: true
-  validates :type, presence: true
+  validates :category, presence: true
   validates :formatted_address, presence: true
-
 end

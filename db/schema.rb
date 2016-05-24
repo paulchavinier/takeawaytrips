@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524115757) do
+ActiveRecord::Schema.define(version: 20160524132740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160524115757) do
   create_table "cards", force: :cascade do |t|
     t.string   "banner_picture"
     t.string   "name"
-    t.string   "type"
+    t.string   "category"
     t.text     "formatted_address"
     t.string   "international_phone_number"
     t.string   "website"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20160524115757) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "place"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "guides", ["user_id"], name: "index_guides_on_user_id", using: :btree

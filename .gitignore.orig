@@ -5,6 +5,9 @@ tmp/*
 *.swp
 .DS_Store
 public/assets
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f1a1b77fe043701d7d4b2027a2b0f0b69c890d8
 # Ignore application configuration
 /config/application.yml
