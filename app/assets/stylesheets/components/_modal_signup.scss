@@ -1,0 +1,77 @@
+.modal-body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100%;
+  margin: 0 auto;
+  @media(max-width: $screen-sm) {
+    margin: 0 20%;
+  }
+  @media(max-width: 530px) {
+    margin: 0 10%;
+  }
+  @media(max-width: $screen-xs) {
+    margin: 0 auto;
+  }
+  border: solid 5px;
+  border-color: white;
+  padding: 3px;
+  flex-direction: column;
+}
+
+.modallogo {
+  background-image: url('bcklgn.jpg');
+  height: 50vh;
+  background-size: cover;
+  background-position: center top;
+}
+.modallogo img {
+  width: 287px;
+  margin-top: 1%;
+}
+
+.modal-sm {
+  width: 300px;
+  @media(max-width: $screen-sm) {
+    width: auto;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  background-image: url("bcklgn.jpg");
+  background-size: cover;
+}
+.infoconnect {
+  width: 100%;
+  height: 30%;
+  padding-top: 10px;
+}
+.infoconnect p {
+  font-size: 10px;
+  color: #B3B3B3;
+  margin-bottom: 0px;
+  padding-top: 5px;
+}
+
+.buttonfb {
+  margin: 0 auto;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3b5998;
+  width: 80%;
+  transition: 1s;
+  &:hover {
+    color: white;
+    background-color: #365189;
+  }
+  i {
+    font-size: 25px;
+    margin-right: 5px
+  }
+}
