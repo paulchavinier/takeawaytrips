@@ -1,0 +1,17 @@
+<% @cards.each do |card| %>
+<div class="col-xs-12 col-md-4">
+  <div class="border">
+    <h2>Card</h2>
+    <p><%= card.name %></p>
+    <p><%= card.category %></p>
+    <p><%= card.personnal_note %></p>
+    <p><%= card.formatted_address %></p>
+    <p><%= card.international_phone_number %></p>
+    <p><%= card.website %></p>
+    <p><%= card.opening_hours %></p>
+    <p><%= card.price_level %></p>
+    <%= link_to 'Show', card_path(card) %> | <%= link_to 'Edit', edit_card_path(card) %> | <%= link_to 'Delete', card, method: :delete %>
+  </div>
+</div>
+<% end %>
+

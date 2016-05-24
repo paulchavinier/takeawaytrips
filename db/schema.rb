@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160524132740) do
   create_table "cards", force: :cascade do |t|
     t.string   "banner_picture"
     t.string   "name"
-    t.string   "type"
+    t.string   "category"
     t.text     "formatted_address"
     t.string   "international_phone_number"
     t.string   "website"
