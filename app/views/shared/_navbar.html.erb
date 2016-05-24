@@ -53,8 +53,9 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-button1 navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-button navbar-wagon-link" %>
+      <button type="button" class="navbar-wagon-button1" data-toggle="modal" data-target="#modalsignup">
+               Login
+      </button>
 
 
     <% end %>
@@ -72,6 +73,31 @@
         <li><a href="#">Other one</a></li>
       </ul>
     </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalsignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-body">
+          <div class="header">
+            <div class="modallogo">
+              <%= image_tag "Logowhite.png" %>
+            </div>
+          </div>
+          <div class="infoconnect">
+           <!--  <button type="button" class="buttonfb">
+                   <i class="fa fa-facebook-square" aria-hidden="true"></i>Connect with Facebook
+          </button>
+
+ -->        <% User.omniauth_providers.each do |provider| %>
+              <%= link_to  omniauth_authorize_path(:user, provider), class:"btn buttonfb" do %>
+                <i class="fa fa-facebook-square"></i>Connect with Facebook
+              <% end %>
+            <% end %>
+            <p><i class="fa fa-info-circle" aria-hidden="true"></i> We dont publish anything on Facebook</p>
+          </div>
+      </div>
   </div>
 </div>
 
