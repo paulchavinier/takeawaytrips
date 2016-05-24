@@ -15,7 +15,7 @@
     height: 90vh;
     width: 100%;
     overflow: hidden;
-    background: #000;
+    background-image: url("city_night.jpg");
 }
 .video-container .poster img {
     width: 100%;
@@ -36,46 +36,4 @@
 }
 .video-container video.fillWidth {
     width: 100%;
-}
-
-.home-logo {
-  position: absolute;
-  top: 10%;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
-
-.home-logo img {
-  width: 50%;
-  margin-bottom: 30px;
-}
-
-.form-inline #q{
- border-top-left-radius: 10px;
- border-bottom-left-radius: 10px;
- border-top-right-radius: 0px;
- border-bottom-right-radius: 0px;
- height: 50px;
- width: 25%;
- border: white;
- background-color: rgba(0, 0, 0, 0.6);
- color: white;
- box-shadow: none;
-}
-
-.form-inline .btn-home{
-color: white;
-margin-left: -5px;
-background-color: #61B292;
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
-border-top-left-radius: 0px;
-border-bottom-left-radius: 0px;
-height: 50px;
-width: 10%;
-}
-
-.form-inline {
-margin-bottom: 5%;
 }
