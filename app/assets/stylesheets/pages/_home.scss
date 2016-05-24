@@ -2,48 +2,94 @@
     width: 100%;
     margin: 0px auto 0px auto;
     vertical-align: top;
-    background-color: #E6E6E6;
     height:100%;
+    padding: 0;
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+42,f4f4f4+100 */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 42%, rgba(244,244,244,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 42%,rgba(244,244,244,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  rgba(255,255,255,1) 42%,rgba(244,244,244,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-.homepage-hero-module {
-    border-right: none;
-    border-left: none;
-    position: relative;
+.home-logo {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
-.no-video .video-container video,
-.touch .video-container video {
-    display: none;
+
+.home-logo img {
+  width: 45%;
+  margin-bottom: 50px;
 }
-.no-video .video-container .poster,
-.touch .video-container .poster {
-    display: block !important;
+
+.form-inline #q{
+ border-top-left-radius: 10px;
+ border-bottom-left-radius: 10px;
+ border-top-right-radius: 0px;
+ border-bottom-right-radius: 0px;
+ height: 50px;
+ width: 25%;
+ border: none;
+ background-color: rgba(0, 0, 0, 0.6);
+ color: white;
+ box-shadow: none;
 }
-.video-container {
-    position: relative;
-    bottom: 0%;
-    left: 0%;
-    height: 80%;
-    width: 100%;
-    overflow: hidden;
-    background: #000;
+
+.form-inline .btn-home{
+color: #fff;
+background-color: #32A2C8;
+margin-left: -5px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;
+height: 50px;
+width: 10%;
 }
-.video-container .poster img {
-    width: 100%;
-    bottom: 0;
-    position: absolute;
+
+.form-inline {
+margin-bottom: 5%;
 }
-.video-container .filter {
-    z-index: 100;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    width: 100%;
+
+.banner01 {
+  width: 100%;
+  height: 290px;
+  background-position: bottom;
+  display: flex;
+  align-items: center;
+  margin-top: -70px;
+  justify-content: center;
+  background: image_url('firstbanner.png');
+  background-size: cover;
+  background-color: white;
+  color: white;
+  font-size: 50px;
+  flex-direction: column;
 }
-.video-container video {
-    position: absolute;
-    z-index: 0;
-    bottom: 0;
+
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
-.video-container video.fillWidth {
-    width: 100%;
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
 }

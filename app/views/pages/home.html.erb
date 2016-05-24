@@ -2,14 +2,14 @@
   <div class="homepage-hero-module">
       <div class="video-container">
           <div class="home-logo text-center">
-            <%= image_tag "Logowhite.png" %>
-            <%= form_tag("#", method: "get", class: "form-inline") do %>
-              <%= text_field_tag :q, nil, class: 'form-control', placeholder: "Search for a city to travel", onfocus: "myFunction(this)" %>
-              <%= submit_tag("Search", class: "form_submit btn btn-home")  %>
-            <% end %>
-          </div>
+            <%= image_tag "Logowhite.png" %> <br>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+               Create my guide board
+            </button>
+            </div>
+
           <video autoplay loop class="fillWidth">
-              <source src="http://res.cloudinary.com/constantdesfosse/video/upload/ac_none/v1464025377/NEW_YORK_PEOPLE_SLOW_MOTION_online-video-cutter.com_iramws.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+              <source src="#http://res.cloudinary.com/constantdesfosse/video/upload/ac_none/v1464025377/NEW_YORK_PEOPLE_SLOW_MOTION_online-video-cutter.com_iramws.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
               <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
           </video>
           <div class="poster hidden">
@@ -17,42 +17,43 @@
           </div>
       </div>
   </div>
+  <!-- <div class="banner01">
+  </div> -->
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
 </div>
 
 
-<html>
-  <head>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 50%;
-      }
-      .controls {
-        margin-top: 10px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
 
-    </style>
-  </head>
-  <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
-    <div id="map"></div>
-
-<% content_for(:after_js) do %>
-
-<script type="text/javascript" src="autocomplete.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjxOsy8vrEh0TCr5XjPV_T4-V7rE3Zq_8&signed_in=true&libraries=places&callback=initMap" async defer></script>
-<% end %>
-
-  </body>
-</html>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create your guide board</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @guide do |f| %>
+          <%= f.input :name, label: "Enter the name of your guide board", input_html: { placeholder: "Cocktails bar in NYC" } %>
+          <%= f.input :description, label: "Please give a detailed description of your offer" %>
+          <%= f.input :place, label: "If your guide board is for a city or a country, put the name here !"
+          <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
