@@ -23,7 +23,7 @@ class GuidesController < ApplicationController
   private
 
   def offer_params
-    params.require(:guide).permit(:name, :description)
+    params.require(:guide).permit(:name, :description, :place)
   end
 
 
