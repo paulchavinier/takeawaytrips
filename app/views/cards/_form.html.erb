@@ -16,7 +16,7 @@
         <%= simple_form_for @card do |f| %>
           <%= f.input :name, label: "Enter the name of the place", input_html: { placeholder: "Le Wagon" } %>
           <%= f.input :personnal_note, label: "Have something to say about this place?", input_html: { placeholder: "Cool cool place" } %>
-          <%= f.input :formatted_address, label: "Enter the address",  input_html: { placeholder: "16 Vila Gaudelet", id: "pac-input", class: "controls", type: "text"  } %>
+          <%= f.input :formatted_address, label: "Enter the address",  input_html: { placeholder: "16 Vila Gaudelet" } %>
           <div id="map"></div>
           <%= f.input :category, label: "Select a category", collection: [ "Bar", "Cafe", "Restaurant"] %>
           <hr>
@@ -24,7 +24,7 @@
           <%= f.input :international_phone_number, label: "Phone:", input_html: { placeholder: "555-2222" } %>
           <%= f.input :website, label: "Web address", input_html: { placeholder: "www.takewaytrips.com" } %>
           <%= f.input :price_level, label: "How expensive it is?", collection: 0..4 %>
-
+          <%= f.input :guide_id, as: :hidden, input_html: { :value => @card.guide_id } %>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>
 
