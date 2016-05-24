@@ -2,7 +2,7 @@ class GuidesController < ApplicationController
 
 
   def index
-    @guides = Guide.all
+    current_user.guides
   end
 
   def create
