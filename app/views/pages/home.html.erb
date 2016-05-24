@@ -1,2 +1,59 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="main">
+  <div class="homepage-hero-module">
+      <div class="video-container">
+          <div class="home-logo text-center">
+            <%= image_tag "Logowhite.png" %>
+            <%= form_tag("#", method: "get", class: "form-inline") do %>
+              <%= text_field_tag :q, nil, class: 'form-control', placeholder: "Search for a city to travel", onfocus: "myFunction(this)" %>
+              <%= submit_tag("Search", class: "form_submit btn btn-home")  %>
+            <% end %>
+          </div>
+          <video autoplay loop class="fillWidth">
+              <source src="http://res.cloudinary.com/constantdesfosse/video/upload/ac_none/v1464025377/NEW_YORK_PEOPLE_SLOW_MOTION_online-video-cutter.com_iramws.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+              <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+          <div class="poster hidden">
+              <img src="PATH_TO_JPEG" alt="">
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<html>
+  <head>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 50%;
+      }
+      .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+    </style>
+  </head>
+  <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+    <div id="map"></div>
+
+<% content_for(:after_js) do %>
+
+<script type="text/javascript" src="autocomplete.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjxOsy8vrEh0TCr5XjPV_T4-V7rE3Zq_8&signed_in=true&libraries=places&callback=initMap" async defer></script>
+<% end %>
+
+  </body>
+</html>
+
