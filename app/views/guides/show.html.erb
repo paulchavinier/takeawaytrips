@@ -2,8 +2,17 @@
 
 <p><%= @guide.description %></p>
 
+<div class="container">
+  <div class="row">
+    <%= render 'shared/card' %>
+  </div>
+</div>
+
+
+<hr>
 
 <%= link_to 'See all my guides', guides_path %> |
-<%= link_to 'Home', root_path %>
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Add Card', new_card_path(guide_id: params[:id]) %>
 
 

@@ -17,6 +17,7 @@ class GuidesController < ApplicationController
   end
 
   def show
+    @cards = @guide.cards
   end
 
   def edit
