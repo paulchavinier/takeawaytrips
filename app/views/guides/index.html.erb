@@ -4,7 +4,7 @@
 <% current_user.guides.each do |guide| %>
   <ul>
     <li>
-    <p><%= guide.name %></p>
+    <p><%= link_to guide.name, guide_path(guide) %></p>
     <p><%= guide.description %></p>
     </li>
   </ul>
