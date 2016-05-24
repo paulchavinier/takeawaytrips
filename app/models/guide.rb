@@ -4,5 +4,4 @@ class Guide < ActiveRecord::Base
 
   validates :name, presence: true
 
-
 end

@@ -29,10 +29,17 @@
         <h4 class="modal-title" id="myModalLabel">Create your guide board</h4>
       </div>
       <div class="modal-body">
+        <% if @guide.errors.any? %>
+          <ul>
+            <%@guide.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
         <%= simple_form_for @guide do |f| %>
           <%= f.input :name, label: "Enter the name of your guide board", input_html: { placeholder: "Cocktails bar in NYC" } %>
           <%= f.input :description, label: "Please give a detailed description of your offer" %>
-          <%= f.input :place, label: "If your guide board is for a city or a country, put the name here !"
+          <%= f.input :place, label: "If your guide board is for a city or a country, put the name here !" %>
           <%= f.submit class: "btn btn-primary" %>
       <% end %>
       </div>

@@ -2,16 +2,16 @@ class GuidesController < ApplicationController
 
 
   def index
-    @guide = Guide.all
+    @guides = Guide.all
   end
 
   def create
     @guide = Guide.new(offer_params)
     @guide.user_id = current_user.id
     if @guide.save
-      redirect_to guide_path(current_user.id)
+      redirect_to guide_path(@guide.id)
     else
-      render 'guide/index'
+      render 'root/index'
     end
   end
 
