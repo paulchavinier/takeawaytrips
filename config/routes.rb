@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :guides
   resources :cards
 
+  get 'searchmap', to: 'pages#searchmap'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
