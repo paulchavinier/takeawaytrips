@@ -18,7 +18,6 @@
 <%= link_to 'Add Card', new_card_path(guide_id: params[:id]) %>
 
 
-
 <% content_for(:after_js) do %>
   <script>
     $(document).on('ready', function() {
@@ -38,7 +37,3 @@
     })
   </script>
 <% end %>
-// function deleteMarkers() {
-// clearMarkers();
-// markers = [];
-// }

@@ -9,6 +9,8 @@ class GuidesController < ApplicationController
   def create
     @guide = Guide.new(guide_params)
     @guide.user_id = current_user.id
+    results = Geocoder.search(@guide.place)
+    @guide.place_type = results.first.types.first
     if @guide.save
       redirect_to guides_path
     else
@@ -22,9 +24,10 @@ class GuidesController < ApplicationController
       marker.lat card.latitude
       marker.lng card.longitude
     end
-    @markersguide = Gmaps4rails.build_markers(@guide) do |guide, marker|
+    @markersguide = Gmaps4rails.build_markers(@guide) do |guide, marker| # construction duJson pour pousser a Gplace for Rails
       marker.lat guide.latitude
       marker.lng guide.longitude
+      marker.title guide.place_type
     end
   end
 
@@ -44,7 +47,7 @@ class GuidesController < ApplicationController
   private
 
   def guide_params
-    params.require(:guide).permit(:name, :description, :place, :latitude, :longitude)
+    params.require(:guide).permit(:name, :description, :place, :latitude, :longitude, :photo, :photo_cache)
   end
 
   def set_guide
