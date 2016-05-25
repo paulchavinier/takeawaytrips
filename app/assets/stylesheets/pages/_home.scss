@@ -22,7 +22,7 @@
 
 .home-logo img {
   width: 45%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .form-inline #q{
@@ -92,4 +92,14 @@ margin-bottom: 5%;
 
 #pac-input:focus {
   border-color: #4d90fe;
+}
+
+.btn-get {
+  background-color: #89FFC9;
+  color: white;
+  border-radius: 3px;
+  padding: 10px;
+  &:hover {
+    color: white;
+  }
 }

@@ -82,15 +82,12 @@
       <div class="modal-body">
           <div class="header">
             <div class="modallogo">
-              <%= image_tag "Logowhite.png" %>
+              <% image_tag "Logowhite.png" %>
+<!--               <i class="fa fa-globe" aria-hidden="true"></i> -->
             </div>
           </div>
           <div class="infoconnect">
-           <!--  <button type="button" class="buttonfb">
-                   <i class="fa fa-facebook-square" aria-hidden="true"></i>Connect with Facebook
-          </button>
-
- -->        <% User.omniauth_providers.each do |provider| %>
+         <% User.omniauth_providers.each do |provider| %>
               <%= link_to  omniauth_authorize_path(:user, provider), class:"btn buttonfb" do %>
                 <i class="fa fa-facebook-square"></i>Connect with Facebook
               <% end %>

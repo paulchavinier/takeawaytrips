@@ -1,5 +1,8 @@
 class Card < ActiveRecord::Base
-  belongs_to :guide
+
+  mount_uploader :photo, PhotoUploader
+
+  belongs_to :guide, dependent: :destroy
 
   validates :name, presence: true
   validates :category, presence: true

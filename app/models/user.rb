@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  mount_uploader :photo, PhotoUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -26,8 +27,8 @@ class User < ActiveRecord::Base
   def avatar
     if picture
       picture
-    # else
-    #   photo
+    else
+      photo
     end
   end
 
