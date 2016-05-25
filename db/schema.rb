@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160525134632) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "rating"
+    t.string   "photo"
   end
 
   add_index "cards", ["guide_id"], name: "index_cards_on_guide_id", using: :btree

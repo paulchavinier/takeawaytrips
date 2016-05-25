@@ -6,7 +6,7 @@
       </div>
       <%= link_to "", guide_path(guide), class: "card-link" %>
       <div class="infos-guides">
-        <i class="fa fa-map-marker" aria-hidden="true"></i> 145456
+        <i class="fa fa-map-marker" aria-hidden="true"></i> <%= guide.cards.size %>
       </div>
       <div class="edit-guides">
         <%= link_to guide_path(guide), method: :delete do %>
