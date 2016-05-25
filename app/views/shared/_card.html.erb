@@ -1,8 +1,6 @@
 <% @cards.each do |card| %>
   <div class="col-xs-12 col-md-4">
     <div class="border">
-      <h2>Card</h2>
-      <p><%= card.guide_id %></p>
       <p><%= card.name %></p>
       <p><%= card.category %></p>
       <p><%= card.personnal_note %></p>
@@ -15,6 +13,7 @@
         <% end %>
       <% end %>
       <p><%= card.price_level %></p>
+      <%= cl_image_tag card.photo %>
       <%= link_to 'Edit', edit_card_path(card) %> |
       <%= link_to 'Delete', card, method: :delete %> |
       <%= link_to 'Show', card %>

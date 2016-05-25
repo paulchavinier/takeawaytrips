@@ -26,6 +26,8 @@
             <%= f.input :opening_hours, as: :hidden, input_html: { value: @card.opening_hours ? @card.opening_hours.join(",") : nil } %>
             <%= f.input :latitude, as: :hidden %>
             <%= f.input :longitude, as: :hidden %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
             <%= f.input :guide_id, as: :hidden, input_html: { :value => @card.guide_id } %>
             <%= f.submit  class: "btn btn-primary" %>
           <% end %>

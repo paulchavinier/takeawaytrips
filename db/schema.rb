@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20160525134632) do
     t.integer  "guide_id"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+    t.string   "photo"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "photo"
     t.string   "rating"
   end
 
