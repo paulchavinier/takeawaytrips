@@ -7,12 +7,13 @@ class CardsController < ApplicationController
 
   def new
     @card = Card.new
+    @card.guide_id = params[:guide_id]
   end
 
   def create
     @card = Card.new(card_params)
     if @card.save
-      redirect_to card_path(@card)
+      redirect_to guide_path(@card.guide)
     else
       render 'cards/new'
     end

@@ -4,32 +4,44 @@
 
 <p><%= @guide.description %></p>
 
+<div class="container">
+  <div class="row">
+    <%= render 'shared/card' %>
+  </div>
+</div>
 
-<%= link_to 'See all my guides', guides_path %>
-<%= link_to 'Home', root_path %>
+
+<hr>
+
+<%= link_to 'See all my guides', guides_path %> |
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Add Card', new_card_path(guide_id: params[:id]) %>
+
 
 <script>
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
       $(document).on('ready', function() {
         handler = Gmaps.build('Google');
-        handler.buildMap({ internal: { id: 'map-guide' } }, function(){
-          markers = handler.addMarkers(<%= raw @markers.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-        });
+        // handler.buildMap({ internal: { id: 'map-guide' } }, function(){
+        //   markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        //   handler.bounds.extendWith(markers);
+        //   handler.fitMapToBounds();
+        // });
         handler.buildMap({ internal: { id: 'map-guide' } }, function(){
           markers = handler.addMarkers(<%= raw @markersguide.to_json %>);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
-          handler.getMap().setZoom(6);
-          markers = handler.removeMarkers(markers);
+          if (markers[0].serviceObject.title === "country") {
+            handler.getMap().setZoom(7);
+          } else if (markers[0].serviceObject.title === "administrative_area_level_1" | markers[0].serviceObject.title === "administrative_area_level_2") {
+            handler.getMap().setZoom(9);
+          } else {
+            handler.getMap().setZoom(11);
+          }
+        markers = handler.removeMarkers(markers);
         });
       })
     <% end %>
   <% end %>
-  function deleteMarkers() {
-  clearMarkers();
-  markers = [];
-  }
 </script>

@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20160525084821) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "photo"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "cards", ["guide_id"], name: "index_cards_on_guide_id", using: :btree
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160525084821) do
     t.string   "place"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "place_type"
   end
 
   add_index "guides", ["user_id"], name: "index_guides_on_user_id", using: :btree
