@@ -44,7 +44,7 @@ class GuidesController < ApplicationController
   private
 
   def guide_params
-    params.require(:guide).permit(:name, :description, :place, :latitude, :longitude)
+    params.require(:guide).permit(:name, :description, :place, :latitude, :longitude, :photo, :photo_cache)
   end
 
   def set_guide
