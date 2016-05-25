@@ -23,17 +23,23 @@
     <%= javascript_tag do %>
       $(document).on('ready', function() {
         handler = Gmaps.build('Google');
-        handler.buildMap({ internal: { id: 'map-guide' } }, function(){
-          markers = handler.addMarkers(<%= raw @markers.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-        });
+        // handler.buildMap({ internal: { id: 'map-guide' } }, function(){
+        //   markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        //   handler.bounds.extendWith(markers);
+        //   handler.fitMapToBounds();
+        // });
         handler.buildMap({ internal: { id: 'map-guide' } }, function(){
           markers = handler.addMarkers(<%= raw @markersguide.to_json %>);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
-          handler.getMap().setZoom(6);
-          markers = handler.removeMarkers(markers);
+          if (markers[0].serviceObject.title === "country") {
+            handler.getMap().setZoom(7);
+          } else if (markers[0].serviceObject.title === "administrative_area_level_1" | markers[0].serviceObject.title === "administrative_area_level_2") {
+            handler.getMap().setZoom(9);
+          } else {
+            handler.getMap().setZoom(11);
+          }
+        markers = handler.removeMarkers(markers);
         });
       })
     <% end %>
