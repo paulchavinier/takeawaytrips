@@ -43,7 +43,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:photo, :photo_cache, :banner_picture, :name, :category, :formatted_address, :international_phone_number, :website, :opening_hours, :price_level, :personnal_note, :guide_id)
+    params.require(:card).permit(:photo, :photo_cache, :banner_picture, :name, :latitude, :longitude, :category, :formatted_address, :international_phone_number, :website, :opening_hours, :price_level, :personnal_note, :guide_id)
   end
 
   def set_card
