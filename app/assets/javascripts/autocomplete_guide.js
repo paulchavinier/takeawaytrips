@@ -1,7 +1,7 @@
 function initializeAutocomplete(id) {
   var element = document.getElementById(id);
   if (element) {
-    var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode'] });
+    var autocomplete = new google.maps.places.Autocomplete(element);
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
   }
 }
@@ -9,17 +9,22 @@ function initializeAutocomplete(id) {
 function onPlaceChanged() {
   var place = this.getPlace();
 
-  // console.log(place);  // Uncomment this line to view the full object returned by Google API.
+  console.log(place);  // Uncomment this line to view the full object returned by Google API.
 
-  for (var i in place.address_components) {
-    var component = place.address_components[i];
-    for (var j in component.types) {  // Some types are ["country", "political"]
-      var type_element = document.getElementById(component.types[j]);
-      if (type_element) {
-        type_element.value = component.long_name;
-      }
-    }
-  }
+  var form = $('.card-autocomplete-form');
+
+  form.find('#card_formatted_address').val(place.formatted_address);
+
+  var hours = place.opening_hours.weekday_text.join(",")
+  form.find('#card_opening_hours').val(hours);
+  form.find('#card_name').val(place.name);
+  form.find('#card_category').val(place.types[0]);
+  form.find('#card_website').val(place.website);
+  form.find('#card_price_level').val(place.price_level);
+  form.find('#card_rating').val(place.rating);
+  form.find('#card_international_phone_number').val(place.international_phone_number);
+  form.find('#card_latitude').val(place.geometry.location.lat);
+  form.find('#card_longitude').val(place.geometry.location.lng);
 }
 
 google.maps.event.addDomListener(window, 'load', function() {

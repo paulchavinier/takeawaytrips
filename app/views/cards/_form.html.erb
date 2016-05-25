@@ -1,44 +1,36 @@
 <div class="container" id="homepage">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="padding">
+   <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <form role="form" class="form-horizontal">
+            <fieldset>
+               <div class="form-group">
+                <label class="col-sm-4 control-label">Enter a place or address</label>
+                <div class="col-sm-8">
+                  <input id="user_input_autocomplete_address" name="user_input_autocomplete_address"
+                         class="form-control" placeholder="Start typing your address...">
+                </div>
+              </div>
+            </fieldset>
+          </form>
 
-<!--  <input id="pac-input" class="controls" type="text" placeholder="Enter a location"> -->
-
-        <% if @card.errors.any? %>
-          <ul>
-            <%@card.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        <% end %>
-
-        <%= simple_form_for @card do |f| %>
-          <%= f.input :name, label: "Enter the name of the place", input_html: { placeholder: "Le Wagon" } %>
-          <%= f.input :personnal_note, label: "Have something to say about this place?", input_html: { placeholder: "Cool cool place" } %>
-          <%= f.input :formatted_address, label: "Enter the address",  input_html: { placeholder: "16 Vila Gaudelet" } %>
-          <div id="map"></div>
-          <%= f.input :category, label: "Select a category", collection: [ "Bar", "Cafe", "Restaurant"] %>
-          <hr>
-          <h4>more</h4>
-          <%= f.input :international_phone_number, label: "Phone:", input_html: { placeholder: "555-2222" } %>
-          <%= f.input :website, label: "Web address", input_html: { placeholder: "www.takewaytrips.com" } %>
-          <%= f.input :price_level, label: "How expensive it is?", collection: 0..4 %>
-          <%= f.input :guide_id, as: :hidden, input_html: { :value => @card.guide_id } %>
-          <%= f.submit class: "btn btn-primary" %>
-        <% end %>
-
+          <%= simple_form_for @card, html: { class: 'card-autocomplete-form'} do |f| %>
+            <%= f.input :name %>
+            <%= f.input :personnal_note %>
+            <%= f.input :category %>
+            <%= f.input :formatted_address %>
+            <%= f.input :website %>
+            <%= f.input :international_phone_number, as: :hidden %>
+            <%= f.input :price_level, as: :hidden %>
+            <%= f.input :rating, as: :hidden %>
+            <%= f.input :opening_hours, as: :hidden, input_html: { value: @card.opening_hours ? @card.opening_hours.join(",") : nil } %>
+            <%= f.input :latitude, as: :hidden %>
+            <%= f.input :longitude, as: :hidden %>
+            <%= f.input :guide_id, as: :hidden, input_html: { :value => @card.guide_id } %>
+            <%= f.submit  class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 </div>
-
-
-
-<% content_for(:after_js) do %>
-
-<script type="text/javascript" src="autocomplete.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjxOsy8vrEh0TCr5XjPV_T4-V7rE3Zq_8&signed_in=true&libraries=places&callback=initMap" async defer></script>
-<% end %>
-
 
