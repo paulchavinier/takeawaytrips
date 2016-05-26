@@ -37,12 +37,13 @@
 
        handler.buildMap({
           provider: {
-            scrollwheel: false
+            scrollwheel: false,
+            styles: mapStyle
           },
           internal: { id: 'map-guide' } }, function(){
           markers = handler.addMarkers(<%= raw @markersguide.to_json %>);
           handler.bounds.extendWith(markers);
-         handler.fitMapToBounds();
+          handler.fitMapToBounds();
          if (markers[0].serviceObject.title === "country") {
            handler.getMap().setZoom(6);
           } else if (markers[0].serviceObject.title === "administrative_area_level_1") {
@@ -54,7 +55,12 @@
           }
           markerscard = handler.addMarkers(<%= raw @markers.to_json %>);
           handler.bounds.extendWith(markerscard);
-          markers = handler.removeMarkers(markers);
+          if (markerscard.length === 0){
+            markers = handler.removeMarkers(markers);
+          } else {
+            handler.fitMapToBounds();
+            markers = handler.removeMarkers(markers);
+          }
         });
       })
   </script>
