@@ -15,8 +15,11 @@ function onPlaceChanged() {
 
   form.find('#card_formatted_address').val(place.vicinity);
 
-  var hours = place.opening_hours.weekday_text.join(",")
-  form.find('#card_opening_hours').val(hours);
+  if (place.opening_hours) {
+    var hours = place.opening_hours.weekday_text.join(",");
+    form.find('#card_opening_hours').val(hours);
+  }
+
   form.find('#card_name').val(place.name);
   form.find('#card_category').val(place.types[0]);
   form.find('#card_website').val(place.website);
@@ -25,6 +28,11 @@ function onPlaceChanged() {
   form.find('#card_international_phone_number').val(place.international_phone_number);
   form.find('#card_latitude').val(place.geometry.location.lat);
   form.find('#card_longitude').val(place.geometry.location.lng);
+
+  var photos = place.photos;
+  if (photos.length > 0) {
+    form.find('#card_gphoto').val(photos[0].getUrl({maxWidth: 1200}));
+  }
 }
 
 google.maps.event.addDomListener(window, 'load', function() {
