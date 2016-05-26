@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525134632) do
+ActiveRecord::Schema.define(version: 20160526130431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160525134632) do
     t.float    "longitude"
     t.string   "rating"
     t.string   "photo"
+    t.string   "gphoto"
   end
 
   add_index "cards", ["guide_id"], name: "index_cards_on_guide_id", using: :btree
