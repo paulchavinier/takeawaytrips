@@ -38,3 +38,7 @@ function onPlaceChanged() {
 google.maps.event.addDomListener(window, 'load', function() {
   initializeAutocomplete('user_input_autocomplete_address');
 });
+
+$('#user_input_autocomplete_address').keydown(function (e) {
+  if (e.which == 13 && $('.pac-container:visible').length) return false;
+});
