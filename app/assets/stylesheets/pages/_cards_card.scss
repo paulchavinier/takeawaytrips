@@ -1,0 +1,47 @@
+.box-card {
+  background-position: center;
+  background-size: cover;
+  text-align: left;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+  width: 270px;
+  height: 370px;
+  box-shadow: 0px 0px 5px #A7A7A7;
+  position: relative;
+  margin-top: 20px;
+  transition: 0.7s;
+  opacity: 0.85;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.banner-card {
+  width: 100%;
+  height: 60%;
+}
+
+.title-card {
+  margin-top: 5px;
+  color: #272822;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.type-card {
+  color: #61B292;
+  font-size: 14px;
+}
+
+.adress-card {
+  margin-top: 5px;
+  color: #272822;
+  font-size: 13px;
+}
+
+.personnal_note-card {
+margin-top: 5px;
+color: #B1B1B1;
+font-size: 12px;
+}

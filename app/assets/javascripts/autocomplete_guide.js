@@ -13,7 +13,7 @@ function onPlaceChanged() {
 
   var form = $('.card-autocomplete-form');
 
-  form.find('#card_formatted_address').val(place.formatted_address);
+  form.find('#card_formatted_address').val(place.vicinity);
 
   if (place.opening_hours) {
     var hours = place.opening_hours.weekday_text.join(",");
