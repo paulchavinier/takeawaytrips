@@ -26,6 +26,7 @@ gem "rails_admin"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
+  gem "rails-assets-bootstrap-material-design"
 end
 
 group :development, :test do
