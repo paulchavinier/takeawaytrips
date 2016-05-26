@@ -15,8 +15,7 @@
      <div class="personnal_note-card">
       <%= card.personnal_note.chars.take(100).join + "..." %>
     </div>
-      <%= link_to 'Edit', edit_card_path(card) %>
-      <%= link_to 'Delete', card, method: :delete %>
-      <%= link_to 'Show', card %>
+      <%= link_to 'Edit', edit_card_path(card) %> |
+      <%= link_to 'Delete', card, method: :delete %> |
     </div>
 </div>

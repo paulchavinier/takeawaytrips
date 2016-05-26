@@ -33,7 +33,7 @@
   top: 0;
   left: 0;
   right: 0px;
-  bottom: 0;
+  bottom: 40px; // must leave bottom margin to be able to click on edit and delete icons
 }
 
 // .card-link:hover > #box {
