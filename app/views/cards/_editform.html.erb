@@ -1,0 +1,37 @@
+<div class="container" id="homepage">
+   <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-4">
+          <ul class="list-inline">
+            <li>
+               <form role="form" class="form-horizontal">
+                  <input id="user_input_autocomplete_address"  name="user_input_autocomplete_address"
+                  class="form-control" style="margin-right: 100px" placeholder="Add a place" >
+              </form>
+            </li>
+            <li>
+                <%= simple_form_for @card, remote: true, html: { class: 'card-autocomplete-form'} do |f| %>
+            <%= f.input :name %>
+            <%= f.input :personnal_note %>
+            <%= f.input :gphoto, as: :hidden %>
+            <%= f.input :category %>
+            <%= f.input :formatted_address %>
+            <%= f.input :website %>
+            <%= f.input :international_phone_number %>
+            <%= f.input :price_level, as: :hidden %>
+            <%= f.input :rating, as: :hidden %>
+            <%= f.input :opening_hours, as: :hidden, input_html: { value: @card.opening_hours ? @card.opening_hours.join(",") : nil } %>
+            <%= f.input :latitude, as: :hidden %>
+            <%= f.input :longitude, as: :hidden %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.input :guide_id, as: :hidden, input_html: { :value => @card.guide_id } %>
+            <%= f.submit  class: "btn btn-primary", input_html:{class:""} %>
+          <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
