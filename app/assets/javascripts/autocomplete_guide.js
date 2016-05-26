@@ -9,7 +9,7 @@ function initializeAutocomplete(id) {
 function onPlaceChanged() {
   var place = this.getPlace();
 
-  console.log(place);  // Uncomment this line to view the full object returned by Google API.
+  // console.log(place);  // Uncomment this line to view the full object returned by Google API.
 
   var form = $('.card-autocomplete-form');
 
@@ -41,4 +41,12 @@ google.maps.event.addDomListener(window, 'load', function() {
 
 $('#user_input_autocomplete_address').keydown(function (e) {
   if (e.which == 13 && $('.pac-container:visible').length) return false;
+  if (e.which == 13) {
+    $('#new_card').submit();
+    $('#new_card').trigger("reset");
+    // this.trigger("reset");
+    $('#user_input_autocomplete_address').val(' ');
+    // $form.find('input:text, input:password, input:file, select, textarea').val('');
+    return false;
+  }
 });
