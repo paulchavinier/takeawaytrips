@@ -14,9 +14,15 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     @card.opening_hours = card_params[:opening_hours].split(',') if card_params[:opening_hours]
     if @card.save
-      redirect_to guide_path(@card.guide)
+      respond_to do |format|
+        format.html {redirect_to guide_path(@card.guide)}
+        format.js # <-- will render `app/views/cards/create.js.erb`
+      end
     else
-      render 'cards/new'
+      respond_to do |format|
+        format.html {render 'cards/new'}
+        format.js
+      end
     end
   end
 
