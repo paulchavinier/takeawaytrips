@@ -1,21 +1,22 @@
 <% @cards.each do |card| %>
-  <div class="col-xs-12 col-md-4">
-    <div class="border">
-      <p><%= card.name %></p>
-      <p><%= card.category %></p>
-      <p><%= card.personnal_note %></p>
-      <p><%= card.formatted_address %></p>
-      <p><%= card.international_phone_number %></p>
-      <p><%= card.website %></p>
-      <% if card.opening_hours %>
-        <% card.opening_hours.each do |day| %>
-        <p><%= day %></p>
-        <% end %>
-      <% end %>
-      <p><%= card.price_level %></p>
-      <%= cl_image_tag card.photo %>
-      <%= link_to 'Edit', edit_card_path(card) %> |
-      <%= link_to 'Delete', card, method: :delete %> |
+  <div class="col-xs-12 col-lg-3 col-sm-6 col-md-4 ">
+    <div class="box-card" >
+    <div class="banner-card" style="background-image: url(<%= cl_image_path card.photo %>)">
+    </div>
+    <div class="title-card">
+      <%= card.name.upcase %>
+    </div>
+    <div class="type-card">
+      <%= card.category %>
+    </div>
+    <div class="adress-card">
+      <%= card.formatted_address %>
+    </div>
+     <div class="personnal_note-card">
+      <%= card.personnal_note.chars.take(120).join + "..." %>
+    </div>
+      <%= link_to 'Edit', edit_card_path(card) %>
+      <%= link_to 'Delete', card, method: :delete %>
       <%= link_to 'Show', card %>
     </div>
   </div>
