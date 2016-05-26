@@ -23,6 +23,7 @@
 }
 
 .title-guides {
+  text-transform: uppercase;
   color: white;
   font-size: 45px;
   font-weight: 900;
@@ -33,12 +34,7 @@
   top: 0;
   left: 0;
   right: 0px;
-  bottom: 40px; // must leave bottom margin to be able to click on edit and delete icons
 }
-
-// .card-link:hover > #box {
-//     opacity: 1;
-//   }
 
 .infos-guides {
 font-size: 13px;

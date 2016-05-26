@@ -6,4 +6,14 @@ class Card < ActiveRecord::Base
 
   validates :name, presence: true
   validates :formatted_address, presence: true
+
+  def choosephoto
+    if self.photo.url
+      photo
+    else
+      gphoto
+    end
+  end
+
+
 end

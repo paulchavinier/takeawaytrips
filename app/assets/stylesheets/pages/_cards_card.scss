@@ -7,7 +7,7 @@
   border-style: solid;
   border-width: 5px;
   border-color: white;
-  width: 250px;
+  width: 270px;
   height: 370px;
   box-shadow: 0px 0px 5px #A7A7A7;
   position: relative;
@@ -27,6 +27,7 @@
 }
 
 .title-card {
+  text-transform: uppercase;
   margin-top: 5px;
   color: #272822;
   font-size: 20px;
@@ -50,8 +51,23 @@ color: #B1B1B1;
 font-size: 12px;
 }
 
-.tooltipped {
-height: 40px;
+.edit-card {
+text-align: center;
+font-size: 13px;
+position: absolute;
 width: 30px;
-background-color: red;
+height: 40px;
+background-color: white;
+top: -4px;
+right: -4px;
+border-radius: 5px;
+}
+
+.edit-card i {
+text-decoration: none;
+transition: 0.3s;
+}
+
+.edit-card i:hover {
+font-size: 16px;
 }

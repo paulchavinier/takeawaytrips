@@ -39,12 +39,15 @@ class CardsController < ApplicationController
   def show
     @cards = []
     @cards << @card
+
   end
 
   def destroy
     @card.destroy
     redirect_to guide_path(@card.guide)
   end
+
+
 
   private
 
