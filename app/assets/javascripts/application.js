@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-////= require underscore
+//= require underscore
 //= require gmaps/google
+//= require bootstrap-material-design
 //= require_tree .
