@@ -22,6 +22,7 @@ gem "geocoder"
 gem "carrierwave"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem "rails_admin"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
