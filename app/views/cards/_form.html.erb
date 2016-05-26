@@ -14,7 +14,7 @@
             </fieldset>
           </form>
 
-          <%= simple_form_for @card, html: { class: 'card-autocomplete-form'} do |f| %>
+          <%= simple_form_for @card, remote: true, html: { class: 'card-autocomplete-form'} do |f| %>
             <%= f.input :name %>
             <%= f.input :personnal_note %>
             <%= f.input :gphoto %>
