@@ -35,14 +35,20 @@
       //
       //
 
-       handler.buildMap({ internal: { id: 'map-guide' } }, function(){
+       handler.buildMap({
+          provider: {
+            scrollwheel: false
+          },
+          internal: { id: 'map-guide' } }, function(){
           markers = handler.addMarkers(<%= raw @markersguide.to_json %>);
           handler.bounds.extendWith(markers);
          handler.fitMapToBounds();
          if (markers[0].serviceObject.title === "country") {
-           handler.getMap().setZoom(7);
-         } else if (markers[0].serviceObject.title === "administrative_area_level_1" | markers[0].serviceObject.title === "administrative_area_level_2") {
+           handler.getMap().setZoom(6);
+          } else if (markers[0].serviceObject.title === "administrative_area_level_1") {
            handler.getMap().setZoom(9);
+          } else if (markers[0].serviceObject.title === "administrative_area_level_2") {
+           handler.getMap().setZoom(10);
           } else {
             handler.getMap().setZoom(11);
           }
