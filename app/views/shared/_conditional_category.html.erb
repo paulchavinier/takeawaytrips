@@ -1,11 +1,4 @@
-<!-- Modal -->
-<div class="modal fade" id="cardModal_<%= card.id %>" tabindex="-1" role="dialog" aria-labelledby="cardModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-
-      <div class="modal-header-card" style="background-image: url(<%= image_path card.choosephoto %>)">
-      <%= card.name %>
-      <p><% if card.category == "bakery" || card.category == "cafe" || card.category == "meal_delivery" || card.category == "meal_takeaway" || card.category == "food" || card.category == "restaurant" %>
+<% if card.category == "bakery" || card.category == "cafe" || card.category == "meal_delivery" || card.category == "meal_takeaway" || card.category == "food" || card.category == "restaurant" %>
         <%="Eat"%>
         <% elsif card.category == "campground" || card.category == "lodging" %>
         <%="Sleep"%>
@@ -17,32 +10,4 @@
         <%="Do"%>
         <% elsif %>
         <%="Place"%>
-      <%end%></p>
-      </div>
-      <div class="modal-body-card">
-      <div class="containinfo">
-        <div class="opening-card">
-          <ul class="list-unstyled">
-          <% card.opening_hours.each do |hour| %>
-            <% if hour.include?("di") %>
-              </li><li><%= hour %>
-            <% else %>
-              <span> - <%= hour %></span>
-            <% end %>
-          <% end %>
-          </ul>
-          <i class="fa fa-phone" aria-hidden="true"></i> : <%= card.international_phone_number%><br>
-          <i class="fa fa-link" aria-hidden="true"></i> : <%= card.website%>
-        </div>
-        <div class="map-card" style="background-image: url(<%= image_path 'map.png' %>)">
-        </div>
-        </div>
-        <div class="note-card">
-        <%= card.personnal_note %>
-        </div>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
+      <%end%>
