@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
     <div class="box-card" >
-    <%= link_to "", card_path(card), class: "card-link" %>
+    <%= link_to "", card_path(card), class: "card-link", data: {toggle: "modal", target: "#guideModal"} %>
     <div class="banner-card" style="background-image: url(<%= image_path card.choosephoto %>)">
     <%= image_tag 'reflect.png' %>
     </div>
