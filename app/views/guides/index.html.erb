@@ -1,12 +1,37 @@
-<div class=supreme-container>
-<div class="containermain">
-<h3>Welcome to your Guide Board</h3>
-<button type="button" class="homecreate" data-toggle="modal" data-target="#guideModal">
- Create a new guide
-</button>
+<div class="banner-guide-board">
+<%= current_user.first_name + "'s guide boards"%>
+</div>
+
+<div id="map-board" style="width: 100%; height: 50vh; position: center;"></div>
+
+
+
 <div class="container">
+  <div class="create-guide">
+  <button type="button" class="btn btn-danger align-center" data-toggle="modal" data-target="#guideModal">
+   Create a new guide board
+  </button> <br>
+  </div>
   <%= render 'shared/card_guides' %>
 </div>
-</div>
-</div>
+
 <%= render 'shared/modal' %>
+
+<% content_for(:after_js) do %>
+  <script>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+
+       handler.buildMap({
+          provider: {
+            scrollwheel: false,
+            styles: mapStyle
+          },
+          internal: { id: 'map-board' } }, function(){
+          markers = handler.addMarkers(<%= raw @markersguide.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+      })
+  </script>
+<% end %>
