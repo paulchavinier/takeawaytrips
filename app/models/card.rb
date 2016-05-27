@@ -14,10 +14,30 @@ class Card < ActiveRecord::Base
     "bar" => "Drink",
     "liquor_store" => "Drink",
     "night_club" => "Drink",
+    "beauty_salon" => "Shopping",
+    "bicycle_store" => "Shopping",
+    "book_store" => "Shopping",
+    "clothing_store" => "Shopping",
+    "convenience_store" => "Shopping",
+    "department_store" => "Shopping",
+    "electronics_store" => "Shopping",
+    "florist" => "Shopping",
+    "furniture_store" => "Shopping",
+    "grocery_or_supermarket" => "Shopping",
+    "hardware_store" => "Shopping",
+    "home_goods_store" => "Shopping",
+    "jewelry_store" => "Shopping",
+    "pet_store" => "Shopping",
+    "pharmacy" => "Shopping",
+    "shoe_store" => "Shopping",
+    "shopping_mall" => "Shopping",
+    "store" => "Shopping",
   }
 
   CATEGORIES_MAPPING = {
     "Eat" => ["bakery", "cafe", "meal_takeaway", "meal_delivery", "food", "restaurant"]
+    "Sleep" => ["campground", "lodging",]
+    "Drink" => ["liquor_store", "night_club", "bar"]
   }
 
   # <% if card.category ==  || card.category == "" || card.category == "" || card.category == "" || card.category == "" || card.category == "" %>
