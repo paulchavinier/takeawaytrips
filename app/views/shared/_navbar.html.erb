@@ -32,15 +32,27 @@
           <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "/" do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+              <%= link_to root_path do %>
+                <i class="fa fa-home"></i>  <%= t ".home", default: "Home" %>
               <% end %>
             </li>
             <li>
               <%= link_to guides_path do %>
-                <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+                <i class="fa fa-map"></i> <%= t ".guides", default: "My Guides" %>
               <% end %>
             </li>
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-user"></i> <%= t ".profile", default: "Edit Profile" %>
+              <% end %>
+            </li>
+            <% if current_user.admin %>
+              <li>
+                <%= link_to rails_admin_path do %>
+                  <i class="fa fa-gears"></i>  <%= t ".admin", default: "Admin" %>
+                <% end %>
+              </li>
+            <% end %>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
