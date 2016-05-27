@@ -37,8 +37,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    @cards = []
-    @cards << @card
+    @card = Card.find(params[:id])
 
   end
 
