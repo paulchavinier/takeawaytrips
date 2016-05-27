@@ -45,6 +45,9 @@ $('#user_input_autocomplete_address').keydown(function (e) {
     $('#new_card').submit();
     $('#new_card').trigger("reset");
     $('#user_input_autocomplete_address').val(' ');
-    return false;
+    // return false;
+    // e.preventDefault();
   }
 });
+
+// $('#user_input_autocomplete_address').unbind('keydown');
