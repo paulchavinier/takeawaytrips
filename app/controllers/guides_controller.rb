@@ -27,7 +27,12 @@ class GuidesController < ApplicationController
   def show
     @card = Card.new
     @card.guide_id = params[:id]
-    @cards = @guide.cards
+    if params[:category]
+      @cards = @guide.cards.where(category: Card::CATEGORIES_MAPPING[params[:category]])
+    else
+      @cards = @guide.cards
+    end
+    @categories = Card::CATEGORIES.values.uniq
     @markers = Gmaps4rails.build_markers(@cards) do |card, marker|
       marker.lat card.latitude
       marker.lng card.longitude
