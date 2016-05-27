@@ -97,3 +97,8 @@ font-size: 16px;
 .form-group .form-control {
   color: #272822;
 }
+.form-control:focus {
+  border-color: white;
+  outline: 0;
+  box-shadow: none !important;
+}

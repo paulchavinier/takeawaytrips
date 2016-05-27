@@ -31,6 +31,7 @@ class GuidesController < ApplicationController
     @markers = Gmaps4rails.build_markers(@cards) do |card, marker|
       marker.lat card.latitude
       marker.lng card.longitude
+      marker.infowindow "<a class='card-link' data-toggle='modal' data-target='#cardModal_#{card.id}' href='#'>#{card.name}</a>"
     end
     @markersguide = Gmaps4rails.build_markers(@guide) do |guide, marker| # construction duJson pour pousser a Gplace for Rails
       marker.lat guide.latitude
