@@ -1,13 +1,12 @@
 <div class=supreme-container>
 <div class="containermain">
 <h3>Welcome to your Guide Board</h3>
+<button type="button" class="homecreate" data-toggle="modal" data-target="#guideModal">
+ Create a new guide
+</button>
 <div class="container">
   <%= render 'shared/card_guides' %>
 </div>
-
-<button type="button" class="btn btn-danger center-block" data-toggle="modal" data-target="#guideModal">
- Create my guide board
-</button>
 </div>
 </div>
 <%= render 'shared/modal' %>
