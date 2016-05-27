@@ -11,7 +11,9 @@
   <div class="card-filters">
     <ul class="list-inline">
       <li>
-        <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i>
+        <%= link_to guide_path(@guide, category: "Eat"), remote: true do %>
+          <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i>
+        <% end %>
       </li>
       <li>
         <i class="fa fa-bed fa-lg" aria-hidden="true"></i>
@@ -28,9 +30,7 @@
     </ul>
   </div>
   <div class="row" id="guide-cards">
-    <% @cards.each do |card| %>
-      <%= render 'shared/card', card: card %>
-    <% end %>
+    <%= render 'shared/cards', cards: @cards %>
   </div>
 </div>
 
@@ -76,5 +76,6 @@
           }
         });
       })
+
   </script>
 <% end %>
