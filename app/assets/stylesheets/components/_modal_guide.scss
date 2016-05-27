@@ -1,22 +1,22 @@
 // #guideModal {
-//    z-index: 1050 !important;
-//    background-color: ;
+//   background-color: rgba(0,0,0,0.6);
+//   -o-webkit-backdrop-filter: blur(10px);
 // }
-
-// .pac-container {
-//     background-color: #FFF;
-//     z-index: 20;
-//     position: fixed;
-//     display: inline-block;
-//     float: left;
-// }
-// .modal{
-//     z-index: 20;
-// }
-// .modal-backdrop{
-//     z-index: 10;
-// }​
 
 .pac-container {
     z-index: 1051 !important;
+}
+
+body.modal-open .supreme-container{
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    transition: 5s;
+}
+
+
+.supreme-container {
+  transition: 0.7s;
 }

@@ -2,7 +2,7 @@
 <%= @guide.name.upcase %>
 </div>
 
-<div id="map-guide" style="width: 100%; height: 68vh; position: center;"></div>
+<div id="map-guide" style="width: 100%; height: 72vh; position: center;"></div>
 
 <%= render 'cards/form' %>
 
@@ -26,8 +26,8 @@
       </li>
     </ul>
   </div>
-  <div class="row" id="guide-cards">
   <p>YOUR PLACES (<%= @guide.cards.size %>)</p>
+  <div class="row" id="guide-cards">
     <% @cards.each do |card| %>
       <%= render 'shared/card', card: card %>
     <% end %>

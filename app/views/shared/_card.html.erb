@@ -2,6 +2,7 @@
     <div class="box-card" >
     <%= link_to "", card_path(card), class: "card-link" %>
     <div class="banner-card" style="background-image: url(<%= image_path card.choosephoto %>)">
+    <%= image_tag 'reflect.png' %>
     </div>
     <div class="edit-card">
         <%= link_to card_path(card), method: :delete do %>
@@ -20,10 +21,12 @@
         <%="Eat"%>
       <% elsif card.category == "campground" || card.category == "lodging" %>
         <%="Sleep"%>
+         <% elsif card.category == "night_club" %>
+        <%="Night Club"%>
       <% elsif card.category == "bar" || card.category == "liquor_store" || card.category == "bar" %>
         <%="Drink"%>
       <% elsif card.category == "beauty_salon" || card.category == "bicycle_store" || card.category == "book_store" || card.category == "clothing_store" || card.category == "convenience_store" || card.category == "department_store" || card.category == "electronics_store" || card.category == "florist" || card.category == "furniture_store" || card.category == "grocery_or_supermarket" || card.category == "hardware_store" || card.category == "home_goods_store" || card.category == "jewelry_store" || card.category == "pet_store" || card.category == "pharmacy" || card.category == "shoe_store" || card.category == "shopping_mall" || card.category == "store" %>
-        <%="Shop"%>
+        <%="Shopping"%>
       <% elsif card.category == "amusement_park" || card.category == "aquarium" || card.category == "art_gallery" || card.category == "bowling_alley" || card.category == "casino" || card.category == "church" || card.category == "gym"  || card.category == "library"  || card.category == "movie_theater"  || card.category == "museum"  || card.category == "park"  || card.category == "place_of_worship"  || card.category == "spa"  || card.category == "zoo"  %>
         <%="Do"%>
       <% elsif %>
