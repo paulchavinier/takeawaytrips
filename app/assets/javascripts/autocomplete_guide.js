@@ -44,9 +44,7 @@ $('#user_input_autocomplete_address').keydown(function (e) {
   if (e.which == 13) {
     $('#new_card').submit();
     $('#new_card').trigger("reset");
-    // this.trigger("reset");
     $('#user_input_autocomplete_address').val(' ');
-    // $form.find('input:text, input:password, input:file, select, textarea').val('');
     return false;
   }
 });
