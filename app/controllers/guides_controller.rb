@@ -4,6 +4,12 @@ class GuidesController < ApplicationController
 
   def index
     @guide = Guide.new
+    @guides = current_user.guides
+    @markersguide = Gmaps4rails.build_markers(@guides) do |guide, marker| # construction duJson pour pousser a Gplace for Rails
+      marker.lat guide.latitude
+      marker.lng guide.longitude
+      marker.title guide.place_type
+    end
   end
 
   def create
@@ -12,7 +18,7 @@ class GuidesController < ApplicationController
     results = Geocoder.search(@guide.place)
     @guide.place_type = results.first.types.first
     if @guide.save
-      redirect_to guides_path
+      redirect_to guide_path(@guide.id)
     else
       render 'root/index'
     end
