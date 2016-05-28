@@ -3,11 +3,11 @@
   // Render new card form with errors
   $('#new_card').html("<%= j render 'cards/form', guide: @guide, card: @card %>");
 <% else %>
-  // Create a paragraph for the new card. But hide it.
+  // Create a card for the new card. But hide it.
   var new_card = $("<%= j render 'shared/card', card: @card %>").hide();
-  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+  // Add it to the DOM, at the beginning of the existing cards. It's still hidden.
   $('#guide-cards').prepend(new_card);
-  // Show the new review with an animation!
+  // Show the new card with an animation!
   new_card.slideDown();
   // Remove the text from the content textarea.
   $('#card_content').val('');
