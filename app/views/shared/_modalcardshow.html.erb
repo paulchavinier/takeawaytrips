@@ -5,19 +5,7 @@
 
       <div class="modal-header-card" style="background-image: url(<%= image_path card.choosephoto %>)">
       <%= card.name %>
-      <p><% if card.category == "bakery" || card.category == "cafe" || card.category == "meal_delivery" || card.category == "meal_takeaway" || card.category == "food" || card.category == "restaurant" %>
-        <%="Eat"%>
-        <% elsif card.category == "campground" || card.category == "lodging" %>
-        <%="Sleep"%>
-        <% elsif card.category == "bar" || card.category == "liquor_store" || card.category == "night_club" %>
-        <%="Drink"%>
-        <% elsif card.category == "beauty_salon" || card.category == "bicycle_store" || card.category == "book_store" || card.category == "clothing_store" || card.category == "convenience_store" || card.category == "department_store" || card.category == "electronics_store" || card.category == "florist" || card.category == "furniture_store" || card.category == "grocery_or_supermarket" || card.category == "hardware_store" || card.category == "home_goods_store" || card.category == "jewelry_store" || card.category == "pet_store" || card.category == "pharmacy" || card.category == "shoe_store" || card.category == "shopping_mall" || card.category == "store" %>
-        <%="Shopping"%>
-        <% elsif card.category == "amusement_park" || card.category == "aquarium" || card.category == "art_gallery" || card.category == "bowling_alley" || card.category == "casino" || card.category == "church" || card.category == "gym"  || card.category == "library"  || card.category == "movie_theater"  || card.category == "museum"  || card.category == "park"  || card.category == "place_of_worship"  || card.category == "spa"  || card.category == "zoo"  %>
-        <%="Do"%>
-        <% elsif %>
-        <%="Place"%>
-      <%end%></p>
+      <p><%= Card::CATEGORIES[card.category] %></p>
       </div>
       <div class="modal-body-card">
       <div class="containinfo">

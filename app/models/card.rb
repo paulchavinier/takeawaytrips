@@ -14,45 +14,47 @@ class Card < ActiveRecord::Base
     "bar" => "Drink",
     "liquor_store" => "Drink",
     "night_club" => "Drink",
-    "beauty_salon" => "Shopping",
-    "bicycle_store" => "Shopping",
-    "book_store" => "Shopping",
-    "clothing_store" => "Shopping",
-    "convenience_store" => "Shopping",
-    "department_store" => "Shopping",
-    "electronics_store" => "Shopping",
-    "florist" => "Shopping",
-    "furniture_store" => "Shopping",
-    "grocery_or_supermarket" => "Shopping",
-    "hardware_store" => "Shopping",
-    "home_goods_store" => "Shopping",
-    "jewelry_store" => "Shopping",
-    "pet_store" => "Shopping",
-    "pharmacy" => "Shopping",
-    "shoe_store" => "Shopping",
-    "shopping_mall" => "Shopping",
-    "store" => "Shopping",
+    "beauty_salon" => "Shop",
+    "bicycle_store" => "Shop",
+    "book_store" => "Shop",
+    "clothing_store" => "Shop",
+    "convenience_store" => "Shop",
+    "department_store" => "Shop",
+    "electronics_store" => "Shop",
+    "florist" => "Shop",
+    "furniture_store" => "Shop",
+    "grocery_or_supermarket" => "Shop",
+    "hardware_store" => "Shop",
+    "home_goods_store" => "Shop",
+    "jewelry_store" => "Shop",
+    "pet_store" => "Shop",
+    "pharmacy" => "Shop",
+    "shoe_store" => "Shop",
+    "shopping_mall" => "Shop",
+    "store" => "Shop",
+    "amusement_park" => "Do",
+    "aquarium" => "Do",
+    "art_gallery" => "Do",
+    "bowling_alley" => "Do",
+    "casino" => "Do",
+    "church" => "Do",
+    "gym" => "Do",
+    "library" => "Do",
+    "movie_theater" => "Do",
+    "museum" => "Do",
+    "park" => "Do",
+    "spa" => "Do",
+    "zoo" => "Do",
+
   }
 
   CATEGORIES_MAPPING = {
-    "Eat" => ["bakery", "cafe", "meal_takeaway", "meal_delivery", "food", "restaurant"]
-    "Sleep" => ["campground", "lodging",]
-    "Drink" => ["liquor_store", "night_club", "bar"]
+    "Eat" => ["bakery", "cafe", "meal_takeaway", "meal_delivery", "food", "restaurant"],
+    "Sleep" => ["campground", "lodging"],
+    "Drink" => ["liquor_store", "night_club", "bar"],
+    "Shop" => ["beauty_salon", "bicycle_store", "book_store", "clothing_store", "convenience_store", "department_store", "electronics_store", "florist", "furniture_store", "grocery_or_supermarket", "hardware_store", "home_goods_store", "jewelry_store", "pet_store", "pharmacy", "shoe_store", "shopping_mall", "store"],
+    "Do" => ["amusement_park", "aquarium", "art_gallery", "bowling_alley", "casino", "church", "gym", "library", "movie_theater", "museum", "park", "spa", "zoo"]
   }
-
-  # <% if card.category ==  || card.category == "" || card.category == "" || card.category == "" || card.category == "" || card.category == "" %>
-  #   <%=%>
-  # <% elsif card.category == "" || card.category == "" %>
-  #   <%=""%>
-  # <% elsif card.category == "" || card.category == "" || card.category == "" %>
-  #   <%=""%>
-  # <% elsif card.category == "beauty_salon" || card.category == "bicycle_store" || card.category == "book_store" || card.category == "clothing_store" || card.category == "convenience_store" || card.category == "department_store" || card.category == "electronics_store" || card.category == "florist" || card.category == "furniture_store" || card.category == "grocery_or_supermarket" || card.category == "hardware_store" || card.category == "home_goods_store" || card.category == "jewelry_store" || card.category == "pet_store" || card.category == "pharmacy" || card.category == "shoe_store" || card.category == "shopping_mall" || card.category == "store" %>
-  #   <%=""%>
-  # <% elsif card.category == "amusement_park" || card.category == "aquarium" || card.category == "art_gallery" || card.category == "bowling_alley" || card.category == "casino" || card.category == "church" || card.category == "gym"  || card.category == "library"  || card.category == "movie_theater"  || card.category == "museum"  || card.category == "park"  || card.category == "place_of_worship"  || card.category == "spa"  || card.category == "zoo"  %>
-  #   <%="Do"%>
-  # <% elsif %>
-  #   <%="Place"%>
-  # <%end%>
 
   belongs_to :guide
 
