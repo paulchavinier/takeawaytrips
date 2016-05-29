@@ -59,7 +59,6 @@ class Card < ActiveRecord::Base
   belongs_to :guide
 
   validates :name, presence: true
-  validates :formatted_address, presence: true
 
   def choosephoto
     if self.photo.url
