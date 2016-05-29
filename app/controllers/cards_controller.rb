@@ -44,7 +44,6 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    redirect_to guide_path(@card.guide)
   end
 
 
