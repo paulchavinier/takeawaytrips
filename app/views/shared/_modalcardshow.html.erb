@@ -20,10 +20,10 @@
           <% end %>
           </ul>
           <i class="fa fa-phone" aria-hidden="true"></i> : <%= card.international_phone_number%><br>
-          <i class="fa fa-link" aria-hidden="true"></i> : <%= card.website%>
+          <i class="fa fa-link" aria-hidden="true"></i> : <%= link_to card.website, card.website, :target => "_blank" %>
         </div>
         <div class="map-card">
-          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=360x180&sensor=false&maptype=roadmap&markers=color:red|#{card.formatted_address}" %>
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=355x180&sensor=false&maptype=roadmap&markers=color:red|#{card.formatted_address}" %>
         </div>
         </div>
         <div class="note-card">
