@@ -7,7 +7,9 @@
 <%= render 'cards/form' %>
 
 <div class="container">
-<H4>YOUR PLACES (<%= @guide.cards.size %>)</H4>
+<h4 id="total-places">
+  <%="Your places (" + @cards.count.to_s + ")" %>
+</h4>
   <div class="card-filters">
     <ul class="list-inline">
       <li>
