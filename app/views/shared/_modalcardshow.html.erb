@@ -22,7 +22,8 @@
           <i class="fa fa-phone" aria-hidden="true"></i> : <%= card.international_phone_number%><br>
           <i class="fa fa-link" aria-hidden="true"></i> : <%= card.website%>
         </div>
-        <div class="map-card" style="background-image: url(<%= image_path 'map.png' %>)">
+        <div class="map-card">
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=360x180&sensor=false&maptype=roadmap&markers=color:red|#{card.formatted_address}" %>
         </div>
         </div>
         <div class="note-card">
