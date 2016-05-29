@@ -52,14 +52,6 @@
   <script>
     $(document).on('ready', function() {
       handler = Gmaps.build('Google');
-      // handler.buildMap({ internal: { id: 'map-guide' } }, function(){
-      //   markers = handler.addMarkers(<%= raw @markers.to_json %>);
-      //   handler.bounds.extendWith(markers);
-      //   handler.fitMapToBounds();
-      // });
-      //
-      //
-
        handler.buildMap({
           provider: {
             scrollwheel: false,

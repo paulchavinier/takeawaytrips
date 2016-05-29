@@ -5,8 +5,8 @@
           <div class="home-logo text-center">
             <%= image_tag "Logowhite.png" %>
             <div id="changethewords" style="color:white">
-              <h2><b>Create your own guideboard and</b><h2>
-              <h2>
+              <h2>Create your own guideboard and<h2>
+              <h2><b>
               <span data-id="1">Travel the world</span>
               <span data-id="2">Discover your city</span>
               <span data-id="3">Share with your friends</span>
@@ -14,7 +14,7 @@
               <span data-id="5">Plan your next trip</span>
               <span data-id="6">Eat icecreams in Vladivostock</span>
               <span data-id="7">Prepare your next trips to Brazioul</span>
-              </h2>
+              </b></h2>
             </div>
             <button type="button" class="homecreate" data-toggle="modal" data-target="#guideModal">
                Get Started
@@ -46,7 +46,7 @@
 <script>
   $(document).on('ready', function() {
       $("#changethewords").changeWords({
-        time: 4000,
+        time: 3000,
         animate: "fadeInUp",
         selector: "span"
       });
