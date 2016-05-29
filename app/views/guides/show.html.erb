@@ -19,16 +19,24 @@
         <% end %>
       </li>
       <li>
-        <i class="fa fa-bed fa-lg" aria-hidden="true"></i>
+        <%= link_to guide_path(@guide, category: "Sleep"), remote: true do %>
+          <i class="fa fa-bed fa-lg" aria-hidden="true"></i>
+        <% end %>
       </li>
       <li>
+      <%= link_to guide_path(@guide, category: "Drink"), remote: true do %>
         <i class="fa fa-glass fa-lg" aria-hidden="true"></i>
+      <% end %>
       </li>
       <li>
+      <%= link_to guide_path(@guide, category: "Shop"), remote: true do %>
         <i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i>
+      <% end %>
       </li>
       <li>
+      <%= link_to guide_path(@guide, category: "Do"), remote: true do %>
         <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
+      <% end %>
       </li>
     </ul>
   </div>
