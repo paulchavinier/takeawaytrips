@@ -12,6 +12,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
+    @guide = @card.guide
     @card.opening_hours = card_params[:opening_hours].split(',') if card_params[:opening_hours]
     if @card.save
       respond_to do |format|
@@ -43,7 +44,6 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    redirect_to guide_path(@card.guide)
   end
 
 

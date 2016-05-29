@@ -7,7 +7,9 @@
 <%= render 'cards/form' %>
 
 <div class="container">
-<H4>YOUR PLACES (<%= @guide.cards.size %>)</H4>
+<h4 id="total-places">
+  <%="Your places (" + @cards.count.to_s + ")" %>
+</h4>
   <div class="card-filters">
     <ul class="list-inline">
       <li>
@@ -16,16 +18,24 @@
         <% end %>
       </li>
       <li>
-        <i class="fa fa-bed fa-lg" aria-hidden="true"></i>
+        <%= link_to guide_path(@guide, category: "Sleep"), remote: true do %>
+          <i class="fa fa-bed fa-lg" aria-hidden="true"></i>
+        <% end %>
       </li>
       <li>
+      <%= link_to guide_path(@guide, category: "Drink"), remote: true do %>
         <i class="fa fa-glass fa-lg" aria-hidden="true"></i>
+      <% end %>
       </li>
       <li>
+      <%= link_to guide_path(@guide, category: "Shop"), remote: true do %>
         <i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i>
+      <% end %>
       </li>
       <li>
+      <%= link_to guide_path(@guide, category: "Do"), remote: true do %>
         <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
+      <% end %>
       </li>
     </ul>
   </div>
@@ -34,7 +44,7 @@
   </div>
 </div>
 
-<%= render 'shared/modal' %>
+
 
 <% content_for(:after_js) do %>
   <script>
