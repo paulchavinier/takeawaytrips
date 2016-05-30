@@ -76,18 +76,18 @@
   margin-left: 10px;
   padding: 0 20px;
   line-height: 40px;
-  color: white;
+  color: #25AA99;
   background-color: rgba(0,0,0,0);
   font-size: 14px;
-  border: 1px solid #fff;
-  z-index: 2;
-  transition: 1.5s;
+  border: 1px solid white;
+  z-index: 3;
+  transition: 1s;
 }
 .navbar-wagon-button1:hover {
-  color: #fff;
+  color: #25AA99;
   background-color: rgba(255,255,255,0.3);
-  border-color: #fff;
-  z-index: 2;
+  border-color: #25AA99;
+  z-index: 3;
 }
 
 /* Navbar search form */
