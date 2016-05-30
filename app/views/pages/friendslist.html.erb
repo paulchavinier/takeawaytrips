@@ -1,0 +1,11 @@
+<hr>
+<% @users.each do |user| %>
+
+<%= image_tag(user.picture, class: "avatar") %>
+<% full_name = user.first_name + " " + user.last_name%>
+<p><%= link_to full_name, "/friend_guides_list/#{user.uid}" %></p>
+<p>Guides: <%= user.guides.size %></p>
+<p>Cards: <%= user.cards.size %></p>
+<% end %>
+<hr>
+
