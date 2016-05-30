@@ -1,8 +1,9 @@
+<div class="supreme-container">
 <div class="banner-guide-board">
 <%= @guide.name.upcase %>
 </div>
 
-<div id="map-guide" style="width: 100%; height: 72vh; position: center;"></div>
+<div id="map-guide" style="width: 100%; height: 50vh; position: center;"></div>
 
 <%= render 'cards/form' %>
 
@@ -37,11 +38,17 @@
         <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
       <% end %>
       </li>
+      <li>
+      </li>
+      <li style="text-decoration: none; "><b>
+      <%= link_to "All", guide_path(@guide), remote: true %>
+      </b></li>
     </ul>
   </div>
   <div class="row" id="guide-cards">
     <%= render 'shared/cards', cards: @cards %>
   </div>
+</div>
 </div>
 
 
@@ -89,11 +96,11 @@
           }
         }
       );
-          $("#new-card-button").click(function() {
-            $('html, body').animate({
-              scrollTop: $("#new-card-button").offset().top
-            }, 2000);
-          });
+          // $("#new-card-button").click(function() {
+          //   $('html, body').animate({
+          //     scrollTop: $("#new-card-button").offset().top
+          //   }, 2000);
+          // });
       })
 
 

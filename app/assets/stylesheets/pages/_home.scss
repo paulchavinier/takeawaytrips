@@ -109,7 +109,7 @@ body {
 .homecreate {
   height: 50px;
   width: 15%;
-  background-color: #61B292;
+  background-color: #25AA99;
   color: white;
   border: none;
   border-radius: 5px;
@@ -131,11 +131,36 @@ body {
   height: 5000px;
 }
 
+a {
+  text-decoration: none;
+}
+a:visited, a:hover, a:focus, a:active {
+  outline: none;
+}
 
 
+.user-initials {
+    height: 40px;
+    width: 40px;
+    background:#25AA99;
+    color: white;
+    border-radius: 50%;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
 
-
-
+.user-initials:hover {
+    background: white;
+    color: #25AA99;
+    border-radius: 10%;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 

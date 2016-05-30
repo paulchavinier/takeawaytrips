@@ -1,6 +1,6 @@
 <% @guides.each do |guide| %>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-    <div class="box-guides" id="box" style="background-image: url(<%= cl_image_path guide.photo %>)">
+    <div class="box-guides" id="box" style="background-image: url(<%= cl_image_path guide.choosephoto %>)">
     <%= link_to "", guide_path(guide), class: "card-link" %>
       <div class="title-guides">
         <%= guide.name.upcase %>

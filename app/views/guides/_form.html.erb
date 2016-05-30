@@ -5,10 +5,11 @@
     <% end %>
   </ul>
 <% end %>
-<%= simple_form_for @guide do |f| %>
+<%= simple_form_for @guide, html: { class: 'card-autocomplete-form'}  do |f| %>
   <%= f.input :name, label: "Enter the name of your guide board", input_html: { placeholder: "Farniente à l'île de Ré" } %>
   <%= f.input :place, label: "Do you have a city or country in mind ?", input_html: { id: :user_input_autocomplete_address } %>
-  <%= f.input :photo %>
+  <%= f.input :gphoto, as: :hidden %>
+  <%= f.input :photo, as: :hidden %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

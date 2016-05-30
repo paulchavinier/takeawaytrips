@@ -2,7 +2,6 @@
     <div class="box-card" id="card-<%=card.id%>" >
     <%= link_to "", "", class: "card-link", data: {toggle: "modal", target: "#cardModal_#{card.id}"} %>
     <div class="banner-card" style="background-image: url(<%= image_path card.choosephoto %>)">
-    <%= image_tag 'reflect.png' %>
     </div>
     <div class="edit-card">
         <%= link_to card_path(card), method: :delete, remote: true do %>
@@ -27,4 +26,3 @@
     </div>
     </div>
 </div>
-

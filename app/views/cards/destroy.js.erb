@@ -1,1 +1,2 @@
-$('#card-<%= @card.id %>').slideUp();
+$('#card-<%= @card.id %>').parent().fadeOut();
+$('#total-places').html('<%= j "Your places (" + @cards.count.to_s + ")" %>');

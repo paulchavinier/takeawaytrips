@@ -1,1 +1,107 @@
-// Your footer style
+.footer {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: #161713;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.newletter {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #25AA99;
+  margin: auto;
+  margin-top: 35px;
+}
+
+.newletter h3 {
+  color: white;
+  font-size: 18px;
+  margin-right: 20px !important;
+  margin-left: -100px !important;
+  margin: auto;
+}
+label {
+  color: #DAC26C;
+  font-size: 25px;
+  position: relative;
+    left: 39px;
+    top: 3px;
+}
+.newletter #newsq {
+  margin-right: 20px;
+  text-align: center;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+}
+
+.newletter #newsb {
+  color: white;
+  background-color: #DAC26C;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+}
+
+.menuf {
+  flex-direction: column;
+  position: absolute;
+  right: 5%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  background-color: #161713;
+  color: white;
+}
+
+.logof {
+  background-size: 100%;
+  background-position: center;
+  width: 20%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.menuf i {
+  margin: 5px;
+  transition: 0.5s;
+}
+
+.menuf i:hover {
+  color: #25AA99;
+}
+
+.menum {
+  position: absolute;
+  left: 5%;
+  flex-direction: column;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  height: 100%;
+  background-color: #161713;
+  color: white;
+}
+
+.menum p {
+  margin: 5px;
+  transition: 0.5s;
+}
+
+.menum p:hover {
+  color: #25AA99;
+}
