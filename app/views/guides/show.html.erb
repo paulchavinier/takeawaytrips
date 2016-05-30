@@ -38,6 +38,11 @@
         <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
       <% end %>
       </li>
+      <li>
+      </li>
+      <li style="text-decoration: none; "><b>
+      <%= link_to "All", guide_path(@guide, category: "All"), remote: true %>
+      </b></li>
     </ul>
   </div>
   <div class="row" id="guide-cards">
