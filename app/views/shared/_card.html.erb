@@ -1,4 +1,4 @@
-<div class="supreme-container">
+
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
     <div class="box-card" id="card-<%=card.id%>" >
     <%= link_to "", "#", class: "card-link", data: {toggle: "modal", target: "#cardModal_#{card.id}"} %>
@@ -30,5 +30,3 @@
     </div>
     </div>
 </div>
-</div>
-<%= render 'shared/modalcardshow', card: card %>
