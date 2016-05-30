@@ -14,6 +14,10 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
     @guide = @card.guide
     @card.opening_hours = card_params[:opening_hours].split(',') if card_params[:opening_hours]
+    @markers_new_card = Gmaps4rails.build_markers(@card) do |card, marker|
+      marker.lat card.latitude
+      marker.lng card.longitude
+    end
     if @card.save
       respond_to do |format|
         format.html {redirect_to guide_path(@card.guide)}
