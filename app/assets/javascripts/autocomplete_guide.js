@@ -33,6 +33,10 @@ function onPlaceChanged() {
   if (photos.length > 0) {
     form.find('#card_gphoto').val(photos[0].getUrl({maxWidth: 1200}));
   }
+  var photos = place.photos;
+  if (photos.length > 0) {
+    form.find('#guide_gphoto').val(photos[0].getUrl({maxWidth: 1200}));
+  }
 }
 
 google.maps.event.addDomListener(window, 'load', function() {

@@ -1,7 +1,7 @@
 <div class="navbar-wagon <%= params[:action] == 'home' ? 'navbar-wagon-fixed' : '' %>">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "Logowhite.png" %>
+    <%= image_tag "Logo.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -29,7 +29,9 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <div class="user-initials dropdown-toggle" id= "navbar-wagon-menu", data-toggle= "dropdown">
+            <span><%= current_user.initials %></span>
+          </div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to root_path do %>
@@ -39,6 +41,11 @@
             <li>
               <%= link_to guides_path do %>
                 <i class="fa fa-map"></i> <%= t ".guides", default: "My Guides" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to friends_path do %>
+                <i class="fa fa-group"></i> <%= t ".friends", default: "My Friends" %>
               <% end %>
             </li>
             <li>

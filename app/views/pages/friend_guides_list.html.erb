@@ -1,0 +1,32 @@
+<div class="banner-guide-board">
+  <div>
+    <%= image_tag(@friend.picture, class: "avatar") %>
+    <%= @friend.first_name + "'s guide boards" %>
+  </div>
+</div>
+
+<div id="map-board" style="width: 100%; height: 50vh; position: center;"></div>
+
+<div class="container">
+  <%= render 'shared/card_guides' %>
+</div>
+
+<% content_for(:after_js) do %>
+  <script>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+
+       handler.buildMap({
+          provider: {
+            scrollwheel: false,
+            styles: mapStyle
+          },
+          internal: { id: 'map-board' } }, function(){
+          markers = handler.addMarkers(<%= raw @markersguide.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          handler.getMap().setZoom(2);
+        });
+      })
+  </script>
+<% end %>
