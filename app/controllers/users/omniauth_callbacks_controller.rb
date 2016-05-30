@@ -1,7 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
  def facebook
   user = User.find_for_facebook_oauth(request.env['omniauth.auth'])
-  user.fill_friendship_relations   # Mise à jour ou creation des relations entre amis FB qui ont installé l'app.
+  user.get_friendslist   # Mise à jour ou creation des relations entre amis FB qui ont installé l'app.
 
   if user.persisted?
     sign_in_and_redirect user, event: :authentication
