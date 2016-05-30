@@ -9,8 +9,11 @@
   $('#guide-cards').prepend(new_card);
   // Show the new card with an animation!
   new_card.fadeIn();
+  $('body').append("<%= j render 'shared/modalcardshow', card: @card %>");
   // Remove the text from the content textarea.
   $('#user_input_autocomplete_address').val('');
   $('#total-places').html('<%= j "Your places (" + @guide.cards.count.to_s + ")" %>');
-
+  markersnewcard = handler.addMarkers(<%= raw @markers_new_card.to_json %>);
+  handler.bounds.extendWith(markersnewcard);
+  handler.fitMapToBounds();
 <% end %>
