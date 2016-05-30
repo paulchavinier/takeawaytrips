@@ -8,4 +8,12 @@ class Guide < ActiveRecord::Base
   validates :name, presence: true
   geocoded_by :place
   after_validation :geocode, if: :place_changed?
+
+  def choosephoto
+    if self.photo.url
+      photo
+    else
+      gphoto
+    end
+  end
 end
