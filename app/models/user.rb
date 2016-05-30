@@ -32,4 +32,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def initials
+    "#{self.first_name.first}#{self.last_name.first}"
+  end
+
 end
