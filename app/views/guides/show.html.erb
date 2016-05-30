@@ -51,32 +51,44 @@
     $(document).on('ready', function() {
       handler = Gmaps.build('Google');
        handler.buildMap({
-          provider: {
-            scrollwheel: false,
-            styles: mapStyle
-          },
-          internal: { id: 'map-guide' } }, function(){
-          markers = handler.addMarkers(<%= raw @markersguide.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-         if (markers[0].serviceObject.title === "country") {
-           handler.getMap().setZoom(6);
-          } else if (markers[0].serviceObject.title === "administrative_area_level_1") {
-           handler.getMap().setZoom(9);
-          } else if (markers[0].serviceObject.title === "administrative_area_level_2") {
-           handler.getMap().setZoom(10);
-          } else {
-            handler.getMap().setZoom(11);
-          }
+        provider: {
+          scrollwheel: false,
+          styles: mapStyle
+        },
+        internal: { id: 'map-guide' }
+      }, function(){
+          markersguide = handler.addMarkers(<%= raw @markersguide.to_json %>);
           markerscard = handler.addMarkers(<%= raw @markers.to_json %>);
-          handler.bounds.extendWith(markerscard);
+          markersnewcard = handler.addMarkers(<%= raw @markers_new_card.to_json %>);
+
+
           if (markerscard.length === 0){
-            markers = handler.removeMarkers(markers);
-          } else {
+            handler.bounds.extendWith(markersguide);
             handler.fitMapToBounds();
-            markers = handler.removeMarkers(markers);
+            markers = handler.removeMarkers(markersguide);
+            if (markersguide[0].serviceObject.title === "country") {
+              handler.getMap().setZoom(6);
+             } else if (markersguide[0].serviceObject.title === "administrative_area_level_1") {
+              handler.getMap().setZoom(9);
+             } else if (markersguide[0].serviceObject.title === "administrative_area_level_2") {
+              handler.getMap().setZoom(10);
+             } else {
+               handler.getMap().setZoom(11);
+             }
+          } else if (markerscard.length === 1) {
+            handler.bounds.extendWith(markerscard);
+            handler.fitMapToBounds();
+            handler.getMap().setZoom(14);
+            markers = handler.removeMarkers(markersguide);
+
+          } else {
+            handler.bounds.extendWith(markerscard);
+            handler.fitMapToBounds();
+            markers = handler.removeMarkers(markersguide);
+
           }
-        });
+        }
+      );
           $("#new-card-button").click(function() {
             $('html, body').animate({
               scrollTop: $("#new-card-button").offset().top
