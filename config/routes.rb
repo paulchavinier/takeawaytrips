@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'searchmap', to: 'pages#searchmap'
+  get 'friends', to: 'pages#friendslist'
+  get 'friend_guides_list/:uid', to: 'pages#friend_guides_list'
 
   resources :cards
   resources :guides
