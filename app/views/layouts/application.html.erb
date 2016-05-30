@@ -34,6 +34,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= yield %>
+    <%= render "shared/footer" %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_include_tag "https://cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js" %>
     <%= javascript_include_tag 'application' %>
