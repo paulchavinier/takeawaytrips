@@ -47,7 +47,9 @@ class CardsController < ApplicationController
   end
 
   def destroy
+    @guide = @card.guide
     @card.destroy
+    @cards = @guide.cards
   end
 
 
