@@ -8,7 +8,7 @@
               </form>
             </li>
             <li>
-                <%= simple_form_for @card, remote: true, html: { class: 'card-autocomplete-form'} do |f| %>
+            <%= simple_form_for @card, remote: true, html: { class: 'card-autocomplete-form'} do |f| %>
             <%= f.input :name, as: :hidden %>
             <%= f.input :personnal_note, as: :hidden %>
             <%= f.input :gphoto, as: :hidden %>
@@ -24,7 +24,7 @@
             <%= f.input :photo, as: :hidden %>
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.input :guide_id, as: :hidden, input_html: { :value => @card.guide_id } %>
-            <%= f.submit  class: "btn btn-primary", input_html:{class:""} %>
+            <%= f.submit  class: "btn btn-primary", id: "new-card-button" %>
           <% end %>
             </li>
           </ul>
