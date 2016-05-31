@@ -32,8 +32,7 @@ class CardsController < ApplicationController
   end
 
   def add_card_to_guide
-    # @new_card.guide = nil # BE CAREFUL, REVIEW UX!!!!
-    # @new_card.save
+
   end
 
   def update_card_to_guide
