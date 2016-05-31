@@ -15,5 +15,10 @@ class PagesController < ApplicationController
   def friend_guides_list
     @friend = User.find_by(uid: params[:uid])
     @guides = @friend.guides
+    @markersguide = Gmaps4rails.build_markers(@guides) do |guide, marker| # construction duJson pour pousser a Gplace for Rails
+      marker.lat guide.latitude
+      marker.lng guide.longitude
+      marker.title guide.place_type
+    end
   end
 end
