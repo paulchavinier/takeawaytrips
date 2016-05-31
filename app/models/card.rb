@@ -69,5 +69,36 @@ class Card < ActiveRecord::Base
     end
   end
 
+  def opened?(date=Date.current)
+    return if opening_hours.empty?
+    day_hours = []
+
+    if opening_hours.size == 14
+      day = (date.wday * 2) - 2
+
+      day_hours << opening_hours[day].split(': ').last
+      day_hours << opening_hours[day + 1]
+    else
+      day = date.wday - 1
+      day_hours << opening_hours[day].split(': ').last
+    end
+
+    return false if day_hours == ["Fermé"]
+    return true if day_hours == ["Ouvert 24h/24"]
+
+    day_hours.each do |day_hour|
+      hours = day_hour.strip.split(" – ")
+
+      hour, minute = hours[0].split(':').map(&:to_i)
+      opening_hour = date.to_time.advance(hours: hour, minutes: minute)
+
+      hour, minute = hours[1].split(':').map(&:to_i)
+      closing_hour = date.to_time.advance(hours: hour, minutes: minute)
+
+      return true if opening_hour <= Time.current && Time.current <= closing_hour
+    end
+
+    return false
+  end
 
 end

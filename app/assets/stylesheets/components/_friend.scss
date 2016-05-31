@@ -1,0 +1,40 @@
+.cardfriend {
+  position: relative;
+  background-color: white;
+  width: 250px;
+  height: 300px;
+  margin: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white;
+  box-shadow: 0px 0px 5px #A7A7A7;
+}
+
+.headerfriend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.headerfriend p{
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.linkf {
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+}

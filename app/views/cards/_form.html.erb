@@ -9,23 +9,23 @@
             </li>
             <li>
             <%= simple_form_for @card, remote: true, html: { class: 'card-autocomplete-form'} do |f| %>
-            <%= f.input :name, as: :hidden %>
-            <%= f.input :personnal_note, as: :hidden %>
-            <%= f.input :gphoto, as: :hidden %>
-            <%= f.input :category, as: :hidden %>
-            <%= f.input :formatted_address, as: :hidden %>
-            <%= f.input :website, as: :hidden %>
-            <%= f.input :international_phone_number, as: :hidden %>
-            <%= f.input :price_level, as: :hidden %>
-            <%= f.input :rating, as: :hidden %>
-            <%= f.input :opening_hours, as: :hidden, input_html: { value: @card.opening_hours ? @card.opening_hours.join(",") : nil } %>
-            <%= f.input :latitude, as: :hidden %>
-            <%= f.input :longitude, as: :hidden %>
-            <%= f.input :photo, as: :hidden %>
-            <%= f.input :photo_cache, as: :hidden %>
-            <%= f.input :guide_id, as: :hidden, input_html: { :value => @card.guide_id } %>
-            <%= f.submit  class: "btn btn-primary", id: "new-card-button" %>
-          <% end %>
+              <%= f.input :name, as: :hidden %>
+              <%= f.input :personnal_note, as: :hidden %>
+              <%= f.input :gphoto, as: :hidden %>
+              <%= f.input :category, as: :hidden %>
+              <%= f.input :formatted_address, as: :hidden %>
+              <%= f.input :website, as: :hidden %>
+              <%= f.input :international_phone_number, as: :hidden %>
+              <%= f.input :price_level, as: :hidden %>
+              <%= f.input :rating, as: :hidden %>
+              <%= f.input :opening_hours, as: :hidden, input_html: { value: @card.opening_hours ? @card.opening_hours.join(",") : nil } %>
+              <%= f.input :latitude, as: :hidden %>
+              <%= f.input :longitude, as: :hidden %>
+              <%= f.input :photo, as: :hidden %>
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.input :guide_id, as: :hidden, input_html: { :value => @card.guide_id } %>
+              <%= f.submit  class: "btn btn-primary", id: "new-card-button" %>
+            <% end %>
             </li>
           </ul>
         </div>
