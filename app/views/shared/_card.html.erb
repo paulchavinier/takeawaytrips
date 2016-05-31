@@ -17,9 +17,9 @@
           <i class="fa fa-trash" aria-hidden="true" style="color:#272822"></i>
         <%end%>
         <br>
-        <%= link_to edit_card_path(card) do %>
-          <i class="fa fa-pencil" aria-hidden="true"style="color:#3287C2"></i>
-        <%end%>
+        <%= link_to "", data: {toggle: "modal", target: "#editcardModal_#{card.id}"} do %>
+          <i class="fa fa-pencil" aria-hidden="true" style="color:#3287C2"></i>
+        <% end %>
       </div>
     <div class="title-card">
       <%= card.name %>

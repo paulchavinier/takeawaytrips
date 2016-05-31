@@ -1,31 +1,27 @@
-<div class="container" id="homepage">
-   <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-4">
-          <ul class="list-inline">
-            <li>
-                <%= simple_form_for @card, html: { class: 'edit-form'} do |f| %>
-            <%= f.input :name %>
-            <%= f.input :personnal_note %>
-            <%= f.input :gphoto, as: :hidden %>
-            <%= f.input :category %>
-            <%= f.input :formatted_address %>
-            <%= f.input :website %>
-            <%= f.input :international_phone_number %>
-            <%= f.input :price_level, as: :hidden %>
-            <%= f.input :rating, as: :hidden %>
-            <%= f.input :opening_hours, as: :hidden, input_html: { value: @card.opening_hours ? @card.opening_hours.join(",") : nil } %>
-            <%= f.input :latitude, as: :hidden %>
-            <%= f.input :longitude, as: :hidden %>
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
-            <%= f.input :guide_id, as: :hidden, input_html: { :value => @card.guide_id } %>
-            <%= f.submit  class: "btn btn-primary", input_html:{class:""} %>
-          <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-</div>
+<% if card.errors.any? %>
+  <ul>
+    <%card.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= simple_form_for card, html: { class: 'edit-form', style: 'width: 300px'} do |f| %>
+<%= f.input :name, as: :hidden  %>
+<%= f.input :personnal_note, label: "Write here your personnal notes on this place" %>
+<%= f.input :gphoto, as: :hidden %>
+<%= f.input :category, as: :hidden %>
+<%= f.input :formatted_address, as: :hidden %>
+<%= f.input :website, as: :hidden %>
+<%= f.input :international_phone_number, as: :hidden %>
+<%= f.input :price_level, as: :hidden %>
+<%= f.input :rating, as: :hidden %>
+<%= f.input :opening_hours, as: :hidden, input_html: { value: card.opening_hours ? card.opening_hours.join(",") : nil } %>
+<%= f.input :latitude, as: :hidden %>
+<%= f.input :longitude, as: :hidden %>
+<%= f.input :photo, label: "Upload your own photo" %>
+<%= f.input :photo_cache, as: :hidden %>
+<%= f.input :guide_id, as: :hidden, input_html: { :value => card.guide_id } %>
+<%= f.submit  class: "btn btn-primary", input_html:{class:""} %>
+<% end %>
 
