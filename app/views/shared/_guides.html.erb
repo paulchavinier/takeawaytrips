@@ -1,0 +1,5 @@
+<% guides.each do |guide| %>
+  <%= render 'shared/card_guides', guide: guide %>
+  <%= render 'shared/modaleditguide', guide: guide %>
+  <%= render 'shared/modal', guide: @guide %>
+<% end %>

@@ -12,6 +12,7 @@
 
   // Remove the text from the content textarea.
   $('#user_input_autocomplete_address').val('');
+  $('#card_gphoto').val('');
   $('body').append("<%= j render 'shared/modalcardshow', card: @card %>");
   $('#total-places').html('<%= j "Your places (" + @guide.cards.count.to_s + ")" %>');
   markersnewcard = handler.addMarkers(<%= raw @markers_new_card.to_json %>);
