@@ -24,9 +24,9 @@
         <% end %>
 
       <% else %>
-        <%= link_to add_card_path(card) do %>
+        <%= link_to "", data: {toggle: "modal", target: "#addcardModal_#{card.id}"} do %>
           <i class="fa fa-plus" aria-hidden="true" style="color:#25aa99"></i>
-        <%end%>
+        <% end %>
       <% end %>
 
       </div>
