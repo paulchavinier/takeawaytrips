@@ -14,5 +14,5 @@
   <%= f.input :photo, as: :hidden %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.input :guide_id, label: false, :include_blank => "Choose your existing guide board", collection: current_user.guides %>
-  <%= f.submit  class: "btn btn-primary", input_html:{class:""} %>
+  <%= f.submit  class: "btn btn-primary", input_html:{class:""}, value: "Add to your guide !" %>
 <% end %>
