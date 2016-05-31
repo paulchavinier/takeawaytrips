@@ -1,2 +1,8 @@
+$('.card-filters .category').removeClass("active");
+
+<% if @category %>
+  $('.card-filters .category--<%= @category.downcase %>').addClass("active");
+<% end %>
+
 $('#guide-cards').html('<%= j render "shared/cards", cards: @cards %>');
 $('#total-places').html('<%= j "Your places (" + @cards.count.to_s + ")" %>');
