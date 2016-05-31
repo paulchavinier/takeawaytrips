@@ -69,8 +69,10 @@ class Card < ActiveRecord::Base
     end
   end
 
-  def opened?(date=Date.current)
+  def opened?(datetime=Time.current)
     return if opening_hours.empty?
+
+    date = datetime.to_date
     day_hours = []
 
     if opening_hours.size == 14
@@ -89,13 +91,14 @@ class Card < ActiveRecord::Base
     day_hours.each do |day_hour|
       hours = day_hour.strip.split(" – ")
 
-      hour, minute = hours[0].split(':').map(&:to_i)
-      opening_hour = date.to_time.advance(hours: hour, minutes: minute)
+      opening_hour, opening_minute = hours[0].split(':').map(&:to_i)
+      opening_time = date.to_time.advance(hours: opening_hour, minutes: opening_minute)
 
-      hour, minute = hours[1].split(':').map(&:to_i)
-      closing_hour = date.to_time.advance(hours: hour, minutes: minute)
+      closing_hour, closing_minute = hours[1].split(':').map(&:to_i)
+      closing_date = closing_hour < opening_hour ? date + 1.day : date
+      closing_time = closing_date.to_time.advance(hours: closing_hour, minutes: closing_minute)
 
-      return true if opening_hour <= Time.current && Time.current <= closing_hour
+      return true if opening_time <= datetime && datetime <= closing_time
     end
 
     return false

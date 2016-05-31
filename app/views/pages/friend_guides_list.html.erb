@@ -8,7 +8,7 @@
 <div id="map-board" style="width: 100%; height: 50vh; position: center;"></div>
 
 <div class="container">
-  <%= render 'shared/card_guides' %>
+  <%= render 'shared/friendguides', guides: @guides %>
 </div>
 
 <% content_for(:after_js) do %>

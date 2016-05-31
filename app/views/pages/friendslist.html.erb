@@ -1,13 +1,23 @@
+<div class="container">
 <% @users.each do |user| %>
-<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 <div class="cardfriend">
 <%= link_to "", friend_guides_list_path(user.uid), class: "linkf" %>
   <div class="headerfriend" style="background-image: url(<%= image_path (user.picture) %>)">
   <p><%= full_name = user.first_name + " " + user.last_name%></p>
   </div>
-    <p>Guides: <%= user.guides.size %></p>
-    <p>Cards: <%= user.cards.size %></p>
+  <div class="footerfriend">
+  <div class="guidesize">
+    <h1>Guides</h1>
+    <p><%= user.guides.size %></p>
+    </div>
+    <div class="cardsize">
+    <h1>Cards</h1>
+     <p><%= user.cards.size %></p>
+    </div>
+    </div>
   </div>
   </div>
 <% end %>
+</div>
 
