@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'searchmap', to: 'pages#searchmap'
   get 'friends', to: 'pages#friendslist'
   get 'friend_guides_list/:uid', to: 'pages#friend_guides_list'
+  get 'cards/:id/add', to:'cards#add_card_to_guide', as: 'add_card'
+  patch 'cards/:id/update', to: 'cards#update_card_to_guide', as: 'update_card'
 
   resources :cards
   resources :guides
