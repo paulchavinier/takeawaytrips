@@ -14,21 +14,37 @@ class GuidesController < ApplicationController
 
   def create
     @guide = Guide.new(guide_params)
-    @guide.user_id = current_user.id
-    results = Geocoder.search(@guide.place)
+
+    unless @guide.valid?
+      return respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- idem
+      end
+    end
+
+    @guide.user_id    = current_user.id
+    results           = Geocoder.search(@guide.place)
     @guide.place_type = results.first.types.first
+
     if @guide.save
-      redirect_to guide_path(@guide.id)
+      respond_to do |format|
+        format.html { redirect_to guide_path(@guide) }
+        format.js  # <-- will render `app/views/guides/create.js.erb`
+      end
     else
-      render 'root/index'
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- idem
+      end
     end
   end
 
   def show
     @card = Card.new
     @card.guide_id = params[:id]
-    if params[:category]
-      @cards = @guide.cards.where(category: Card::CATEGORIES_MAPPING[params[:category]])
+    @category = params[:category]
+    if @category
+      @cards = @guide.cards.where(category: Card::CATEGORIES_MAPPING[@category])
     else
       @cards = @guide.cards
     end

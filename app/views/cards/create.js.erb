@@ -1,8 +1,5 @@
 // Here you will write *javascript* that would be executed by the browser
-<% if @card.errors.any? %>
-  // Render new card form with errors
-  $('#new_card').html("<%= j render 'cards/form', guide: @guide, card: @card %>");
-<% else %>
+<% unless @card.errors.any? %>
   // Create a card for the new card. But hide it.
   var new_card = $("<%= j render 'shared/card', card: @card %>").hide();
   // Add it to the DOM, at the beginning of the existing cards. It's still hidden.

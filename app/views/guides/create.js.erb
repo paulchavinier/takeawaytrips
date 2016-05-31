@@ -1,0 +1,7 @@
+<% if @guide.errors.any? %>
+  // Render new review form with errors
+  $('.modal-body').html("<%= j render 'guides/form' %>");
+<% else %>
+  window.location.replace("<%= guide_path(@guide) %>");
+<% end %>
+

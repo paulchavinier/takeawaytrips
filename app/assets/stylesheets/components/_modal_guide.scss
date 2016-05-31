@@ -20,3 +20,7 @@ body.modal-open .supreme-container{
 .supreme-container {
   transition: 0.3s;
 }
+
+.has-error .help-block {
+  display: block;
+}
