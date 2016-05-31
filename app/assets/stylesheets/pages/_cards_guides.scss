@@ -44,7 +44,6 @@ font-size: 13px;
 display: flex;
 align-items: center;
 justify-content: center;
-text-align: left;
 position: absolute;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
@@ -56,9 +55,9 @@ background-color: white;
 }
 
 .infos-guides i {
-color: #D72323;
+color: #25AA99;
 font-size: 15px;
-margin: 3px;
+margin-right: 8px;
 }
 
 .edit-guides {

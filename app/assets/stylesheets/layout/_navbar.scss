@@ -161,3 +161,16 @@
   border-top: 1px solid #E6E6E6;
   z-index: 2;
 }
+
+.user-initials {
+    height: 40px;
+    width: 40px;
+    background:#25AA99;
+    color: white;
+    border-radius: 50%;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
