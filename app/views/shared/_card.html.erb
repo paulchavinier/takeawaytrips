@@ -13,6 +13,7 @@
     </div>
     </div>
     <div class="edit-card">
+      <% if current_user == @guide.user %>
         <%= link_to card_path(card), method: :delete, remote: true do %>
           <i class="fa fa-trash" aria-hidden="true" style="color:#272822"></i>
         <%end%>
@@ -20,6 +21,12 @@
         <%= link_to "", data: {toggle: "modal", target: "#editcardModal_#{card.id}"} do %>
           <i class="fa fa-pencil" aria-hidden="true" style="color:#3287C2"></i>
         <% end %>
+      <% else %>
+        <%= link_to add_card_path(card) do %>
+          <i class="fa fa-plus" aria-hidden="true" style="color:#25aa99"></i>
+        <%end%>
+      <% end %>
+
       </div>
     <div class="title-card">
       <%= card.name %>

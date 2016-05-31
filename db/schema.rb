@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160530212743) do
     t.float    "longitude"
     t.string   "photo"
     t.string   "rating"
+    t.string   "photo"
     t.string   "gphoto"
     t.boolean  "open_now"
   end

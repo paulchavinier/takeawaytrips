@@ -1,0 +1,31 @@
+<div class="container" id="homepage">
+   <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-4">
+          <ul class="list-inline">
+            <li>
+              <%= simple_form_for @card, url: update_card_path, html: { class: 'edit-form'} do |f| %>
+                <%= f.input :name %>
+                <%= f.input :personnal_note %>
+                <%= f.input :gphoto, as: :hidden %>
+                <%= f.input :category %>
+                <%= f.input :formatted_address %>
+                <%= f.input :website %>
+                <%= f.input :international_phone_number %>
+                <%= f.input :price_level, as: :hidden %>
+                <%= f.input :rating, as: :hidden %>
+                <%= f.input :opening_hours, as: :hidden, input_html: { value: @card.opening_hours ? @card.opening_hours.join(",") : nil } %>
+                <%= f.input :latitude, as: :hidden %>
+                <%= f.input :longitude, as: :hidden %>
+                <%= f.input :photo %>
+                <%= f.input :photo_cache, as: :hidden %>
+                <%= f.input :guide_id, collection: current_user.guides %>
+                <%= f.submit  class: "btn btn-primary", input_html:{class:""} %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
