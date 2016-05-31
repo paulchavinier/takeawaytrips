@@ -58,6 +58,7 @@ class Card < ActiveRecord::Base
   }
 
   belongs_to :guide
+  has_one :user, through: :guide
 
   validates :name, presence: true
 

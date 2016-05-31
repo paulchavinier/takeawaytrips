@@ -8,6 +8,7 @@
       <div class="infos-guides">
         <i class="fa fa-map-marker" aria-hidden="true"></i> <%= guide.cards.size %>
       </div>
+      <% if current_user == guide.user %>
       <div class="edit-guides">
         <%= link_to guide_path(guide), method: :delete do %>
           <i class="fa fa-trash" aria-hidden="true" style="color:#272822"></i>
@@ -17,6 +18,7 @@
           <i class="fa fa-pencil" aria-hidden="true"style="color:#3287C2"></i>
         <%end%>
       </div>
+      <% end %>
     </div>
 
   </div>
