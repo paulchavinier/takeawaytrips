@@ -11,11 +11,13 @@
   <button type="button" class="btn btn-danger align-center" data-toggle="modal" data-target="#guideModal">
    Create a new guide board
   </button> <br>
+  <%= render 'shared/modal'%>
   </div>
-  <%= render 'shared/card_guides' %>
+  <%= render 'shared/guides', guides: @guides %>
+
 </div>
 
-<%= render 'shared/modal' %>
+
 
 <% content_for(:after_js) do %>
   <script>

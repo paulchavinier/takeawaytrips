@@ -1,4 +1,4 @@
-<% @guides.each do |guide| %>
+
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
     <div class="box-guides" id="box" style="background-image: url(<%= cl_image_path guide.choosephoto %>)">
     <%= link_to "", guide_path(guide), class: "card-link" %>
@@ -13,13 +13,14 @@
           <i class="fa fa-trash" aria-hidden="true" style="color:#272822"></i>
         <%end%>
         <br>
-        <%= link_to edit_guide_path(guide) do %>
-          <i class="fa fa-pencil" aria-hidden="true"style="color:#3287C2"></i>
-        <%end%>
+        <%= link_to "", data: {toggle: "modal", target: "#editguideModal_#{guide.id}"} do %>
+          <i class="fa fa-pencil" aria-hidden="true" style="color:#3287C2"></i>
+        <% end %>
       </div>
     </div>
 
   </div>
-  <% end %>
+
+
 
 
