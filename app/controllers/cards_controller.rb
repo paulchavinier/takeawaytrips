@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:edit, :update, :destroy, :show]
+  before_action :set_card, only: [:edit, :update, :destroy, :show, :add_card_to_guide, :update_card_to_guide]
 
   def index
     @cards = Card.all
@@ -31,7 +31,21 @@ class CardsController < ApplicationController
     end
   end
 
+  def add_card_to_guide
+
+  end
+
+  def update_card_to_guide
+    @new_card = @card.dup
+    @new_card.update(card_params)
+    # @new_card.user = current_user
+    @new_card.opening_hours = card_params[:opening_hours].split(',') if card_params[:opening_hours]
+    @new_card.save
+    redirect_to guide_path(@card.guide)
+  end
+
   def edit
+
   end
 
   def update

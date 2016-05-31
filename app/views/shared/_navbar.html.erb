@@ -27,17 +27,12 @@
       <%#end %>
 
       <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
+      <div class="navbnavbar-wagonar-wagon-item">
         <div class="dropdown">
           <div class="user-initials dropdown-toggle" id= "navbar-wagon-menu", data-toggle= "dropdown">
             <span><%= current_user.initials %></span>
           </div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t ".home", default: "Home" %>
-              <% end %>
-            </li>
             <li>
               <%= link_to guides_path do %>
                 <i class="fa fa-map"></i> <%= t ".guides", default: "My Guides" %>

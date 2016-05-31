@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20160530212743) do
     t.datetime "updated_at",                              null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "photo"
     t.string   "rating"
+    t.string   "photo"
     t.string   "gphoto"
     t.boolean  "open_now"
   end

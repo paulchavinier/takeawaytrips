@@ -5,13 +5,17 @@
 
 <div id="map-guide" style="width: 100%; height: 50vh; position: center;"></div>
 
-<div id="js-card-form">
-  <%= render 'cards/form', guide: @guide, card: @card %>
-</div>
+
+<% if @guide.user == current_user %>
+  <div id="js-card-form">
+    <%= render 'cards/form', guide: @guide, card: @card %>
+  </div>
+<% end %>
 
 <div class="container">
 <h4 id="total-places">
-  <%="Your places (" + @cards.count.to_s + ")" %>
+  <% name = @guide.user.first_name + " " + @guide.user.last_name %>
+  <%="#{name} places (" + @cards.count.to_s + ")" %>
 </h4>
   <div class="card-filters">
     <ul class="list-inline">
@@ -52,7 +56,6 @@
   </div>
 </div>
 </div>
-
 
 
 <% content_for(:after_js) do %>
