@@ -38,3 +38,52 @@ top: 0;
 left: 0;
 right: 0;
 }
+
+
+
+.footerfriend {
+  width: 100%;
+  height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guidesize {
+color: #A7A7A7;
+flex-direction: column;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 50%;
+height: 100%;
+background-color: white;
+}
+
+.cardsize {
+color: #A7A7A7;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+width: 50%;
+height: 100%;
+background-color: white;
+}
+
+
+.guidesize h1 {
+  font-size: 13px;
+}
+
+.cardsize h1 {
+  font-size: 13px;
+}
+
+.guidesize p {
+  font-size: 20px;
+}
+
+.cardsize p {
+  font-size: 20px;
+}
