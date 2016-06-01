@@ -41,6 +41,7 @@ class CardsController < ApplicationController
     # @new_card.user = current_user
     @new_card.opening_hours = card_params[:opening_hours].split(',') if card_params[:opening_hours]
     @new_card.save
+    flash[:notice] = "Added to your guideboard!"
     redirect_to guide_path(@card.guide)
   end
 
