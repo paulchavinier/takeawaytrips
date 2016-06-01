@@ -25,7 +25,8 @@
               <span data-id="15">Ok let's start !</span>
               </b></h2>
             </div>
-            <button type="button" class="homecreate" data-toggle="modal" data-target="#guideModal">
+            <button type="button" class="homecreate" data-toggle="modal" data-target="<%= user_signed_in? ? "#guideModal" : "#modalsignup"
+ %>">
                Get Started
             </button>
             </div>
