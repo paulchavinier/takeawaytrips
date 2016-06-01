@@ -28,12 +28,12 @@ class GuidesController < ApplicationController
 
     if @guide.save
       respond_to do |format|
-        format.html { redirect_to guide_path(@guide) }
+        # format.html { redirect_to guide_path(@guide) }
         format.js  # <-- will render `app/views/guides/create.js.erb`
       end
     else
       respond_to do |format|
-        format.html { render :new }
+        # format.html { render :new }
         format.js  # <-- idem
       end
     end
