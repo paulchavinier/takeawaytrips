@@ -2,10 +2,10 @@
         <div class="" id=center>
           <ul class="list-inline">
             <li>
-               <form role="form" class="form-horizontal">
+               <%= form_tag cards_path, method: :post, remote: true, class: 'form-horizontal' do %>
                   <input id="user_input_autocomplete_address" name="user_input_autocomplete_address"
                   class="form-control" style="margin-right: 100px" placeholder="Add a place">
-              </form>
+              <% end %>
             </li>
             <li>
             <%= simple_form_for card, remote: true, html: { class: 'card-autocomplete-form'} do |f| %>
