@@ -39,7 +39,6 @@ padding: 15px;
   border-right-style: none !important;
     position: relative;
     top: 0px;
-  margin-top: 10px;
 }
 
 .opening-card {
@@ -60,7 +59,7 @@ padding: 15px;
 .note-card p {
 margin-left: 15px;
 margin-right: 15px;
-margin-top: 10px;
+margin-top: 5px;
 font-family: "rancho" ;
 text-align: justify;
 }
@@ -83,10 +82,12 @@ color: #272822;
   border-radius: 5px;
   text-transform: uppercase;
   font-size: 13px;
+  margin-bottom: 5px;
 }
 
 .shownote {
   margin-top: 5px;
+  margin-bottom: 10px;
   width: 100px;
   height: 30px;
   background-color: #25AA99;
@@ -106,9 +107,13 @@ color: #272822;
   display: none;
 }
 
+.phone {
+  margin-top: 10px;
+  font-size: 13px;
+}
 
-
-
+.modal-body-card-card {
+}
 
 
 

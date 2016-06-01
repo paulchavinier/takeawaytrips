@@ -8,9 +8,13 @@
       <div class="modal-img-card" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 50%), url(<%= image_path card.choosephoto %>)">
         <%= card.name %>
       </div>
-      <div class="modal-body-card">
+      <div class="modal-body-card-card">
+      <% if card.international_phone_number != "" %>
+      <div class="phone">
+      <%= card.international_phone_number%>
+      </div>
+      <%end%>
       <div class="contactcard">
-        <%= card.international_phone_number%><br>
         <% if card.website != "" %>
         <%= link_to "Website", card.website, :target => "_blank" %>
         <% end %>
