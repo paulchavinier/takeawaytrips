@@ -1,5 +1,5 @@
 
-class SessionsController  resource_name, :recall => "#{controller_path}#failure")
+class SessionsController  resource_name, :recall => "#{controller_path}#failure"
     sign_in_and_redirect(resource_name, resource)
   end
 
