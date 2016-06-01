@@ -18,17 +18,10 @@
           <i class="fa fa-trash" aria-hidden="true" style="color:#272822"></i>
         <%end%>
         <br>
-
         <%= link_to "", data: {toggle: "modal", target: "#editcardModal_#{card.id}"} do %>
           <i class="fa fa-pencil" aria-hidden="true" style="color:#3287C2"></i>
         <% end %>
-
-      <% else %>
-        <%= link_to "", data: {toggle: "modal", target: "#addcardModal_#{card.id}"} do %>
-          <i class="fa fa-plus" aria-hidden="true" style="color:#25aa99"></i>
-        <% end %>
       <% end %>
-
       </div>
     <div class="title-card">
       <%= card.name %>
@@ -41,6 +34,11 @@
     </div>
      <div class="personnal_note-card">
       <%= card.personnal_note.chars.take(100).join + "..." %>
+    </div>
+    <div class="plus">
+      <%= link_to "", data: {toggle: "modal", target: "#addcardModal_#{card.id}"} do %>
+        <i class="fa fa-plus-circle" aria-hidden="true" style="color:#25aa99"></i>
+      <% end %>
     </div>
     </div>
 </div>
