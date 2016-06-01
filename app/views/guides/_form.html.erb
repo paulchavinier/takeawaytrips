@@ -1,5 +1,5 @@
 <%= simple_form_for @guide, html: { class: 'card-autocomplete-form'} do |f| %>
-  <%= f.input :name, label: false, input_html: { placeholder: "Enter the name of your guide board" } %>
+  <%= f.input :name, label: false, input_html: { placeholder: "Enter the name of your guideboard" } %>
   <%= f.input :place, label: false, input_html: { id: :user_input_autocomplete_address, placeholder: "Enter a place" } %>
   <%= f.input :photo, label: false, as: :hidden %>
   <%= f.input :gphoto, as: :hidden %>
