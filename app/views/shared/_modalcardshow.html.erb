@@ -5,34 +5,44 @@
 <div class="modal fade" id="cardModal_<%= card.id %>" tabindex="-1" role="dialog" aria-labelledby="cardModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-
-      <div class="modal-header-card" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 50%), url(<%= image_path card.choosephoto %>)">
-      <%= card.name %>
-      <p><%= Card::CATEGORIES[card.category] %></p>
+      <div class="modal-img-card" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 50%), url(<%= image_path card.choosephoto %>)">
+        <%= card.name %>
+        <p><%= card.personnal_note %></p>
       </div>
       <div class="modal-body-card">
-      <div class="containinfo">
-        <div class="opening-card">
-          <ul class="list-unstyled">
-          <% card.opening_hours.each do |hour| %>
-            <% if hour.include?("di") %>
-              </li><li><%= hour %>
-            <% else %>
-              <span> - <%= hour %></span>
-            <% end %>
-          <% end %>
-          </ul>
-          <i class="fa fa-phone" aria-hidden="true"></i> : <%= card.international_phone_number%><br>
-          <i class="fa fa-link" aria-hidden="true"></i> : <%= link_to card.website, card.website, :target => "_blank" %>
-        </div>
-        <div class="map-card">
-          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=500x180&sensor=false&maptype=roadmap&markers=color:red|#{card.formatted_address}" %>
-        </div>
+        <div class="containinfo">
+          <div class="opening-card">
+            <!-- <button class="showhours">show hours</button> -->
+              <ul class="list-unstyled" id="hide">
+              <% card.opening_hours.each do |hour| %>
+                <% if hour.include?("di") %>
+                  </li><li><%= hour %>
+                <% else %>
+                  <span> - <%= hour %></span>
+                <% end %>
+              <% end %>
+              </ul>
         </div>
         <div class="note-card">
-        <%= card.personnal_note %>
+        </div>
+        <div class="contactcard">
+        <i class="fa fa-phone" aria-hidden="true"></i> <%= card.international_phone_number%><br>
+        <%= link_to card.website, card.website, :target => "_blank" %>
+        </div>
+        <div class="map-card">
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=300x220&sensor=false&maptype=roadmap&markers=color:red|#{card.formatted_address}" %>
+        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#hide").toggle(500);
+    });
+});
+</script>
