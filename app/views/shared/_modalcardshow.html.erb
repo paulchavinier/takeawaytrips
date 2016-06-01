@@ -11,9 +11,12 @@
       <div class="modal-body-card">
       <div class="contactcard">
         <%= card.international_phone_number%><br>
+        <% if card.website != "" %>
         <%= link_to "Website", card.website, :target => "_blank" %>
+        <% end %>
         </div>
         <div class="containinfo">
+        <% if card.opening_hours != [] %>
           <div class="opening-card">
             <button class="showhours" >show hours</button>
               <ul class="list-unstyled">
@@ -25,13 +28,16 @@
                 <% end %>
               <% end %>
               </ul>
-        </div>
-        <div class="note-card">
-        <button class="shownote">show notes</button>
-        <div class="notes">
-        <p><%= card.personnal_note %></p>
-        </div>
-        </div>
+          </div>
+        <% end %>
+        <% if card.personnal_note != "" %>
+          <div class="note-card">
+          <button class="shownote">show notes</button>
+            <div class="notes">
+              <p><%= card.personnal_note %></p>
+            </div>
+          </div>
+        <% end %>
         <div class="map-card">
           <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x180&sensor=false&maptype=roadmap&markers=color:red|#{card.formatted_address}" %>
         </div>
