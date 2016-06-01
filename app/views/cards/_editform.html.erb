@@ -6,9 +6,9 @@
   </ul>
 <% end %>
 
-<%= simple_form_for card, html: { class: 'edit-form', style: 'width: 300px'} do |f| %>
+<%= simple_form_for card, html: { class: 'edit-form', style: 'width: 400px'} do |f| %>
 <%= f.input :name, as: :hidden  %>
-<%= f.input :personnal_note, label: "Write here your personnal notes on this place" %>
+<%= f.input :personnal_note, label: false, input_html: { placeholder: "Write here your personnal notes" } %>
 <%= f.input :gphoto, as: :hidden %>
 <%= f.input :category, as: :hidden %>
 <%= f.input :formatted_address, as: :hidden %>
