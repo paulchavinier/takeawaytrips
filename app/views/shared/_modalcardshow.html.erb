@@ -9,42 +9,40 @@
         <%= card.name %>
       </div>
       <div class="modal-body-card-card">
-      <% if card.international_phone_number != "" %>
-      <div class="phone">
-      <%= card.international_phone_number%>
-      </div>
-      <%end%>
-      <div class="contactcard">
-        <% if card.website != "" %>
-        <%= link_to card.website, card.website, :target => "_blank" %>
-        <% end %>
-        </div>
+
+
         <div class="containinfo">
-        <% if card.opening_hours != [] %>
-          <div class="opening-card">
-            <button class="showhours" >show hours</button>
+          <% if card.opening_hours.any? || !card.international_phone_number.blank? || !card.website.blank? %>
+            <div class="opening-card">
+              <button class="showhours">display infos</button>
               <ul class="list-unstyled">
-              <% card.opening_hours.each do |hour| %>
-                <% if hour.include?("di") %>
-                  </li><li><%= hour %>
-                <% else %>
-                  <span> - <%= hour %></span>
+                <% if !card.international_phone_number.blank? %>
+                  <li><p><i class="fa fa-phone-square" aria-hidden="true"></i><%= card.international_phone_number %></p></li>
                 <% end %>
-              <% end %>
+                <% card.opening_hours.each do |hour| %>
+                  <% if hour.include?("di") %>
+                    </li><li><%= hour %>
+                  <% else %>
+                    <span> - <%= hour %></span>
+                  <% end %>
+                <% end %>
+                <% if !card.website.blank? %>
+                  <li><%= link_to "GO TO WEBSITE", card.website, :target => "_blank", class: "btn btn-website" %></li>
+                <% end %>
               </ul>
-          </div>
-        <% end %>
-        <% if card.personnal_note != "" %>
-          <div class="note-card">
-          <button class="shownote">show notes</button>
-            <div class="notes">
-              <p><%= card.personnal_note %></p>
             </div>
+          <% end %>
+          <% if card.personnal_note != "" %>
+            <div class="note-card">
+              <button class="shownote">display notes</button>
+              <div class="notes">
+                <p><%= card.personnal_note %></p>
+              </div>
+            </div>
+          <% end %>
+          <div class="map-card">
+            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x180&sensor=false&&style=feature:water|element:geometry|color:0xe9e9e9|lightness:17&style=feature:landscape|element:geometry|color:0xf5f5f5|lightness:20&style=feature:road.highway|element:geometry.fill|color:0xffffff|lightness:17&style=feature:road.highway|element:geometry.stroke|color:0xffffff|lightness:29|weight:0.2&style=feature:road.arterial|element:geometry|color:0xffffff|lightness:18&style=feature:road.local|element:geometry|color:0xffffff|lightness:16&style=feature:poi|element:geometry|color:0xf5f5f5|lightness:21&style=feature:poi.park|element:geometry|color:0xdedede|lightness:21&style=element:labels.text.stroke|visibility:on|color:0xffffff|lightness:16&style=element:labels.text.fill|saturation:36|color:0x333333|lightness:40&style=feature:transit|element:geometry|color:0xf2f2f2|lightness:19&style=feature:administrative|element:geometry.fill|color:0xfefefe|lightness:20&style=feature:administrative|element:geometry.stroke|color:0xfefefe|lightness:17|weight:1.2&maptype=roadmap&markers=color:0x25AA99|#{card.formatted_address}&key=AIzaSyDOiObxTKMjWwbDYFo1PlGqZ8SbwB9G2wo" %>
           </div>
-        <% end %>
-        <div class="map-card">
-          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x180&sensor=false&&style=feature:water|element:geometry|color:0xe9e9e9|lightness:17&style=feature:landscape|element:geometry|color:0xf5f5f5|lightness:20&style=feature:road.highway|element:geometry.fill|color:0xffffff|lightness:17&style=feature:road.highway|element:geometry.stroke|color:0xffffff|lightness:29|weight:0.2&style=feature:road.arterial|element:geometry|color:0xffffff|lightness:18&style=feature:road.local|element:geometry|color:0xffffff|lightness:16&style=feature:poi|element:geometry|color:0xf5f5f5|lightness:21&style=feature:poi.park|element:geometry|color:0xdedede|lightness:21&style=element:labels.text.stroke|visibility:on|color:0xffffff|lightness:16&style=element:labels.text.fill|saturation:36|color:0x333333|lightness:40&style=feature:transit|element:geometry|color:0xf2f2f2|lightness:19&style=feature:administrative|element:geometry.fill|color:0xfefefe|lightness:20&style=feature:administrative|element:geometry.stroke|color:0xfefefe|lightness:17|weight:1.2&maptype=roadmap&markers=color:0x25AA99|#{card.formatted_address}&key=AIzaSyDOiObxTKMjWwbDYFo1PlGqZ8SbwB9G2wo" %>
-        </div>
         </div>
       </div>
     </div>
