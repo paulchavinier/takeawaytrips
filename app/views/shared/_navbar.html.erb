@@ -43,11 +43,6 @@
                 <i class="fa fa-group"></i> <%= t ".friends", default: "My Friends" %>
               <% end %>
             </li>
-            <li>
-              <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-user"></i> <%= t ".profile", default: "Edit Profile" %>
-              <% end %>
-            </li>
             <% if current_user.admin %>
               <li>
                 <%= link_to rails_admin_path do %>
@@ -96,11 +91,6 @@
           <li>
             <%= link_to friends_path do %>
               <i class="fa fa-group"></i> <%= t ".friends", default: "My Friends" %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to edit_user_registration_path do %>
-              <i class="fa fa-user"></i> <%= t ".profile", default: "Edit Profile" %>
             <% end %>
           </li>
           <% if current_user.admin %>
