@@ -45,12 +45,12 @@ google.maps.event.addDomListener(window, 'load', function() {
 
 $('#user_input_autocomplete_address').keydown(function (e) {
   if (e.which == 13 && $('.pac-container:visible').length) return false;
-  if (e.which == 13) {
-    $('#new_card').submit();
-    $('#new_card').trigger("reset");
-    $('#user_input_autocomplete_address').val(' ');
-    // return false;
-    // e.preventDefault();
+  else if (e.which == 13 && $(this).val()=='')  {
+    e.preventDefault();
+  }
+  else if (e.which == 13) {
+    e.preventDefault();
+    $('#new-card').submit();
   }
 });
 
