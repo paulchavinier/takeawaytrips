@@ -6,9 +6,9 @@
   </ul>
 <% end %>
 
-<%= simple_form_for card, html: { class: 'edit-form', style: 'width: 300px'} do |f| %>
+<%= simple_form_for card, html: { style: 'width: 400px'} do |f| %>
 <%= f.input :name, as: :hidden  %>
-<%= f.input :personnal_note, label: "Write here your personnal notes on this place" %>
+<%= f.input :personnal_note, label: false, input_html: { placeholder: "Write here your personnal notes" } %>
 <%= f.input :gphoto, as: :hidden %>
 <%= f.input :category, as: :hidden %>
 <%= f.input :formatted_address, as: :hidden %>
@@ -19,9 +19,9 @@
 <%= f.input :opening_hours, as: :hidden, input_html: { value: card.opening_hours ? card.opening_hours.join(",") : nil } %>
 <%= f.input :latitude, as: :hidden %>
 <%= f.input :longitude, as: :hidden %>
-<%= f.input :photo, label: "Upload your own photo" %>
+<%= f.input :photo, label: false %>
 <%= f.input :photo_cache, as: :hidden %>
 <%= f.input :guide_id, as: :hidden, input_html: { :value => card.guide_id } %>
-<%= f.submit  class: "btn btn-primary", input_html:{class:""} %>
+<%= f.submit class: "newguidebtn", value: "Ok" %>
 <% end %>
 
