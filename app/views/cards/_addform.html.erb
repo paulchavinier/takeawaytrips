@@ -13,6 +13,6 @@
   <%= f.input :longitude, as: :hidden %>
   <%= f.input :photo, as: :hidden %>
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.input :guide_id, label: false, :include_blank => "Choose your existing guideboard", collection: current_user.guides %>
+  <%= f.input :guide_id, label: false, :include_blank => "Choose your existing guide", collection: current_user.guides %>
   <%= f.submit  class: "btn btn-primary", id: "add-card-button", input_html:{class:""}, value: "Ok" %>
 <% end %>
