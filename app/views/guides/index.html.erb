@@ -1,5 +1,5 @@
 <div class="banner-guide-board">
-<%= current_user.first_name + "'s guideboards"%>
+<%= current_user.first_name + "'s guideboard"%>
 </div>
 
 <div id="map-board" style="width: 100%; height: 50vh; position: center;"></div>
@@ -9,7 +9,7 @@
 <div class="container">
   <div class="create-guide">
   <button id="createg" type="button" class="btn btn-danger align-center" data-toggle="modal" data-target="#guideModal">
-   Create a new guideboard
+   Create a new guide
   </button> <br>
   <%= render 'shared/modal'%>
   </div>
