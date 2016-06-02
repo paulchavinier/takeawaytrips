@@ -66,9 +66,11 @@ class Card < ActiveRecord::Base
 
   def choosephoto
     if self.photo.url
-      photo
-    else
+      photo.url
+    elsif self.gphoto != ""
       gphoto
+    else
+      'logoholder.png'
     end
   end
 
