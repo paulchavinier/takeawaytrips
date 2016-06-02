@@ -14,6 +14,13 @@
   $('body').append("<%= j render 'shared/modalcardedit', card: @card %>");
   $('body').append("<%= j render 'shared/modaladdcard', card: @card %>");
   $('#total-places').html('<%= j "Your places (" + @guide.cards.count.to_s + ")" %>');
+
+  $(document).ready(function(){
+    $(".showhours").click(function(){
+      $(this).next(".list-unstyled").slideToggle(500);
+    });
+  });
+
   markersnewcard = handler.addMarkers(<%= raw @markers_new_card.to_json %>);
   handler.bounds.extendWith(markersnewcard);
   handler.fitMapToBounds();
