@@ -90,6 +90,7 @@ class Card < ActiveRecord::Base
       day_hours << opening_hours[day].split(': ').last
     end
 
+    return false if day_hours == ["Closed"]
     return false if day_hours == ["Fermé"]
     return true if day_hours == ["Ouvert 24h/24"]
 
