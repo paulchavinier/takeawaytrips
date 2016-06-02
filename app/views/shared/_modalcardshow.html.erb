@@ -18,7 +18,7 @@
                   <li><p><i class="fa fa-phone-square" aria-hidden="true"></i><%= card.international_phone_number %></p></li>
                 <% end %>
                 <% card.opening_hours.each do |hour| %>
-                  <% if hour.include?("di") %>
+                  <% if hour.include?("di") || hour.include?("day") %>
                     </li><li><%= hour %>
                   <% else %>
                     <span> - <%= hour %></span>
