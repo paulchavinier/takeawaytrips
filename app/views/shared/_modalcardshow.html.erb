@@ -1,5 +1,5 @@
 <!-- Modal -->
-<% content_for :meta_title, "#{@card.name}" %>
+<%# content_for :meta_title, "#{@card.name}" %>
 <%# content_for :meta_description, @product.description %>
 <%# content_for :meta_image, @product.url %>
 <div class="modal fade" id="cardModal_<%= card.id %>" tabindex="-1" role="dialog" aria-labelledby="cardModalLabel">
@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body-card-card">
       <% if card.international_phone_number != "" %>
-      <div class="phone">
+      <div class="phone" style="text-align: center;">
       <%= card.international_phone_number%>
       </div>
       <%end%>
