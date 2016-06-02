@@ -1,11 +1,9 @@
 $(document).ready(function(){
-  $(".showhours").click(function(){
+  $("body").on("click", ".showhours", function(){
     $(this).next(".list-unstyled").slideToggle(500);
   });
-});
 
-$(document).ready(function(){
-  $(".shownote").click(function(){
+  $("body").on("click", ".shownote", function(){
     $(this).next(".notes").slideToggle(500);
   });
 });
