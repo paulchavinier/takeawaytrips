@@ -19,6 +19,9 @@
 </h4>
   <div class="card-filters">
     <ul class="list-inline">
+    <li style="text-decoration: none; "><b>
+      <%= link_to "All", guide_path(@guide), remote: true %>
+      </b></li>
       <li>
         <%= link_to guide_path(@guide, category: "Eat"), class: "category category--eat", remote: true do %>
           <i class="fa fa-cutlery fa-lg" aria-hidden="true"></i>
@@ -44,11 +47,6 @@
         <i class="fa fa-eye fa-lg" aria-hidden="true"></i>
       <% end %>
       </li>
-      <li>
-      </li>
-      <li style="text-decoration: none; "><b>
-      <%= link_to "All", guide_path(@guide), remote: true %>
-      </b></li>
     </ul>
   </div>
   <div class="row" id="guide-cards">
