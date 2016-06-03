@@ -24,6 +24,7 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem "rails_admin"
 gem "koala", "~> 2.2"
+gem 'material_icons'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
