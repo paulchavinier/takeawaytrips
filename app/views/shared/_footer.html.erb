@@ -1,25 +1,37 @@
 <div class="newletter">
 <h3 class="hidden-xs">Subscribe our newsletters</h3>
-<form class="news">
-    <label for="email"><i class="fa fa-envelope"></i></label>
-    <input type="email" id="newsq" value="" placeholder="Enter your email address"/>
-    <input type="submit" id="newsb" value="SUBSCRIBE" />
 
+<%#= simple_form_for @contact, html: { class: 'news'} do |f| %>
+  <%#= f.input :email, label_html: {class: "fa fa-envelope"}, input_html: { placeholder: "Enter your email address"} %>
+  <%#= f.button :submit, type:"submit", value:"SUBSCRIBE", input_html: {id: "newsb"} %>
+<%# end %>
+
+
+<form class="news" action="https://formkeep.com/f/a3a4daa0ff44" method="POST">
+    <label for="email"><i class="fa fa-envelope"></i></label>
+    <input type="email" id="newsq" name="email" value="" placeholder="Enter your email address"/>
+    <input type="submit" id="newsb" value="SUBSCRIBE" />
 </form>
 
 </div>
 <div class="footer">
   <div class="logof" style="background-image: url('<%= image_path 'Logowhite.png' %>')"></div>
   <div class="menum">
-    <p>Home</p>
-    <p>About Us</p>
-    <p>Policy</p>
-    <p>The Team</p>
-  </div>
+    <p><%= link_to "Home", root_path%></p>
+  <!--   <p>About Us</p>
+   -->  <p><%= link_to "Policy", root_path%></p>
+  <!--   <p>The Team</p>
+ -->  </div>
   <div class="menuf">
-    <i class="fa fa-facebook" aria-hidden="true"></i>
+    <%= link_to "https://www.facebook.com/takeawaytrips/", :target => "_blank" do %>
+      <i class="fa fa-facebook" aria-hidden="true" ></i>
+    <% end %>
+    <%= link_to "https://www.instagram.com/takeawaytrips/", :target => "_blank" do %>
+      <i class="fa fa-instagram" aria-hidden="true" ></i>
+    <% end %>
+   <!--  <i class="fa fa-facebook" aria-hidden="true" ></i>
     <i class="fa fa-instagram" aria-hidden="true"></i>
     <i class="fa fa-twitter" aria-hidden="true"></i>
-    <i class="fa fa-pinterest" aria-hidden="true"></i>
+    <i class="fa fa-pinterest" aria-hidden="true"></i> -->
   </div>
 </div>

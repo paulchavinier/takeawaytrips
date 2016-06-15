@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
   def home
     @guide = Guide.new
+    @contact = Contact.new
   end
 
   def friendslist
