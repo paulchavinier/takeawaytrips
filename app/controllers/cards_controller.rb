@@ -12,6 +12,8 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
+    @card = current_user.cards.build(card_params)
+    authorize @card
     @guide = @card.guide
     @card.opening_hours = card_params[:opening_hours].split(',') if card_params[:opening_hours]
     @markers_new_card = Gmaps4rails.build_markers(@card) do |card, marker|
@@ -56,10 +58,9 @@ class CardsController < ApplicationController
     redirect_to guide_path(@card.guide)
   end
 
-  def show
-    @card = Card.find(params[:id])
-
-  end
+  # def show
+  #   @card = Card.find(params[:id])
+  # end
 
   def destroy
     @guide = @card.guide
@@ -77,5 +78,6 @@ class CardsController < ApplicationController
 
   def set_card
     @card = Card.find(params[:id])
+    authorize @card
   end
 end

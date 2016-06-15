@@ -105,3 +105,15 @@ label {
 .menum p:hover {
   color: #25AA99;
 }
+
+.signin {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    padding-top: 100px;
+    margin: 0 auto 250px; /* the bottom margin is the negative value of the footer's height */
+}
+
+#signinbutton{
+  background-color: #DAC26C;
+}

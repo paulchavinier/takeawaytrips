@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
+  skip_after_action :verify_authorized, only: [:home, :friendslist, :friend_guides_list]
+
   def home
     @guide = Guide.new
   end
@@ -21,4 +23,5 @@ class PagesController < ApplicationController
       marker.title guide.place_type
     end
   end
+
 end

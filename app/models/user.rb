@@ -32,7 +32,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def get_friendslist
    graph = Koala::Facebook::API.new(self.token)
    graph.get_connections("me", "friends")

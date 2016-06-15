@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { registrations: "users/registrations", omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -6,12 +7,14 @@ Rails.application.routes.draw do
 
   get 'searchmap', to: 'pages#searchmap'
   get 'friends', to: 'pages#friendslist'
+  #get 'friends', to: 'guides#friendslist'
 
   get 'friend_guides_list/:uid', to: 'pages#friend_guides_list', as: :friend_guides_list
+  #get 'friend_guides_list/:uid', to: 'guides#friend_guides_list', as: :friend_guides_list
   get 'cards/:id/add', to:'cards#add_card_to_guide', as: 'add_card'
   patch 'cards/:id/update', to: 'cards#update_card_to_guide', as: 'update_card'
 
-  resources :cards
+  resources :cards, only: [:new, :create, :edit, :update, :destroy]
   resources :guides
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

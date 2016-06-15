@@ -4,7 +4,8 @@ class GuidesController < ApplicationController
 
   def index
     @guide = Guide.new
-    @guides = current_user.guides
+    #@guides = current_user.guides
+    @guides = policy_scope(Guide) # ca remplace le @guides et on met dans pundit la façon dont on accède aux guides
     @markersguide = Gmaps4rails.build_markers(@guides) do |guide, marker| # construction duJson pour pousser a Gplace for Rails
       marker.lat guide.latitude
       marker.lng guide.longitude
@@ -13,7 +14,9 @@ class GuidesController < ApplicationController
   end
 
   def create
-    @guide = Guide.new(guide_params)
+    # @guide = Guide.new(guide_params)
+    @guide = current_user.guides.build(guide_params)
+    authorize @guide
 
     unless @guide.valid?
       return respond_to do |format|
@@ -22,7 +25,7 @@ class GuidesController < ApplicationController
       end
     end
 
-    @guide.user_id    = current_user.id
+    # @guide.user_id    = current_user.id
     results           = Geocoder.search(@guide.place)
     @guide.place_type = results.first.types.first
 
@@ -82,6 +85,7 @@ class GuidesController < ApplicationController
 
   def set_guide
     @guide = Guide.find(params[:id])
+    authorize @guide
   end
 
 end
