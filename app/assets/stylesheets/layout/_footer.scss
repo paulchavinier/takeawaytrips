@@ -80,6 +80,11 @@ label {
   transition: 0.5s;
 }
 
+.menuf a {
+  text-decoration: none;
+  color: white;
+}
+
 .menuf i:hover {
   color: #25AA99;
 }
@@ -102,8 +107,13 @@ label {
   transition: 0.5s;
 }
 
-.menum p:hover {
+.menum a:hover {
   color: #25AA99;
+}
+
+.menum p a {
+  text-decoration: none;
+  color: white;
 }
 
 .signin {

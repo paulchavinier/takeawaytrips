@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530212743) do
+ActiveRecord::Schema.define(version: 20160615163833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,13 +31,19 @@ ActiveRecord::Schema.define(version: 20160530212743) do
     t.datetime "updated_at",                              null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "rating"
     t.string   "photo"
+    t.string   "rating"
     t.string   "gphoto"
     t.boolean  "open_now"
   end
 
   add_index "cards", ["guide_id"], name: "index_cards_on_guide_id", using: :btree
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "guides", force: :cascade do |t|
     t.string   "name"
