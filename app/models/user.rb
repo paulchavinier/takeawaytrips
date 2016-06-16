@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :guides, dependent: :destroy
   has_many :cards, through: :guides
 
+  after_create :send_welcome_email
 
   def self.find_for_facebook_oauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -23,6 +24,8 @@ class User < ActiveRecord::Base
         user.token_expiry = Time.at(auth.credentials.expires_at)
       end
     end
+
+
 
   def avatar
     if picture
@@ -40,5 +43,12 @@ class User < ActiveRecord::Base
   def initials
     "#{self.first_name.first}#{self.last_name.first}"
   end
+
+  private
+
+  def send_welcome_email #l'envoi du mail se fait via le Model. On peut aussi creer des methodes d envoi d email dans le controller
+      UserMailer.welcome(self).deliver_now # self : je passe a la methode le model U ser
+  end
+
 
 end
