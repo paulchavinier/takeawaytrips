@@ -1,21 +1,18 @@
 <div class="newletter">
-<h3 class="hidden-xs">Subscribe our newsletters</h3>
-
-<%#= simple_form_for @contact, html: { class: 'news'} do |f| %>
-  <%#= f.input :email, label_html: {class: "fa fa-envelope"}, input_html: { placeholder: "Enter your email address"} %>
-  <%#= f.button :submit, type:"submit", value:"SUBSCRIBE", input_html: {id: "newsb"} %>
-<%# end %>
+<h3 class="hidden-xs">Subscribe to our newsletter</h3>
 
 
-<form class="news" action="https://formkeep.com/f/a3a4daa0ff44" method="POST">
+<form class="news" action="/contacts" method="POST">
     <label for="email"><i class="fa fa-envelope"></i></label>
-    <input type="email" id="newsq" name="email" value="" placeholder="Enter your email address"/>
-    <input type="submit" id="newsb" value="SUBSCRIBE" />
+    <input type="email" id="newsq" name="contact[email]" value="" placeholder="Enter your email address"/>
+    <input name="authenticity_token" type="hidden" value="x37DrAAwyIIb7s+w2+AdoCR8cAJIpQhIetKRrPgG5VA=">
+    <input type="submit" id="newsb" name="commit" value="SUBSCRIBE" />
 </form>
 
 </div>
 <div class="footer">
-  <div class="logof" style="background-image: url('<%= image_path 'Logowhite.png' %>')"></div>
+  <div class="logof" style="background-image: url('<%= image_path 'Logowhite.png' %>')">
+  </div>
   <div class="menum">
     <p><%= link_to "Home", root_path%></p>
   <!--   <p>About Us</p>
@@ -33,5 +30,8 @@
     <i class="fa fa-instagram" aria-hidden="true"></i>
     <i class="fa fa-twitter" aria-hidden="true"></i>
     <i class="fa fa-pinterest" aria-hidden="true"></i> -->
+  </div>
+  <div class="copyright">
+    <p style="color:white; font-size: 12px">© Take Away Lab SAS</p>
   </div>
 </div>
