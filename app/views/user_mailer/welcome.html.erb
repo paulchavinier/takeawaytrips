@@ -1,0 +1,26 @@
+
+<br>
+
+Bonjour <%= @user.first_name %>, <br>
+<br>
+
+Bienvenue sur <b><%=link_to "Take Away Trips", "http://www.takeawaytrips.com", {:style=>'color:#C63939; text-decoration:none'}%></b> ! <br><br>
+
+Take Away Trips est en version test pour l'instant, et nous comptons sur nos premiers utilisateurs pour faire évoluer rapidement notre service. Ceci étant dit, nous espérons que la version actuelle te permettra de créer et de partager tous les guides de voyages que tu souhaites. <br><br>
+
+Sans plus attendre, connectes-toi sur ton <b><%=link_to "guideboard", guides_url, {:style=>'color:#C63939; text-decoration:none'}%></b> et commence à créer tes premiers guides ! <br><br>
+
+Si en revanche tu manque d'inspiration, peut être que tes <b><%=link_to "amis", friends_url, {:style=>'color:#C63939; text-decoration:none'}%></b> t'aideront à rêver de ton prochain voyage ?...Ou de ton prochain resto :) <br><br>
+
+<%= @user.first_name %>, si tu as des suggestions, surtout n'hésites pas, envoi-moi un message sur <%= mail_to "paul@takeawaytrips.com", "paul@takeawaytrips.com", {:style=>'color:#C63939; text-decoration:none'} %>. Si tu n'as pas de suggestions mais que tu veux seulement papauter, c'est la même adresse. <br><br>
+
+Je te laisse, on a du travail <br><br>
+
+A bientôt sur Take Away Trips ! <br><br>
+
+Paul<br>
+<div style="font-size:12px">Fondateur</div><br><br>
+
+
+
+

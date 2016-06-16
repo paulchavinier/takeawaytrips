@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="text-center" style="background-image: url(<%= image_path 'background_email.png' %>); background-size: cover;">
+            <%= image_tag "Logowhite_Small.png", :style => "display: block; margin: auto; padding-top: 10px; padding-bottom: 10px" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= yield %>
+    <div class="text-center" style="height: 8%; background-color: #C63939; display: block; position: relative">
+      <%=link_to "http://www.takeawaytrips.com" do %>
+        <%= image_tag "Logowhite_Small.png", :style => "display: block; height:50%; margin-right: auto; margin-left: auto; padding-top: 15px" %>
+      <% end %>
+    </div>
+  </body>
+</html>
+
