@@ -3,17 +3,17 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <div class="text-center" style="background-image: url(<%= image_path 'background_email.png' %>); background-size: cover;">
-            <%= image_tag "Logowhite_Small.png", :style => "display: block; margin: auto; padding-top: 10px; padding-bottom: 10px" %>
+          <div class="text-center">
+            <%=link_to "http://www.takeawaytrips.com" do %>
+              <%= image_tag attachments['banneremail.png'].url, :style => "width:100%; background-size: cover; margin:auto" %>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
     <%= yield %>
-    <div class="text-center" style="height: 8%; background-color: #C63939; display: block; position: relative">
-      <%=link_to "http://www.takeawaytrips.com" do %>
-        <%= image_tag "Logowhite_Small.png", :style => "display: block; height:50%; margin-right: auto; margin-left: auto; padding-top: 15px" %>
-      <% end %>
+    <div class="text-center" style=" height: 2%; background-color: #F4CA79; display: block; position: relative">
+    <p style="text-align: right; margin: auto; font-size: 10px">© Take Away Lab SAS</p>
     </div>
   </body>
 </html>

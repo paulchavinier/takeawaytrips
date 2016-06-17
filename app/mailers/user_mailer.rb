@@ -6,9 +6,10 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.welcome.subject
   #
   def welcome(user) # la methode prend un argument ce qui differe d un controller classique
-    @user = user  # Instance variable => available in view
-
+    attachments.inline['banneremail.png'] = File.read('app/assets/images/banneremail.png')
+    #attachments.inline['Logowhite_Small.png'] = File.read('app/assets/images/Logowhite_Small.png')
+    @user = user
     mail(to: @user.email, subject: 'Bienvenue sur Take Away Trips !')
-    # This will render a view in `app/views/user_mailer`!
+
   end
 end
