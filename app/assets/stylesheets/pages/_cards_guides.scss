@@ -60,6 +60,27 @@ font-size: 15px;
 margin-right: 8px;
 }
 
+.privacy-info {
+font-size: 13px;
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+top: 15px;
+left: 0px;
+height: 30px;
+width: 45px;
+background-color: white;
+}
+
+.privacy-info i {
+color: #25AA99;
+font-size: 15px;
+margin-right: 8px;
+}
+
 .edit-guides {
 font-size: 13px;
 position: absolute;

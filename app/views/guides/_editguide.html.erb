@@ -10,6 +10,7 @@
   <%= f.input :name, label: false, input_html: { placeholder: "Enter the name of your guide" } %>
   <%= f.input :place, label: false, input_html: { id: :user_input_autocomplete_address } %>
   <%= f.input :photo, label: false %>
+  <%= f.collection_radio_buttons :privacy, [["public",'Public'], ["private", 'Only me'], ["facebook", 'Friends only']], :first, :last, item_wrapper_class: 'checkbox_container'%>
   <%= f.input :gphoto, as: :hidden %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "btn btn-primary", value: "Ok" %>

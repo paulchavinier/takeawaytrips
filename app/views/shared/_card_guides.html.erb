@@ -5,6 +5,15 @@
       <div class="title-guides">
         <%= guide.name.upcase %>
       </div>
+      <div class="privacy-info">
+        <% if guide.privacy == nil || guide.privacy == "facebook" %>
+          <i class="fa fa-users" aria-hidden="true"></i>
+        <% elsif guide.privacy == "private" %>
+          <i class="fa fa-lock" aria-hidden="true"></i>
+        <% else %>
+          <i class="fa fa-globe" aria-hidden="true"></i>
+        <%end%>
+      </div>
       <div class="infos-guides">
         <i class="fa fa-map-marker" aria-hidden="true"></i> <%= guide.cards.size %>
       </div>

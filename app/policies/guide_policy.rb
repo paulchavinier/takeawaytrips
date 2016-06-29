@@ -7,7 +7,7 @@ class GuidePolicy < ApplicationPolicy
 
   def show?
     # la show des guides uniquement s'ils ont été créé par le user ou des amis du user
-    record.user == user || is_friend_user? || user.admin
+    privacy? || user.admin
 
   end
 
@@ -39,5 +39,14 @@ class GuidePolicy < ApplicationPolicy
     test == 1
   end
 
+  def privacy?
+    if record.privacy == "private"
+      record.user == user
+    elsif record.privacy == "facebook" || record.privacy == nil
+      record.user == user || is_friend_user?
+    else
+      true
+    end
+  end
 
 end
