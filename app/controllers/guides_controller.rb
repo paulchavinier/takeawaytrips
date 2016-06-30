@@ -69,7 +69,7 @@ class GuidesController < ApplicationController
 
   def update
     @guide.update(guide_params)
-    redirect_to @guide
+    redirect_to guides_path
   end
 
   def destroy
@@ -80,7 +80,7 @@ class GuidesController < ApplicationController
   private
 
   def guide_params
-    params.require(:guide).permit(:name, :description, :place, :latitude, :longitude, :photo, :photo_cache, :gphoto)
+    params.require(:guide).permit(:name, :description, :place, :latitude, :longitude, :photo, :photo_cache, :gphoto, :privacy)
   end
 
   def set_guide

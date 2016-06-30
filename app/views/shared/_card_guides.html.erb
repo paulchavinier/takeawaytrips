@@ -5,6 +5,27 @@
       <div class="title-guides">
         <%= guide.name.upcase %>
       </div>
+      <div class="privacy-info">
+        <% if guide.privacy == nil || guide.privacy == "facebook" %>
+          <% if current_user == guide.user %>
+            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Only you and your friends can see this guide"></i>
+          <% else %>
+            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{guide.user.first_name}"+" shared this guide to his friends only"%>"></i>
+          <% end %>
+        <% elsif guide.privacy == "private" %>
+          <% if current_user == guide.user %>
+          <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Only you can see this guide"></i>
+          <% else %>
+          <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{guide.user.first_name}"+" don't want to share this guide"%>"></i>
+          <% end %>
+        <% else %>
+          <% if current_user == guide.user %>
+          <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Any user of TAT can see this guide"></i>
+          <% else %>
+          <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{guide.user.first_name}"+" shared this guide to any TAT user"%>"></i>
+          <% end %>
+        <%end%>
+      </div>
       <div class="infos-guides">
         <i class="fa fa-map-marker" aria-hidden="true"></i> <%= guide.cards.size %>
       </div>
