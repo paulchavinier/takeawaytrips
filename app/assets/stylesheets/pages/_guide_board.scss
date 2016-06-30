@@ -36,6 +36,36 @@
   opacity: 1 !important;
 }
 
+.radio input[type=radio] {
+  opacity: 1 !important;
+  height: 50%;
+  width: 50%;
+}
+
+.tooltip{
+  width:350px !important;
+  text-align: right;
+}
+
+
+.guide_photo{
+  text-align: left;
+}
+
+.form-group.radio_buttons.optional.guide_privacy{
+  text-align: left;
+}
+
+.form-group label.control-label {
+  color: #333333;
+  padding-top: 5px;
+}
+
+.form-group .checkbox label, .form-group .radio label, .form-group label{
+  color: #333333;
+  font-size: 12px;
+}
+
 #createg {
   margin-top: 32px;
   height: 50px;

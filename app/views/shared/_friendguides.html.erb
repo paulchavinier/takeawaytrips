@@ -1,3 +1,13 @@
 <% guides.each do |guide| %>
   <%= render 'shared/card_guides', guide: guide %>
 <% end %>
+
+
+<% content_for(:after_js) do %>
+  <script>
+    $(document).on('ready', function() {
+      $('[data-toggle="tooltip"]').tooltip({
+      });
+    })
+  </script>
+<% end %>
