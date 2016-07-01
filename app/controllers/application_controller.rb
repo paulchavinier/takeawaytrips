@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
   def default_url_options
   { host: ENV['HOST'] || 'localhost:3000' }
   end
-
+  #Par défaut, Rails retourne le chemin relatif de vos URLs (routing helpers suffixés en _path).
+  #Il est donc primordial de lui dire de retourner les urls absolues afin que celles-ci puissent être récupérées par Facebook et Twitter.
 
 end
