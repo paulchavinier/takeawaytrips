@@ -1,4 +1,12 @@
 class GuidesController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => :show, :if => lambda {
+      if params[:id]
+        @guide = Guide.find(params[:id])
+        @guide.policy == "public"
+      else
+        false
+      end
+    }
   before_action :set_guide, only: [:edit, :update, :destroy, :show]
 
 
