@@ -1,5 +1,6 @@
 class GuidesController < ApplicationController
-  skip_before_filter :authenticate_user!, :only => :show, :if => lambda {
+  before_action :set_guide, only: [:edit, :update, :destroy, :show]
+  skip_before_action :authenticate_user!, :only => :show, :if => lambda {
       if params[:id]
         @guide = Guide.find(params[:id])
         @guide.privacy == "public"
@@ -7,7 +8,6 @@ class GuidesController < ApplicationController
         false
       end
     }
-  before_action :set_guide, only: [:edit, :update, :destroy, :show]
 
 
   def index
