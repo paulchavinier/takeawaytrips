@@ -7,8 +7,13 @@ class GuidePolicy < ApplicationPolicy
 
   def show?
     # la show des guides uniquement s'ils ont été créé par le user ou des amis du user
-    privacy? || user.admin
-
+    if user != nil
+      privacy? || user.admin
+    elsif user == nil && record.privacy == "public"
+      true
+    else
+      false
+    end
   end
 
   def create? # tous les user (signed in) peuvent créer des guides
