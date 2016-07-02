@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%#= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
 
     <title><%= meta_title %></title>
     <meta name="description" content="<%= meta_description %>">
+    <link rel="canonical" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
 
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
