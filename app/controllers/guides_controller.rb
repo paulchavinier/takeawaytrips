@@ -2,7 +2,7 @@ class GuidesController < ApplicationController
   skip_before_filter :authenticate_user!, :only => :show, :if => lambda {
       if params[:id]
         @guide = Guide.find(params[:id])
-        @guide.policy == "public"
+        @guide.privacy == "public"
       else
         false
       end
