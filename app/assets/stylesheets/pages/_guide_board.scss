@@ -12,12 +12,47 @@
   background-color: #272822;
   font-size: 35px;
   font-weight: 900;
+  position: relative;
 }
 
 .banner-guide-board p {
   color: white;
   font-size: 18px;
   font-weight: 400;
+}
+
+.nextguide{
+  position: absolute;
+  right: 10px;
+  bottom: 5%;
+  display: flex;
+  top: 5%;
+  align-items: center;
+}
+
+.nextguide a {
+  color: white;
+  font-size: 22px;
+}
+
+.previousguide {
+  position: absolute;
+  left: 10px;
+  bottom: 5%;
+  display: flex;
+  top: 5%;
+  align-items: center;
+  text-transform: none;
+}
+
+.previousguide .list-inline a {
+  color: white;
+  text-decoration: none;
+}
+
+.previousguide a {
+  color: white;
+  font-size: 22px;
 }
 
 .collection_radio_buttons {
@@ -49,6 +84,10 @@
 
 
 .guide_photo{
+  text-align: left;
+}
+
+.form-group {
   text-align: left;
 }
 
