@@ -48,6 +48,38 @@ class Card < ActiveRecord::Base
     "locality" => "See",
     "natural_feature" =>"See",
     "point_of_interest" => "See",
+    "administrative_area_level_1" => "See",
+    "administrative_area_level_2" => "See",
+    "administrative_area_level_3" => "See",
+    "administrative_area_level_4" => "See",
+    "administrative_area_level_5" => "See",
+    "colloquial_area" => "See",
+    "country" => "See",
+    "floor" => "See",
+    "geocode" => "See",
+    "intersection" => "See",
+    "natural_feature" => "See",
+    "neighborhood" => "See",
+    "political" => "See",
+    "point_of_interest" => "See",
+    "post_box" => "See",
+    "postal_code" => "See",
+    "postal_code_prefix" => "See",
+    "postal_code_suffix" => "See",
+    "postal_town" => "See",
+    "premise" => "See",
+    "room" => "See",
+    "route" => "See",
+    "street_address" => "See",
+    "street_number" => "See",
+    "sublocality" => "See",
+    "sublocality_level_4" => "See",
+    "sublocality_level_5" => "See",
+    "sublocality_level_3" => "See",
+    "sublocality_level_2" => "See",
+    "sublocality_level_1" => "See",
+    "subpremise" => "See",
+    "transit_station" => "See",
   }
 
   CATEGORIES_MAPPING = {
@@ -55,8 +87,8 @@ class Card < ActiveRecord::Base
     "Sleep" => ["campground", "lodging"],
     "Drink" => ["liquor_store", "night_club", "bar"],
     "Shop" => ["beauty_salon", "bicycle_store", "book_store", "clothing_store", "convenience_store", "department_store", "electronics_store", "florist", "furniture_store", "grocery_or_supermarket", "hardware_store", "home_goods_store", "jewelry_store", "pet_store", "pharmacy", "shoe_store", "shopping_mall", "store"],
-    "See" => ["amusement_park", "aquarium", "art_gallery", "bowling_alley", "casino", "church", "gym", "library", "movie_theater", "museum", "park", "spa", "zoo", "locality", "natural_feature", "point_of_interest" ],
-    "All" => ["amusement_park", "aquarium", "art_gallery", "bowling_alley", "casino", "church", "gym", "library", "movie_theater", "museum", "park", "spa", "zoo", "locality", "natural_feature", "point_of_interest", "beauty_salon", "bicycle_store", "book_store", "clothing_store", "convenience_store", "department_store", "electronics_store", "florist", "furniture_store", "grocery_or_supermarket", "hardware_store", "home_goods_store", "jewelry_store", "pet_store", "pharmacy", "shoe_store", "shopping_mall", "store", "liquor_store", "night_club", "bar", "campground", "lodging", "bakery", "cafe", "meal_takeaway", "meal_delivery", "food", "restaurant"]
+    "See" => ["amusement_park", "aquarium", "art_gallery", "bowling_alley", "casino", "church", "gym", "library", "movie_theater", "museum", "park", "spa", "zoo", "locality", "natural_feature", "point_of_interest", "administrative_area_level_1", "administrative_area_level_2", "administrative_area_level_3", "administrative_area_level_4", "administrative_area_level_5", "colloquial_area", "country", "floor", "geocode", "intersection", "locality", "natural_feature", "neighborhood", "political", "post_box", "postal_code", "postal_code_prefix", "postal_code_suffix", "postal_town", "premise", "room", "route", "street_address", "street_number", "sublocality", "sublocality_level_4", "sublocality_level_5", "sublocality_level_3", "sublocality_level_2", "sublocality_level_1", "subpremise", "transit_station" ],
+    "All" => ["amusement_park", "aquarium", "art_gallery", "bowling_alley", "casino", "church", "gym", "library", "movie_theater", "museum", "park", "spa", "zoo", "locality", "natural_feature", "point_of_interest", "beauty_salon", "bicycle_store", "book_store", "clothing_store", "convenience_store", "department_store", "electronics_store", "florist", "furniture_store", "grocery_or_supermarket", "hardware_store", "home_goods_store", "jewelry_store", "pet_store", "pharmacy", "shoe_store", "shopping_mall", "store", "liquor_store", "night_club", "bar", "campground", "lodging", "bakery", "cafe", "meal_takeaway", "meal_delivery", "food", "restaurant", "administrative_area_level_1", "administrative_area_level_2", "administrative_area_level_3", "administrative_area_level_4", "administrative_area_level_5", "colloquial_area", "country", "floor", "geocode", "intersection", "locality", "natural_feature", "neighborhood", "political", "post_box", "postal_code", "postal_code_prefix", "postal_code_suffix", "postal_town", "premise", "room", "route", "street_address", "street_number", "sublocality", "sublocality_level_4", "sublocality_level_5", "sublocality_level_3", "sublocality_level_2", "sublocality_level_1", "subpremise", "transit_station"]
   }
 
   belongs_to :guide
