@@ -9,7 +9,42 @@
 
 <div class="supreme-container">
 <div class="banner-guide-board">
-<%= @guide.name.upcase %>
+  <div class="previousguide">
+  <% if @guide.user == current_user %>
+    <% index = current_user.guides.ids.index(@guide.id) %>
+    <% previousid = current_user.guides[index-1].id %>
+    <%= link_to guide_path(previousid), class: "previous_guide_arrow" do %>
+      <i class="material-icons">keyboard_arrow_left</i>
+    <% end %>
+  <% else %>
+  <ul class="list-inline">
+    <li>
+    <%= link_to friend_guides_list_path(@guide.user.uid), class: "back to guide board" do %>
+      <i class="material-icons">local_library</i>
+    <%end%>
+    </li>
+    <li>
+    <h5><%= "Back to #{@guide.user.first_name}'s guideboard" %></h5>
+    </li>
+  <% end %>
+  </div>
+  <div class="guidename">
+    <%= @guide.name.upcase %>
+  </div>
+  <div class="nextguide">
+  <% if @guide.user == current_user %>
+    <% index = current_user.guides.ids.index(@guide.id) %>
+    <% if index == current_user.guides.size-1 %>
+      <% nextid = current_user.guides[0].id %>
+    <% else %>
+      <% nextid = current_user.guides[index+1].id %>
+    <% end %>
+    <%= link_to guide_path(nextid), class: "next_guide_arrow" do %>
+      <i class="material-icons">keyboard_arrow_right</i>
+    <% end %>
+  <% end %>
+  </div>
+
 </div>
 
 <div id="map-guide" style="width: 100%; height: 50vh; position: center;"></div>

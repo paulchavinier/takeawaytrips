@@ -5,4 +5,19 @@
   display:flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.nextguide{
+  position: absolute;
+  right: 10px;
+  bottom: 5%;
+  display: flex;
+  top: 5%;
+  align-items: center;
+}
+
+.previousguide {
+  position: absolute;
+  left: 10px;
 }
