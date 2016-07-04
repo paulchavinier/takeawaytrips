@@ -6,7 +6,7 @@
         <%= guide.name.upcase %>
       </div>
       <div class="privacy-info">
-        <% if guide.privacy == nil || guide.privacy == "facebook" %>
+        <% if guide.privacy == nil || guide.privacy == "facebook" || guide.privacy == "" %>
           <% if current_user == guide.user %>
             <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Only you and your friends can see this guide"></i>
           <% else %>
