@@ -47,7 +47,7 @@ class GuidePolicy < ApplicationPolicy
   def privacy?
     if record.privacy == "private"
       record.user == user
-    elsif record.privacy == "facebook" || record.privacy == nil
+    elsif record.privacy == "facebook" || record.privacy == nil || record.privacy == ""
       record.user == user || is_friend_user?
     else
       true
