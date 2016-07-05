@@ -2,9 +2,14 @@
 <%= current_user.first_name + "'s guideboard"%>
 </div>
 
-<div id="map-board" style="width: 100%; height: 50vh; position: center;"></div>
 
 
+<div class="wrapper-grey">
+  <div class="container">
+    <div id="map-board" style="width: 100%; height: 50vh; position: center; box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;"></div>
+  </div>
+</div>
 
 <div class="container">
   <div class="create-guide">
@@ -26,7 +31,7 @@
        handler.buildMap({
           provider: {
             scrollwheel: false,
-            styles: mapStyle
+            styles: mapStyle1
           },
           internal: { id: 'map-board' } }, function(){
           markers = handler.addMarkers(<%= raw @markersguide.to_json %>);
