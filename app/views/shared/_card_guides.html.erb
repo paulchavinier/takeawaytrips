@@ -31,9 +31,9 @@
       </div>
       <% if current_user == guide.user %>
       <div class="edit-guides">
-        <%= link_to guide_path(guide), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <%= link_to guide_path(guide), type: "button", method: :delete, data: { confirm: "Are you sure ? ", :'confirm-button-text' => 'Oui', :'cancel-button-text' => 'Non', :'confirm-button-color' => '#25AA99', text: "You won't have access to this guide anymore", :'image-url' => image_path('Logo.png') } do %>
           <i class="fa fa-trash" aria-hidden="true" style="color:#272822"></i>
-        <%end%>
+        <% end %>
         <br>
         <%= link_to "", data: {toggle: "modal", target: "#editguideModal_#{guide.id}"} do %>
           <i class="fa fa-pencil" aria-hidden="true" style="color:#3287C2"></i>
