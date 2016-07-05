@@ -3,5 +3,7 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
+//= require sweetalert
+//= require sweet-alert-confirm
 //= require bootstrap-material-design
 //= require_tree .

@@ -28,10 +28,13 @@ gem 'material_icons'
 gem 'pundit'
 gem "letter_opener", group: :development
 
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
   gem "rails-assets-bootstrap-material-design"
+  gem 'rails-assets-sweetalert'
 end
+gem 'sweet-alert-confirm'
 
 group :development, :test do
   gem 'binding_of_caller'
