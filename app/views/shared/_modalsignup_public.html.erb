@@ -1,0 +1,20 @@
+<div class="modal fade" id="modalsignup_public" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-body">
+          <div class="header">
+            <div><p>Nobody likes popup...</p><p><b>Sign in now, you won't regret !</b></p></div>
+            <div class="modallogo" style="background-image: url(<%= image_path 'bcklgn.jpg' %>)">
+              <%= image_tag "Logowhite.png" %>
+            </div>
+          </div>
+          <div class="infoconnect">
+         <% User.omniauth_providers.each do |provider| %>
+              <%= link_to  omniauth_authorize_path(:user, provider), class:"btn buttonfb" do %>
+                <i class="fa fa-facebook-square"></i>Connect with Facebook
+              <% end %>
+            <% end %>
+            <p><i class="fa fa-info-circle" aria-hidden="true"></i> We dont publish anything on Facebook</p>
+          </div>
+      </div>
+  </div>
+</div>
