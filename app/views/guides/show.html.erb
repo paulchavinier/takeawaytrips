@@ -128,7 +128,7 @@
     </ul>
   </div>
 
-
+ <%= render 'shared/modalsignup_public' %>
 
   <div class="row" id="guide-cards">
     <%= render 'shared/cards', cards: @cards %>
@@ -183,6 +183,14 @@
        $('[data-toggle="tooltip"]').tooltip({
            });
       });
+
+    $(window).load(function(){
+      <% if current_user == nil %>
+            setTimeout (function(){
+            $('#modalsignup_public').modal('show');
+            },5000);
+      <% end %>
+        });
 
 
   </script>
