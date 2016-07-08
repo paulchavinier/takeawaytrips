@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'searchmap', to: 'pages#searchmap'
   get 'friends', to: 'pages#friendslist'
+  get 'guides/:id/filtered', to: 'guides#filteredfriends', as: 'filtered'
   #get 'friends', to: 'guides#friendslist'
 
   get 'friend_guides_list/:uid', to: 'pages#friend_guides_list', as: :friend_guides_list

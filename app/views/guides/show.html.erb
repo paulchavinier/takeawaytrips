@@ -93,39 +93,56 @@
       </div>
     </div>
   </div>
-  <div class="card-filters">
-    <ul class="list-inline">
-      <li>
-        <%= link_to guide_path(@guide), remote: true do %>
-          <i class="material-icons">apps</i>
-        <% end %>
-        </li>
-      <li>
-        <%= link_to guide_path(@guide, category: "Eat"), class: "category category--eat", remote: true do %>
-          <i class="material-icons">local_dining</i>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to guide_path(@guide, category: "Sleep"), class: "category category--sleep", remote: true do %>
-          <i class="material-icons">local_hotel</i>
-        <% end %>
-      </li>
-      <li>
-      <%= link_to guide_path(@guide, category: "Drink"), class: "category category--drink", remote: true do %>
-        <i class="material-icons">local_bar</i>
-      <% end %>
-      </li>
-      <li>
-      <%= link_to guide_path(@guide, category: "Shop"), class: "category category--shop", remote: true do %>
-        <i class="material-icons">shopping_basket</i>
-      <% end %>
-      </li>
-      <li>
-      <%= link_to guide_path(@guide, category: "See"), class: "category category--see", remote: true do %>
-        <i class="material-icons">local_see</i>
-      <% end %>
-      </li>
-    </ul>
+   <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="card-filters">
+        <ul class="list-inline">
+          <li>
+            <%= link_to guide_path(@guide), remote: true do %>
+              <i class="material-icons">apps</i>
+            <% end %>
+            </li>
+          <li>
+            <%= link_to guide_path(@guide, category: "Eat"), class: "category category--eat", remote: true do %>
+              <i class="material-icons">local_dining</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to guide_path(@guide, category: "Sleep"), class: "category category--sleep", remote: true do %>
+              <i class="material-icons">local_hotel</i>
+            <% end %>
+          </li>
+          <li>
+          <%= link_to guide_path(@guide, category: "Drink"), class: "category category--drink", remote: true do %>
+            <i class="material-icons">local_bar</i>
+          <% end %>
+          </li>
+          <li>
+          <%= link_to guide_path(@guide, category: "Shop"), class: "category category--shop", remote: true do %>
+            <i class="material-icons">shopping_basket</i>
+          <% end %>
+          </li>
+          <li>
+          <%= link_to guide_path(@guide, category: "See"), class: "category category--see", remote: true do %>
+            <i class="material-icons">local_see</i>
+          <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="friend-filter text-right">
+        <h4>
+          <% if @guide.friendlist_filtered != [] && @guide.user == current_user %>
+            <% if @guide.friendlist_filtered.count == 1 %>
+              <%= link_to "#{@guide.friendlist_filtered.count} friend also did a guide on #{@guide.guide_country} !", filtered_path(@guide.id)%>
+            <% else @guide.friendlist_filtered.count > 1 %>
+              <%= link_to "#{@guide.friendlist_filtered.count} friends also did guides on #{@guide.guide_country} !", filtered_path(@guide.id)%>
+            <% end %>
+          <% end %>
+        </h4>
+      </div>
+    </div>
   </div>
 
  <%= render 'shared/modalsignup_public' %>

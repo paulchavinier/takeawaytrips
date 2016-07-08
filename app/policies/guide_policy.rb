@@ -16,6 +16,10 @@ class GuidePolicy < ApplicationPolicy
     end
   end
 
+  def filteredfriends?
+    true
+  end
+
   def create? # tous les user (signed in) peuvent créer des guides
     true
   end

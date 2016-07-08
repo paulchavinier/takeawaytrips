@@ -16,7 +16,27 @@ class PagesController < ApplicationController
       end
       @friends = @friends.next_page
     end
-end
+  end
+
+  # def friendslist_filtered
+  #   raise
+  #   @friends = current_user.get_friendslist
+  #   @users = []
+  #   while @friends != nil
+  #     @friends.each do |friend|
+  #       @users << User.find_by(uid: friend["id"])
+  #     end
+  #     @friends = @friends.next_page
+  #   end
+  #   @filtered_users = []
+  #   @users.each do |user|
+  #     user.guides.each do |guide|
+  #       if guide.guide_country == self.guide_country
+  #         @filtered_users << User.find_by(uid: user["id"])
+  #       end
+  #     end
+  #   end
+  # end
 
   def friend_guides_list
     @friend = User.find_by(uid: params[:uid])
