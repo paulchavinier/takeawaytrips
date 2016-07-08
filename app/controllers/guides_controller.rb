@@ -1,5 +1,5 @@
 class GuidesController < ApplicationController
-  before_action :set_guide, only: [:edit, :update, :destroy, :show]
+  before_action :set_guide, only: [:edit, :update, :destroy, :show, :filteredfriends]
   skip_before_action :authenticate_user!, :only => :show, :if => lambda {
       if params[:id]
         @guide = Guide.find(params[:id])
@@ -36,6 +36,8 @@ class GuidesController < ApplicationController
     # @guide.user_id    = current_user.id
     results           = Geocoder.search(@guide.place)
     @guide.place_type = results.first.types.first
+    # results.first.data["address_components"][3]["long_name"]
+    # Geocoder.search(@guide.place).first.data["address_components"][3]["long_name"]
 
     if @guide.save
       respond_to do |format|
@@ -69,6 +71,7 @@ class GuidesController < ApplicationController
       marker.lat guide.latitude
       marker.lng guide.longitude
       marker.title guide.place_type
+      marker
     end
   end
 
@@ -83,6 +86,10 @@ class GuidesController < ApplicationController
   def destroy
     @guide.destroy
     redirect_to :back
+  end
+
+  def filteredfriends
+    @filteredfriends = @guide.friendlist_filtered
   end
 
   private
