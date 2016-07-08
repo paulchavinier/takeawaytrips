@@ -136,7 +136,7 @@
           <% if @guide.friendlist_filtered != [] && @guide.user == current_user %>
             <% if @guide.friendlist_filtered.count == 1 %>
               <%= link_to "#{@guide.friendlist_filtered.count} friend also did a guide on #{@guide.guide_country} !", filtered_path(@guide.id)%>
-            <% else @guide.friendlist_filtered.count > 1 %>
+            <% elsif @guide.friendlist_filtered.count > 1 %>
               <%= link_to "#{@guide.friendlist_filtered.count} friends also did guides on #{@guide.guide_country} !", filtered_path(@guide.id)%>
             <% end %>
           <% end %>
