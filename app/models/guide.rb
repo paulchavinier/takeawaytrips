@@ -10,9 +10,9 @@ class Guide < ActiveRecord::Base
   geocoded_by :place
   after_validation :geocode, if: :place_changed?
 
-  reverse_geocoded_by :latitude, :longitude,
-    :country => :location
-  after_validation :reverse_geocode
+  # reverse_geocoded_by :latitude, :longitude,
+  #   :country => :location
+  # after_validation :reverse_geocode
 
 
   def choosephoto
