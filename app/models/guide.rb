@@ -31,25 +31,25 @@ class Guide < ActiveRecord::Base
   end
 
   def friendlist_filtered
-    @friends = self.user.get_friendslist
-    @users = []
-    while @friends != nil
-      @friends.each do |friend|
-        @users << User.find_by(uid: friend["id"])
+    friends = self.user.get_friendslist
+    users = []
+    while friends != nil
+      friends.each do |friend|
+        users << User.find_by(uid: friend["id"])
       end
-      @friends = @friends.next_page
+      friends = friends.next_page
     end
-    @filtered_users = []
-    @users.each do |user|
+    filtered_users = []
+    users.each do |user|
       counter = 0
       user.guides.each do |guide|
           if guide.guide_country == self.guide_country  && counter == 0
-            @filtered_users << user
+            filtered_users << user
             counter += 1
           end
       end
     end
-    @filtered_users
+    filtered_users
   end
 
 end
