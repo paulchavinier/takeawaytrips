@@ -41,12 +41,14 @@ class Guide < ActiveRecord::Base
     end
     filtered_users = []
     users.each do |user|
-      counter = 0
-      user.guides.each do |guide|
-          if guide.guide_country == self.guide_country  && counter == 0
-            filtered_users << user
-            counter += 1
-          end
+      if user != nil
+        counter = 0
+        user.guides.each do |guide|
+            if guide.guide_country == self.guide_country  && counter == 0
+              filtered_users << user
+              counter += 1
+            end
+        end
       end
     end
     filtered_users
