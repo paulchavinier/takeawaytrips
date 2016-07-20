@@ -1,8 +1,8 @@
 <%= simple_form_for @guide, html: { class: 'card-autocomplete-form'} do |f| %>
-  <%= f.input :name, label: false, input_html: { placeholder: "What is the title of your guide ?" } %>
-  <%= f.input :place, label: false, input_html: { id: :user_input_autocomplete_address, placeholder: "What is the main city or country of your guide ?" } %>
+  <%= f.input :name, label: false, input_html: { placeholder: "Quel titre pour votre guide?" } %>
+  <%= f.input :place, label: false, input_html: { id: :user_input_autocomplete_address, placeholder: "De quel pays ou de quelle ville s'agit-il?" } %>
   <%= f.input :photo, label: false, as: :hidden %>
-  <%= f.input :privacy, label: false, :include_blank => "Click here and choose your privacy settings", collection: [['Public','public'], ['Friends only','facebook'], ['Only me','private']]%>
+  <%= f.input :privacy, label: false, :include_blank => "Choisissez qui peut consulter votre guide", collection: [['Tout le monde','public'], ['Mes amis uniquement','facebook'], ['Moi seulement ','private']]%>
   <%= f.input :gphoto, as: :hidden %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "newguidebtn", value: "Ok" %>

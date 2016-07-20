@@ -31,7 +31,7 @@
       </div>
       <% if current_user == guide.user %>
       <div class="edit-guides">
-        <%= link_to guide_path(guide), type: "button", method: :delete, data: { confirm: "Are you sure ? ", :'confirm-button-text' => 'Yes', :'cancel-button-text' => 'No', :'confirm-button-color' => '#25AA99', text: "You won't have access to this guide anymore", :'image-url' => image_path('Logo.png') } do %>
+        <%= link_to guide_path(guide), type: "button", method: :delete, data: { confirm: "Êtes vous sûr ? ", :'confirm-button-text' => 'Oui', :'cancel-button-text' => 'Non', :'confirm-button-color' => '#25AA99', text: "Vous n'aurez plus accès à ce guide (et nous non plus)", :'image-url' => image_path('Logo.png') } do %>
           <i class="fa fa-trash" aria-hidden="true" style="color:#272822"></i>
         <% end %>
         <br>
