@@ -137,7 +137,7 @@
             <% if @guide.friendlist_filtered.count == 1 %>
               <%= link_to "#{@guide.friendlist_filtered.count} ami a aussi fait un guide sur ce pays !", filtered_path(@guide.id)%>
             <% elsif @guide.friendlist_filtered.count > 1 %>
-              <%= link_to "#{@guide.friendlist_filtered.count} amis aussi fait des guides sur ce pays !", filtered_path(@guide.id)%>
+              <%= link_to "#{@guide.friendlist_filtered.count} amis ont aussi fait des guides sur ce pays !", filtered_path(@guide.id)%>
             <% end %>
           <% end %>
         </h4>
