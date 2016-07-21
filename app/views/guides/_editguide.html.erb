@@ -9,8 +9,8 @@
 <%= simple_form_for guide, html: { style: 'width: 300px'} do |f| %>
   <%= f.input :name, label: false, input_html: { placeholder: "Enter the name of your guide" } %>
   <%= f.input :place, label: false, input_html: { id: :user_input_autocomplete_address } %>
-  <%= f.input :photo, label: "Change the picture" %>
-  <%= f.input :privacy, label: "Update your privacy settings in the list below", collection: [['Public','public'], ['Friends only','facebook'], ['Only me','private']]%>
+  <%= f.input :photo, label: "Changez la photo de couverture !" %>
+  <%= f.input :privacy, label: "Mettez à jour qui peut consulter votre guide", collection: [['Tout le monde','public'], ['Mes amis seulement','facebook'], ['Moi uniquement','private']]%>
   <%= f.input :gphoto, as: :hidden %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "btn btn-primary", value: "Ok" %>

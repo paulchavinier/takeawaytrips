@@ -1,5 +1,5 @@
 <div class="banner-guide-board">
-<%="They also did guides on #{@guide.guide_country}"%>
+<%="Inspirez vous de vos amis"%>
 </div>
 <div class="container">
 <% @guide.friendlist_filtered.each do |user| %>
@@ -16,7 +16,7 @@
     <p><%= user.guides.size %></p>
     </div>
     <div class="cardsize">
-    <h1>Places</h1>
+    <h1>Spots</h1>
      <p><%= user.cards.size %></p>
     </div>
     </div>

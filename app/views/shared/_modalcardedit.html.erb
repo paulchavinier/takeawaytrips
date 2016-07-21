@@ -4,8 +4,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3><%=card.name%></h3>
-        <h4 class="modal-title" id="editcardModalLabel">Edit your card with your personal touch !</h4>
+        <h3 class="text-center"><%=card.name%></h3>
+        <h4 class="modal-title" id="editcardModalLabel">C'est le moment de partager vos bons plans</h4>
       </div>
       <div class="modal-body">
         <%= render 'cards/editform', card: card %>

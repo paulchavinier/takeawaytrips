@@ -13,7 +13,7 @@
   $('body').append("<%= j render 'shared/modalcardshow', card: @card %>");
   $('body').append("<%= j render 'shared/modalcardedit', card: @card %>");
   $('body').append("<%= j render 'shared/modaladdcard', card: @card %>");
-  $('#total-places').html('<%= j "Your places (" + @guide.cards.count.to_s + ")" %>');
+  $('#total-places').html('<%= j "Les spots de " + @guide.user.first_name + " " + @guide.user.last_name + " (" + @guide.cards.count.to_s + ")" %>');
 
 
   markersnewcard = handler.addMarkers(<%= raw @markers_new_card.to_json %>);

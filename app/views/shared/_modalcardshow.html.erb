@@ -12,7 +12,7 @@
         <div class="containinfo">
           <% if card.opening_hours.any? || !card.international_phone_number.blank? || !card.website.blank? %>
             <div class="opening-card">
-              <button class="showhours">display infos</button>
+              <button class="showhours">Afficher plus d'infos</button>
               <ul class="list-unstyled">
                 <% if !card.international_phone_number.blank? %>
                   <li><p><i class="fa fa-phone-square" aria-hidden="true"></i><%= card.international_phone_number %></p></li>
@@ -25,14 +25,14 @@
                   <% end %>
                 <% end %>
                 <% if !card.website.blank? %>
-                  <li><%= link_to "GO TO WEBSITE", card.website, :target => "_blank", class: "btn btn-website" %></li>
+                  <li><%= link_to "VOIR LE SITE WEB", card.website, :target => "_blank", class: "btn btn-website" %></li>
                 <% end %>
               </ul>
             </div>
           <% end %>
           <% if card.personnal_note != "" %>
             <div class="note-card">
-              <button class="shownote">display notes</button>
+              <button class="shownote">Afficher vos commentaires</button>
               <div class="notes">
                 <p><%= card.personnal_note %></p>
               </div>

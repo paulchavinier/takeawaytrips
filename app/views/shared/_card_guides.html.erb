@@ -8,21 +8,21 @@
       <div class="privacy-info">
         <% if guide.privacy == nil || guide.privacy == "facebook" || guide.privacy == "" %>
           <% if current_user == guide.user %>
-            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Only you and your friends can see this guide"></i>
+            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Seulement vos amis et vous peuvent consulter ce guide"></i>
           <% else %>
-            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{guide.user.first_name}"+" shared this guide to his friends only"%>"></i>
+            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{guide.user.first_name}"+" partage ce guide avec ses amis seulement"%>"></i>
           <% end %>
         <% elsif guide.privacy == "private" %>
           <% if current_user == guide.user %>
-          <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Only you can see this guide"></i>
+          <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Vous seul pouvez consulter ce guide"></i>
           <% else %>
-          <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{guide.user.first_name}"+" don't want to share this guide"%>"></i>
+          <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{guide.user.first_name}"+" ne souhaite pas partager ce guide"%>"></i>
           <% end %>
         <% else %>
           <% if current_user == guide.user %>
-          <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Any user of TAT can see this guide"></i>
+          <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tous les utilisateurs de TAT peuvent consulter ce guide"></i>
           <% else %>
-          <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{guide.user.first_name}"+" shared this guide to any TAT user"%>"></i>
+          <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{guide.user.first_name}"+" partage ce guide avec tous les utilisateurs de TAT"%>"></i>
           <% end %>
         <%end%>
       </div>
@@ -31,7 +31,7 @@
       </div>
       <% if current_user == guide.user %>
       <div class="edit-guides">
-        <%= link_to guide_path(guide), type: "button", method: :delete, data: { confirm: "Are you sure ? ", :'confirm-button-text' => 'Yes', :'cancel-button-text' => 'No', :'confirm-button-color' => '#25AA99', text: "You won't have access to this guide anymore", :'image-url' => image_path('Logo.png') } do %>
+        <%= link_to guide_path(guide), type: "button", method: :delete, data: { confirm: "Êtes vous sûr ? ", :'confirm-button-text' => 'Oui', :'cancel-button-text' => 'Non', :'confirm-button-color' => '#25AA99', text: "Vous n'aurez plus accès à ce guide (et nous non plus)", :'image-url' => image_path('Logo.png') } do %>
           <i class="fa fa-trash" aria-hidden="true" style="color:#272822"></i>
         <% end %>
         <br>

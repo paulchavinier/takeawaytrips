@@ -27,6 +27,13 @@
       <%#end %>
 
       <!-- Profile picture and dropdown -->
+      <button type="button" class="navbar-wagon-button1">
+               <%= link_to "Mon Guideboard", guides_path %>
+      </button>
+      <button type="button" class="navbar-wagon-button1" style="margin-right : 40px;">
+               <%= link_to "Mes Amis", friends_path %>
+      </button>
+
       <div class="navbnavbar-wagonar-wagon-item">
         <div class="dropdown">
           <div class="user-initials dropdown-toggle" id= "navbar-wagon-menu", data-toggle= "dropdown">
@@ -35,12 +42,12 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to guides_path do %>
-                <i class="fa fa-map"></i> <%= t ".guides", default: "My Guideboard" %>
+                <i class="fa fa-map"></i> <%= t ".guides", default: "Mon Guideboard" %>
               <% end %>
             </li>
             <li>
               <%= link_to friends_path do %>
-                <i class="fa fa-group"></i> <%= t ".friends", default: "My Friends" %>
+                <i class="fa fa-group"></i> <%= t ".friends", default: "Mes Amis" %>
               <% end %>
             </li>
             <% if current_user.admin %>

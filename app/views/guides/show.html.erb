@@ -24,7 +24,7 @@
     <%end%>
     </li>
     <li>
-    <h5><%= "Back to #{@guide.user.first_name}'s guideboard" %></h5>
+    <h4><%= link_to "Retour au Guideboard de #{@guide.user.first_name}", friend_guides_list_path(@guide.user.uid) %></h4>
     </li>
   <% end %>
   </div>
@@ -61,7 +61,7 @@
     <div class="col-xs-12 col-md-6">
       <h4 id="total-places">
         <% name = @guide.user.first_name + " " + @guide.user.last_name %>
-        <%="#{name} places (" + @cards.count.to_s + ")" %>
+        <%="Les spots de #{name} (" + @cards.count.to_s + ")" %>
       </h4>
     </div>
     <div class="col-xs-12 col-md-6">
@@ -69,25 +69,25 @@
         <h4 id="privacy">
           <% if @guide.privacy == "private" %>
             <% if @guide.user == current_user %>
-              <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="This guide is just for you! You can change the privacy settings on your Guideboard"></i>
+              <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Vous seul pouvez consulter ce guide. Vous pouvez changer les règles de partage dans votre Guideboard"></i>
             <% else %>
               <i class="fa fa-lock" aria-hidden="true"></i>
             <% end %>
-            <%= "Private Guide" %>
+            <%= "Guide privé" %>
           <% elsif  @guide.privacy == "public"%>
             <% if @guide.user == current_user %>
-            <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Any user of TAT can see this guide. You can change the privacy settings on your Guideboard"></i>
+            <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Tous les utilisateurs de TAT peuvent consulter ce guide. Vous pouvez changer les règles de partage dans votre Guideboard"></i>
             <% else %>
               <i class="fa fa-globe" aria-hidden="true"></i>
             <% end %>
-            <%= "Public guide" %>
+            <%= "Guide public" %>
           <% else @guide.privacy == "facebook" || @guide.privacy == nil %>
             <% if @guide.user == current_user %>
-            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="This guide is visible to you and your friends. You can change the privacy settings on your Guideboard"></i>
+            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Seulement vos amis et vous peuvent consulter ce guide. Vous pouvez changer les règles de partage dans votre Guideboard"></i>
             <% else %>
               <i class="fa fa-users" aria-hidden="true"></i>
             <% end %>
-            <%= "Friendly guide" %>
+            <%= "Guide pour les amis" %>
           <% end %>
         </h4>
       </div>
@@ -135,9 +135,9 @@
         <h4>
           <% if @guide.friendlist_filtered != [] && @guide.user == current_user %>
             <% if @guide.friendlist_filtered.count == 1 %>
-              <%= link_to "#{@guide.friendlist_filtered.count} friend also did a guide on #{@guide.guide_country} !", filtered_path(@guide.id)%>
+              <%= link_to "#{@guide.friendlist_filtered.count} ami a aussi fait un guide sur ce pays !", filtered_path(@guide.id)%>
             <% elsif @guide.friendlist_filtered.count > 1 %>
-              <%= link_to "#{@guide.friendlist_filtered.count} friends also did guides on #{@guide.guide_country} !", filtered_path(@guide.id)%>
+              <%= link_to "#{@guide.friendlist_filtered.count} amis aussi fait des guides sur ce pays !", filtered_path(@guide.id)%>
             <% end %>
           <% end %>
         </h4>

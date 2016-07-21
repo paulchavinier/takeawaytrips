@@ -4,7 +4,7 @@
             <li>
                <%= form_tag cards_path, method: :post, remote: true, class: 'form-horizontal' do %>
                   <input id="user_input_autocomplete_address" name="user_input_autocomplete_address"
-                  class="form-control" style="margin-right: 100px" placeholder="Search for a place">
+                  class="form-control" style="margin-right: 100px" placeholder="Cherchez un spot ici">
               <% end %>
             </li>
             <li>
@@ -24,7 +24,7 @@
               <%= f.input :photo, as: :hidden %>
               <%= f.input :photo_cache, as: :hidden %>
               <%= f.input :guide_id, as: :hidden, input_html: { :value => card.guide_id } %>
-              <%= f.submit  class: "btn btn-primary", id: "new-card-button", value: "Add to my guide" %>
+              <%= f.submit  class: "btn btn-primary", id: "new-card-button", value: "Ajouter à mon guide" %>
             <% end %>
             </li>
           </ul>
