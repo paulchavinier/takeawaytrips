@@ -69,21 +69,21 @@
         <h4 id="privacy">
           <% if @guide.privacy == "private" %>
             <% if @guide.user == current_user %>
-              <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="This guide is just for you! You can change the privacy settings on your Guideboard"></i>
+              <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Vous seul pouvez consulter ce guide. Vous pouvez changer les règles de partage dans votre Guideboard"></i>
             <% else %>
               <i class="fa fa-lock" aria-hidden="true"></i>
             <% end %>
             <%= "Guide privé" %>
           <% elsif  @guide.privacy == "public"%>
             <% if @guide.user == current_user %>
-            <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Any user of TAT can see this guide. You can change the privacy settings on your Guideboard"></i>
+            <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Tous les utilisateurs de TAT peuvent consulter ce guide. Vous pouvez changer les règles de partage dans votre Guideboard"></i>
             <% else %>
               <i class="fa fa-globe" aria-hidden="true"></i>
             <% end %>
             <%= "Guide public" %>
           <% else @guide.privacy == "facebook" || @guide.privacy == nil %>
             <% if @guide.user == current_user %>
-            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="This guide is visible to you and your friends. You can change the privacy settings on your Guideboard"></i>
+            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Seulement vos amis et vous peuvent consulter ce guide. Vous pouvez changer les règles de partage dans votre Guideboard"></i>
             <% else %>
               <i class="fa fa-users" aria-hidden="true"></i>
             <% end %>

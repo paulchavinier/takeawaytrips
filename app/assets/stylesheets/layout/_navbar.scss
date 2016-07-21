@@ -74,6 +74,7 @@
 
 .navbar-wagon-button1 {
   margin-left: 10px;
+  margin-right: 10px;
   padding: 0 20px;
   line-height: 40px;
   color: #25AA99;
@@ -88,6 +89,10 @@
   background-color: rgba(255,255,255,0.3);
   border-color: #25AA99;
   z-index: 3;
+}
+
+.navbar-wagon-button1 a:hover {
+  text-decoration: none;
 }
 
 /* Navbar search form */

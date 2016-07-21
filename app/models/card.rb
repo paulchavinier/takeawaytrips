@@ -101,7 +101,7 @@ class Card < ActiveRecord::Base
     elsif self.gphoto != ""
       gphoto
     else
-      'logoholder.png'
+      'logoholder_french.png'
     end
   end
 
