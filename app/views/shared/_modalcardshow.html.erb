@@ -8,7 +8,7 @@
       <div class="modal-img-card" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 50%), url(<%= image_path card.choosephoto %>)">
         <%= card.name %>
       </div>
-      <div class="modal-body-card-card">
+      <div class="modal-body">
         <div class="containinfo">
           <% if card.opening_hours.any? || !card.international_phone_number.blank? || !card.website.blank? %>
             <div class="opening-card">
