@@ -39,7 +39,6 @@ class Guide < ActiveRecord::Base
       end
       friends = friends.next_page
     end
-    raise
     filtered_users = []
     users.each do |user|
       if user != nil
