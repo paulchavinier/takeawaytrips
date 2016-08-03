@@ -5,4 +5,4 @@ $('.card-filters .category').removeClass("active");
 <% end %>
 
 $('#guide-cards').html('<%= j render "shared/cards", cards: @cards %>');
-$('#total-places').html('<%= j "Les spots de " + @guide.user.first_name + " " + @guide.user.last_name + " (" + @guide.cards.count.to_s + ")" %>');
+$('#total-places').html('<%= j "Les spots de " + @guide.user.first_name + " " + @guide.user.last_name + " (" + @cards.count.to_s + ")" %>');
