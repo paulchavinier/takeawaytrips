@@ -135,13 +135,7 @@
     <div class="col-xs-12 col-md-6">
       <div class="friend-filter text-right">
         <h4>
-          <% if @guide.friendlist_filtered != [] && @guide.user == current_user %>
-            <% if @guide.friendlist_filtered.count == 1 %>
-              <%= link_to "#{@guide.friendlist_filtered.count} ami a aussi fait un guide sur ce pays !", filtered_path(@guide.id)%>
-            <% elsif @guide.friendlist_filtered.count > 1 %>
-              <%= link_to "#{@guide.friendlist_filtered.count} amis ont aussi fait des guides sur ce pays !", filtered_path(@guide.id)%>
-            <% end %>
-          <% end %>
+         <%= link_to "Voir les guides de vos amis sur ce pays", filtered_path(@guide.id)%>
         </h4>
       </div>
     </div>
