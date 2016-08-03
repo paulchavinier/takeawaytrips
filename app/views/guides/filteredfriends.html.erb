@@ -2,6 +2,15 @@
 <%="Inspirez vous de vos amis"%>
 </div>
 <div class="container">
+<% if @guide.friendlist_filtered != [] %>
+  <h4 class="text-center"> <%="Voici les amis qui ont aussi créé des guides sur le pays qui vous intéresse. ( "+@guide.guide_country+" )"%></h4>
+<% else %>
+  <h4 class="text-center"><%="Malheureusement, aucun ami n'a pour l'instant créé de guide sur le pays qui vous intéresse. ( "+@guide.guide_country+" )"%></h4>
+  <h4>
+    <%= link_to "Retour à mon guide", guide_path(@guide) %>
+  </h4>
+<% end %>
+
 <% @guide.friendlist_filtered.each do |user| %>
 <% if user != nil %>
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
