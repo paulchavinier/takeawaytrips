@@ -7,22 +7,22 @@ class PagesController < ApplicationController
     @contact = Contact.new
 
     @guides = []
-    # @guides << Guide.find(69)
-    # @guides << Guide.find(121)
-    #     @guides << Guide.find(69)
-    # @guides << Guide.find(121)
-    #     @guides << Guide.find(69)
-    # @guides << Guide.find(121)
 
-    @guides << Guide.find(294)
-    @guides << Guide.find(197)
-    @guides << Guide.find(327)
-    @guides << Guide.find(221)
-    @guides << Guide.find(245)
-    @guides << Guide.find(226)
-    @guides << Guide.find(198)
-    @guides << Guide.find(223)
-    @guides << Guide.find(274)
+    # public_ids = [69, 121, 69, 121, 69, 121, 69]
+
+    # public_ids.each do |id|
+    #   if Guide.exists?(id)
+    #     @guides << Guide.find(id)
+    #   end
+    # end
+
+    public_ids = [294, 197, 327, 221, 245, 226, 198, 223, 274]
+
+    public_ids.each do [id]
+      if Guide.exists?(id)
+        @guides << Guide.find(id)
+      end
+    end
 
   end
 
