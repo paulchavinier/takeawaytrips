@@ -167,11 +167,53 @@ background-color: black;
 
 
 
+.whatwedo-title p {
+  font-size: 120%;
+  font-weight: 500;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+@media(min-width:60em){.whatwedo-title p{font-size: 150%;}}
 
+.whatwedo {
+  padding-right: 20px;
+  padding-left: 20px;
+}
 
+.whatwedo p {
+  font-size: 110%;
+}
+@media(min-width:60em){.whatwedo p{font-size: 130%;}}
 
+.whatwedo img {
+  background-size: 100%;
+  background-position: center;
+  width: 20%;
+  height: 80%;
+}
 
+.palmier img {
+  width: 100%;
+}
 
+.palmier p {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  font-size: 120%;
+  font-weight: 500;
+  color: white;
+}
+@media(min-width:60em){.palmier p{font-size: 150%;}}
 
+.palmier {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
+.bottommargin{
+  height: 15px;
+}
 

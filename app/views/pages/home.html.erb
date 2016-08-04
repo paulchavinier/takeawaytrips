@@ -10,7 +10,7 @@
                 <h2><b>Créez vos guides de voyages et</b><h2>
                 <h2>
                 <span data-id="1">Parcourez le monde</span>
-                <span data-id="2">Faites découvrir votre ville à vos hôtes</span>
+                <span data-id="2">Faites découvrir votre ville</span>
                 <span data-id="3">Partagez vos bons plans</span>
                 <span data-id="4">Gardez vos souvenirs intacts</span>
                 <span data-id="5">Préparez votre prochain voyage à Berlin</span>
@@ -33,6 +33,61 @@
             </div>
 
     </div>
+
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="whatwedo-title text-center">
+            <p>Créez en quelques minutes des guides personnalisés pour vos voyages, vos week-ends et vos sorties</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="whatwedo text-center">
+            <p><b>Collectez</b></p>
+            <p><%= image_tag "collect.png" %></p>
+            <p style= "font-size: 14px">Ajouter des spots à vos guides en recherchant une adresse ou en utilisant les guides de vos amis</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="whatwedo text-center">
+            <p><b>Voyagez</b></p>
+            <p><%= image_tag "travel.png" %></p>
+            <p style= "font-size: 14px">Utlisez votre guide pour découvrir un quartier, une ville, un pays et rajoutez-y vos propre découvertes</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="whatwedo text-center">
+            <p><b>Partagez</b></p>
+            <p><%= image_tag "share.png" %></p>
+            <p style= "font-size: 14px">Partagez vos bons plans facilement et donnez envie à vos amis de partir en voyage </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="palmier text-center">
+          <p>Ou inspirez-vous des guides déjà réalisés !</p>
+            <%= image_tag "palmier.png" %>
+          </div>
+        </div>
+      </div>
+
+      </div>
+        <%= render 'shared/guideshome', guides: @guides %>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="bottommargin">
+          </div>
+        </div>
+      </div>
+
   </div>
 </div>
 <!-- <div class="bannercollect"></div> -->

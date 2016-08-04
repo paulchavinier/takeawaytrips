@@ -5,6 +5,25 @@ class PagesController < ApplicationController
   def home
     @guide = Guide.new
     @contact = Contact.new
+
+    @guides = []
+    # @guides << Guide.find(69)
+    # @guides << Guide.find(121)
+    #     @guides << Guide.find(69)
+    # @guides << Guide.find(121)
+    #     @guides << Guide.find(69)
+    # @guides << Guide.find(121)
+
+    @guides << Guide.find(294)
+    @guides << Guide.find(197)
+    @guides << Guide.find(327)
+    @guides << Guide.find(221)
+    @guides << Guide.find(245)
+    @guides << Guide.find(226)
+    @guides << Guide.find(198)
+    @guides << Guide.find(223)
+    @guides << Guide.find(274)
+
   end
 
   def friendslist
