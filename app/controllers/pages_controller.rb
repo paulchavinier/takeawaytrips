@@ -5,6 +5,25 @@ class PagesController < ApplicationController
   def home
     @guide = Guide.new
     @contact = Contact.new
+
+    @guides = []
+
+    # public_ids = [69, 121, 69, 121, 69, 121, 69]
+
+    # public_ids.each do |id|
+    #   if Guide.exists?(id)
+    #     @guides << Guide.find(id)
+    #   end
+    # end
+
+    public_ids = [294, 197, 327, 221, 245, 226, 198, 223, 274]
+
+    public_ids.each do [id]
+      if Guide.exists?(id)
+        @guides << Guide.find(id)
+      end
+    end
+
   end
 
   def friendslist
