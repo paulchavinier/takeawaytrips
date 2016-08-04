@@ -18,7 +18,7 @@ class PagesController < ApplicationController
 
     public_ids = [294, 197, 327, 221, 245, 226, 198, 223, 274]
 
-    public_ids.each do [id]
+    public_ids.each do |id|
       if Guide.exists?(id)
         @guides << Guide.find(id)
       end
