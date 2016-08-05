@@ -63,16 +63,48 @@ class GuidesController < ApplicationController
     end
     @categories = Card::CATEGORIES.values.uniq
     @markers = Gmaps4rails.build_markers(@cards) do |card, marker|
-      marker.lat card.latitude
-      marker.lng card.longitude
-      marker.infowindow "<a data-toggle='modal' data-target='#cardModal_#{card.id}'>#{card.name}</a>"
-    end
+        marker.lat card.latitude
+        marker.lng card.longitude
+        marker.infowindow "<a data-toggle='modal' data-target='#cardModal_#{card.id}'>#{card.name}</a>"
+        if Card::CATEGORIES[card.category] == "Eat"
+          marker.picture({
+            :url => "https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=glyphish_fork-and-knife|F8E760",
+            :width   => 32,
+            :height  => 32
+          })
+        elsif Card::CATEGORIES[card.category] == "Drink"
+          marker.picture({
+            :url => "https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=glyphish_wineglass|FE1544",
+            :width   => 32,
+            :height  => 32
+          })
+        elsif Card::CATEGORIES[card.category] == "Sleep"
+          marker.picture({
+            :url => "https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=glyphish_house|89B1FF",
+            :width   => 32,
+            :height  => 32
+          })
+        elsif Card::CATEGORIES[card.category] == "Shop"
+          marker.picture({
+            :url => "https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=glyphish_shopping-bag|25AA99",
+            :width   => 32,
+            :height  => 32
+          })
+        elsif Card::CATEGORIES[card.category] == "See"
+          marker.picture({
+            :url => "https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=glyphish_eye|EDEDED",
+            :width   => 32,
+            :height  => 32
+          })
+        end
+      end
     @markersguide = Gmaps4rails.build_markers(@guide) do |guide, marker| # construction duJson pour pousser a Gplace for Rails
       marker.lat guide.latitude
       marker.lng guide.longitude
       marker.title guide.place_type
       marker
     end
+
   end
 
   def edit
