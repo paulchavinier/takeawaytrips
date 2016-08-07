@@ -10,7 +10,6 @@
 <%= f.input :name, as: :hidden  %>
 <%= f.input :personnal_note, label: false, input_html: { placeholder: "Ecrivez ici vos commentaires et conseils !" } %>
 <%= f.input :gphoto, as: :hidden %>
-<%= f.input :category, as: :hidden %>
 <%= f.input :formatted_address, as: :hidden %>
 <%= f.input :website, as: :hidden %>
 <%= f.input :international_phone_number, as: :hidden %>
@@ -22,6 +21,7 @@
 <%= f.input :photo, label: "Changez la photo de ce spot !" %>
 <%= f.input :photo_cache, as: :hidden %>
 <%= f.input :guide_id, as: :hidden, input_html: { :value => card.guide_id } %>
+ <%= f.input :category, label: "Changez la catégorie de ce spot", collection: [['Eat','restaurant'], ['Sleep','lodging'], ['Drink','bar'], ['Shop','clothing_store'], ['See','museum']]%>
 <%= f.submit class: "newguidebtn", value: "Ok" %>
 <% end %>
 
