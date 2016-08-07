@@ -4,6 +4,6 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   process convert: 'jpg'
   version :standard do
-    resize_to_fit 600, 450
+    cloudinary_transformation width: 700, crop: :scale, quality: :auto
   end
 end
