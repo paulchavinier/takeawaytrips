@@ -1,9 +1,9 @@
 class PhotoUploader < CarrierWave::Uploader::Base
-  include Cloudinary::CarrierWave
-  process eager: true  # Force version generation at upload time.
+  include Cloudinary::CarrierWave # les upload d image sont gérés par le service Cloudinary
+  process eager: true  # Force version generation at upload time. Quand tu upload l image fait des transformation en avance
 
   process convert: 'jpg'
   version :standard do
-    cloudinary_transformation width: 700, crop: :scale, quality: :auto
+    resize_to_fit 600, 450
   end
 end

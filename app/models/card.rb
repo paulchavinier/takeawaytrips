@@ -150,7 +150,7 @@ class Card < ActiveRecord::Base
 
   def choosephoto
     if self.photo.url
-      photo.url
+      photo.url(:standard)
     elsif self.gphoto != ""
       gphoto
     else
