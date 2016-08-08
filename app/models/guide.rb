@@ -17,7 +17,7 @@ class Guide < ActiveRecord::Base
 
   def choosephoto
     if self.photo.url
-      photo
+      photo.url(:standard)
     else
       gphoto
     end
