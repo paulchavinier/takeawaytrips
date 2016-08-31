@@ -54,4 +54,13 @@ class Guide < ActiveRecord::Base
     filtered_users
   end
 
+  # def distance(location)
+  #   coordinates1 = Geocoder.coordinates(self.place)
+  #   distancecalc = Geocoder::Calculations.distance_between(coordinates1, location)
+  # end
+
+  # def self.sorted_by_distance
+  # Guide.all.sort_by(&:distance)
+  # end
+
 end

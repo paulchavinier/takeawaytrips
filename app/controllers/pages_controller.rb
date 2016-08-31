@@ -37,6 +37,19 @@ class PagesController < ApplicationController
     end
   end
 
+  def results
+    @guides = Guide.near(params[:q], 1000).where(privacy: "public")
+    coordinates1 = Geocoder.coordinates(params[:q])
+    coordinate_table = []
+    @guides.each do |guide|
+      coordinates2 = Geocoder.coordinates(guide.place)
+      guide_distance = Geocoder::Calculations.distance_between(coordinates1, coordinates2)
+      guide[:distance] = guide_distance
+      raise
+    end
+
+  end
+
   # def friendslist_filtered
   #   raise
   #   @friends = current_user.get_friendslist
