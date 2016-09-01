@@ -20,11 +20,11 @@
   <ul class="list-inline">
     <li>
     <%= link_to friend_guides_list_path(@guide.user.uid), class: "back to guide board" do %>
-      <i class="material-icons">local_library</i>
+      <i class="material-icons">more_horiz</i>
     <%end%>
     </li>
     <li>
-    <h4><%= link_to "Retour au Guideboard de #{@guide.user.first_name}", friend_guides_list_path(@guide.user.uid) %></h4>
+    <h4><%= link_to "#{@guide.user.first_name}", friend_guides_list_path(@guide.user.uid) %></h4>
     </li>
   <% end %>
   </div>
