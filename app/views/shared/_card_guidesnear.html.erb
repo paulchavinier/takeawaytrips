@@ -1,0 +1,47 @@
+<!-- Code pour les cartes des guides publics sur la home -->
+
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+    <div class="box-guides" id="box" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%), url(<%= image_path near_guide[1].choosephoto %>)">
+    <%= link_to "", guide_path(near_guide[1]), class: "card-link" %>
+      <div class="title-guides">
+        <%= near_guide[1].name.upcase %>
+      </div>
+      <div class="privacy-info">
+        <% if near_guide[1].privacy == nil || near_guide[1].privacy == "facebook" || near_guide[1].privacy == "" %>
+          <% if current_user == near_guide[1].user %>
+            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Seulement vos amis et vous peuvent consulter ce guide"></i>
+          <% else %>
+            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{near_guide[1].user.first_name}"+" partage ce guide avec ses amis seulement"%>"></i>
+          <% end %>
+        <% elsif near_guide[1].privacy == "private" %>
+          <% if current_user == near_guide[1].user %>
+          <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Vous seul pouvez consulter ce guide"></i>
+          <% else %>
+          <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{near_guide[1].user.first_name}"+" ne souhaite pas partager ce guide"%>"></i>
+          <% end %>
+        <% else %>
+          <% if current_user == near_guide[1].user %>
+          <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Tous les utilisateurs de TAT peuvent consulter ce guide"></i>
+          <% else %>
+          <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title= "<%= "#{near_guide[1].user.first_name}"+" partage ce guide avec tous les utilisateurs de TAT"%>"></i>
+          <% end %>
+        <%end%>
+      </div>
+      <div class="infos-guides">
+        <i class="fa fa-map-marker" aria-hidden="true"></i> <%= near_guide[1].cards.size %>
+      </div>
+      <div class="avatar-public" data-toggle="tooltip" data-placement="bottom" title= "<%= "Ce guide a été réalisé et rendu public par "+"#{near_guide[1].user.first_name}"%>">
+        <%= image_tag(near_guide[1].user.picture, class: "avatar") %>
+      </div>
+      <div class="distances-guides">
+        <i class="fa fa-crosshairs" aria-hidden="true"></i>
+        <%= near_guide[0].round.to_s + "km" %>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+

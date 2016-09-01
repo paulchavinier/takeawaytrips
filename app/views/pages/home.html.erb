@@ -5,32 +5,43 @@
         <div class="video-container" style="background-image: url(<%= image_path 'city_night.jpg' %>)">
             <i class="fa fa-angle-right hidden-xs" aria-hidden="true"></i>
               <div class="home-logo text-center">
-                  <%= image_tag "Logowhite2.png" %>
-              <div id="changethewords" style="color:white">
-                <h2><b>Créez vos guides de voyages et</b><h2>
-                <h2>
-                <span data-id="1">Parcourez le monde</span>
-                <span data-id="2">Faites découvrir votre ville</span>
-                <span data-id="3">Partagez vos bons plans</span>
-                <span data-id="4">Gardez vos souvenirs intacts</span>
-                <span data-id="5">Préparez votre prochain voyage à Berlin</span>
-                <span data-id="6">Ou à Zanzibar</span>
-                <span data-id="7">Ou à Dunkerque</span>
-                <span data-id="8">Préparez, découvrez, partagez, et surtout</span>
-                <span data-id="9">Soyez vous-même</span>
-                <span data-id="10">Combien de temps lirez-vous ces messages ?</span>
-                <span data-id="11">Nous avons encore plein de suggestions</span>
-                <span data-id="12">Mais pourquoi-pas créer un guide dès maintenant ?</span>
-                <span data-id="13">Il faut juste cliquer sur le gros bouton dessous</span>
-                <span data-id="14">T'as prévu un truc ce soir?</span>
-                <span data-id="15">Ok let's start !</span>
-                </h2>
-            </div>
-            <button type="button" class="homecreate" data-toggle="modal" data-target="<%= user_signed_in? ? "#guideModal" : "#modalsignup"
- %>">
-               Créer un guide
-            </button>
-            </div>
+                <%= image_tag "Logowhite2.png" %>
+                <div id="changethewords" style="color:white">
+                  <h2><b>Créez vos guides de voyages et</b><h2>
+                  <h2>
+                  <span data-id="1">Parcourez le monde</span>
+                  <span data-id="2">Faites découvrir votre ville</span>
+                  <span data-id="3">Partagez vos bons plans</span>
+                  <span data-id="4">Gardez vos souvenirs intacts</span>
+                  <span data-id="5">Préparez votre prochain voyage à Berlin</span>
+                  <span data-id="6">Ou à Zanzibar</span>
+                  <span data-id="7">Ou à San Francisco</span>
+                  <span data-id="8">Préparez, découvrez, partagez, et surtout</span>
+                  <span data-id="9">Soyez vous-même</span>
+                  <span data-id="10">Combien de temps lirez-vous ces messages ?</span>
+                  <span data-id="11">Nous avons encore plein de suggestions</span>
+                  <span data-id="12">Mais pourquoi-pas créer un guide dès maintenant ?</span>
+                  <span data-id="13">C'est vraiment super simple</span>
+                  <span data-id="14">Vous allez adorer</span>
+                  <span data-id="15">Ok let's start !</span>
+                  </h2>
+                </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="cta">
+                    <button type="button" class="homecreate" data-toggle="modal" data-target="<%= user_signed_in? ? "#guideModal" : "#modalsignup"%>">Créer un guide
+                    </button>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="cta">
+                    <button type="button" class="homecreate" data-toggle="modal" data-target="<%= user_signed_in? ? "#searchModal" : "#modalsignup"%>">Rechercher une destination
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              </div>
 
     </div>
 
@@ -97,7 +108,7 @@
 </div>
 
 <%= render 'shared/modal' %>
-
+<%= render 'shared/modalsearch' %>
 
 <!-- Include Google Maps JS API -->
 <!-- <script type="text/javascript"
