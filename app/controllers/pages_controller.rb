@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
-  skip_after_action :verify_authorized, only: [:home, :friendslist, :friend_guides_list]
+  skip_after_action :verify_authorized, only: [:home, :friendslist, :friend_guides_list, :results]
 
   def home
     @guide = Guide.new
@@ -39,15 +39,16 @@ class PagesController < ApplicationController
 
   def results
     @guides = Guide.near(params[:q], 1000).where(privacy: "public")
+    @place = params[:q]
     coordinates1 = Geocoder.coordinates(params[:q])
-    coordinate_table = []
+    @near_guides = []
     @guides.each do |guide|
       coordinates2 = Geocoder.coordinates(guide.place)
       guide_distance = Geocoder::Calculations.distance_between(coordinates1, coordinates2)
       guide[:distance] = guide_distance
-      raise
+      @near_guides << [guide_distance, guide]
     end
-
+    @near_guides
   end
 
   # def friendslist_filtered

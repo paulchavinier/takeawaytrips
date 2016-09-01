@@ -66,6 +66,28 @@ font-size: 15px;
 margin-right: 8px;
 }
 
+.distances-guides {
+font-size: 13px;
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+bottom: 15px;
+right: 0px;
+height: 30px;
+width: 53px;
+background-color: white;
+padding-right: 8px;
+}
+
+.distances-guides i {
+color: #25AA99;
+font-size: 15px;
+margin-left: 8px;
+}
+
 .privacy-info {
 font-size: 13px;
 display: flex;

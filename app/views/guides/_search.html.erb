@@ -1,15 +1,4 @@
-      <%= form_tag("/results", method: "get", class: 'card-autocomplete-form') do %>
-        <%= text_field_tag :q, nil, class: 'form-control', id: 'user_input_autocomplete_address_search', placeholder: "Quel ville ou pays recherchez-vous ?" %>
-        <%= submit_tag("Search", class: "form_submit btn btn-home")  %>
-      <% end %>
-
-
-<%= simple_form_for @guide, html: { class: 'card-autocomplete-form'} do |f| %>
-  <%= f.input :name, label: false, input_html: { placeholder: "Quel titre pour votre guide?" } %>
-  <%= f.input :place, label: false, input_html: { id: :user_input_autocomplete_address_search, placeholder: "De quel pays ou de quelle ville s'agit-il?" } %>
-  <%= f.input :photo, label: false, as: :hidden %>
-  <%= f.input :privacy, label: false, :include_blank => "Choisissez qui peut consulter votre guide", collection: [['Tout le monde','public'], ['Mes amis uniquement','facebook'], ['Moi seulement ','private']]%>
-  <%= f.input :gphoto, as: :hidden %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit class: "newguidebtn", value: "Ok" %>
+<%= form_tag("/results", method: "get", class: 'card-autocomplete-form') do %>
+  <%= text_field_tag :q, nil, class: 'form-control', id: 'user_input_autocomplete_address_search', placeholder: "Entrez le nom du pays ou de la ville" %>
+  <%= submit_tag("Rechercher", class: "form_submit btn btn-home")  %>
 <% end %>

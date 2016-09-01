@@ -1,0 +1,15 @@
+<div class="banner-guide-board">
+<%="Inspirez vous des guides Take Away Trips"%>
+</div>
+<div class="container">
+<% if @near_guides != [] %>
+  <h4 class="text-center"> <%="Voici les guides qui vous interesseront, du plus proche au plus loin de votre recherche ( "+@place+" )"%></h4>
+  <%= render 'shared/guidesresults', near_guides: @near_guides %>
+<% else %>
+  <h4 class="text-center"><%="Malheureusement, aucun guide ne se situe à proximité de votre recherche."%></h4>
+  <h4 class="text-center">
+    <%= link_to "Retour à la home page", root_path %>
+  </h4>
+<% end %>
+
+</div>
