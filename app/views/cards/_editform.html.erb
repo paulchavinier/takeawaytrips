@@ -21,7 +21,7 @@
 <%= f.input :photo, label: "Changez la photo de ce spot !" %>
 <%= f.input :photo_cache, as: :hidden %>
 <%= f.input :guide_id, as: :hidden, input_html: { :value => card.guide_id } %>
- <%= f.input :category, label: "Changez la catégorie de ce spot", collection: [['Eat','restaurant'], ['Sleep','lodging'], ['Drink','bar'], ['Shop','clothing_store'], ['See','museum']]%>
+ <%= f.input :category, label: "Changez la catégorie de ce spot", collection: [[Card::CATEGORIES[card.category], card.category], ['Eat','restaurant'], ['Sleep','lodging'], ['Drink','bar'], ['Shop','clothing_store'], ['See','museum']] %>
 <%= f.submit class: "newguidebtn", value: "Ok" %>
 <% end %>
 
