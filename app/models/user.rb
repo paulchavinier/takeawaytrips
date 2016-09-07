@@ -12,19 +12,37 @@ class User < ActiveRecord::Base
   after_create :send_welcome_email
 
   def self.find_for_facebook_oauth(auth)
-      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
-        user.email = auth.info.email
-        user.password = Devise.friendly_token[0,20]  # Fake password for validation
-        user.first_name = auth.info.first_name
-        user.last_name = auth.info.last_name
-        user.picture = auth.info.image
-        user.token = auth.credentials.token
-        user.token_expiry = Time.at(auth.credentials.expires_at)
-      end
+    user_params = {
+      provider: auth.provider,
+      uid: auth.uid,
+      email: auth.info.email,
+      password: Devise.friendly_token[0,20], # Fake password for validation
+      first_name: auth.info.first_name,
+      last_name: auth.info.last_name,
+      picture: auth.info.image,
+      token: auth.credentials.token,
+      token_expiry: Time.at(auth.credentials.expires_at),
+    }
+    #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    #     user.provider = auth.provider
+    #     user.uid = auth.uid
+    #     user.email = auth.info.email
+    #     user.password = Devise.friendly_token[0,20]  # Fake password for validation
+    #     user.first_name = auth.info.first_name
+    #     user.last_name = auth.info.last_name
+    #     user.picture = auth.info.image
+    #     user.token = auth.credentials.token
+    #     user.token_expiry = Time.at(auth.credentials.expires_at)
+    #   end
+    if self.where(provider: auth.provider, uid: auth.uid).first
+      user = self.where(provider: auth.provider, uid: auth.uid).first
+      user.update(user_params)
+    else
+      user = self.create(user_params)
     end
 
+    user
+  end
 
 
   def avatar
@@ -39,7 +57,7 @@ class User < ActiveRecord::Base
 
    graph = Koala::Facebook::API.new(self.token)
    graph.get_connections("me", "friends")
- end
+  end
 
   def initials
     "#{self.first_name.first}#{self.last_name.first}"
