@@ -32,7 +32,9 @@
       </div>
       <div class="avatar-public" data-toggle="tooltip" data-placement="bottom" title= "<%= "Ce guide a été réalisé et rendu public par "+"#{guide.user.first_name}"%>">
         <%= image_tag(guide.user.picture, class: "avatar") %>
-        <div class="badge badge-blog">B</div>
+        <% if guide.user.bloger == true %>
+          <div class="badge badge-blog">B</div>
+        <%end%>
       </div>
 
     </div>

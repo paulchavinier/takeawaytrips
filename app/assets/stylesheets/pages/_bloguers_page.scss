@@ -1,0 +1,24 @@
+.blog-header{
+  height: 40vh;
+  background-color: red;
+  display: flex;
+}
+
+
+.blog-banner{
+  height: 30vh;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  flex: 0 0 100%;
+}
+
+.blog-logo{
+  height: 50px;
+  width: 100%;
+  border-radius: 50%;
+  background-size: cover !important;
+  position: relative;
+  left: 10px;
+  bottom: 0px;
+}
