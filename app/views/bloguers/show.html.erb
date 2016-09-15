@@ -4,6 +4,52 @@
 
     <div class="blog-logo" style="background-image: url(<%= image_path (@bloguer.profile_pic)%>);">
     </div>
+
+    <div class="blog-name">
+      <h2>
+        <%= "#{@bloguer.name}" %>
+      </h2>
+    </div>
+
+    <div class="blog-intro">
+      <div class="blog-shortdescription">
+        <p>
+          <%= "#{@bloguer.short_desc}" %>
+        </p>
+      </div>
+      <div class="blog-spot">
+        <p>
+          <i class="material-icons">place</i>
+        </p>
+      </div>
+      <div class="blog-location">
+        <p>
+          <%= "#{@bloguer.location}" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="blog-bannerbottom">
+      <div class="blog-detail">
+        <div class="blog-longdescription">
+          <p>
+            <%= "#{@bloguer.long_desc}" %>
+          </p>
+          <p>
+            <%= image_tag("FacebookLogo.png", class: "socialstyle") %>
+            <%= image_tag("TwitterLogo.png", class: "socialstyle") %>
+            <%= image_tag("InstaLogo.png", class: "socialstyle") %>
+          </p>
+        </div>
+
+        <div class="blog-statistiques">
+
+
+        </div>
+
+      </div>
+    </div>
+
 </div>
 
 
