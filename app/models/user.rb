@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :guides, dependent: :destroy
   has_many :cards, through: :guides
+  has_many :bloguers, dependent: :destroy
 
   after_create :send_welcome_email
 

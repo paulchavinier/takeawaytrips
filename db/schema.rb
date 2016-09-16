@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902130508) do
+ActiveRecord::Schema.define(version: 20160916142535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bloguers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "author"
+    t.text     "short_desc"
+    t.text     "long_desc"
+    t.string   "location"
+    t.string   "facebook"
+    t.string   "instagram"
+    t.string   "twitter"
+    t.string   "website"
+    t.string   "profile_pic"
+    t.string   "banner"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.text     "question1"
+    t.text     "answer1"
+    t.text     "question2"
+    t.text     "answer2"
+    t.text     "question3"
+    t.text     "answer3"
+    t.text     "question4"
+    t.text     "answer4"
+    t.text     "question5"
+    t.text     "answer5"
+    t.text     "introduction"
+    t.text     "conclusion"
+  end
+
+  add_index "bloguers", ["user_id"], name: "index_bloguers_on_user_id", using: :btree
 
   create_table "cards", force: :cascade do |t|
     t.string   "banner_picture"
@@ -90,6 +121,7 @@ ActiveRecord::Schema.define(version: 20160902130508) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "bloguers", "users"
   add_foreign_key "cards", "guides"
   add_foreign_key "guides", "users"
 end

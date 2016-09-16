@@ -1,6 +1,4 @@
 <!-- Code pour les cartes des guides publics sur la home -->
-
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
     <div class="box-guides" id="box" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%), url(<%= image_path guide.choosephoto %>)">
     <%= link_to "", guide_path(guide), class: "card-link" %>
       <div class="title-guides">
@@ -31,16 +29,11 @@
         <i class="fa fa-map-marker" aria-hidden="true"></i> <%= guide.cards.size %>
       </div>
       <div class="avatar-public" data-toggle="tooltip" data-placement="bottom" title= "<%= "Ce guide a été réalisé et rendu public par "+"#{guide.user.first_name}"%>">
-        <%= image_tag(guide.user.picture, class: "avatar") %>
-        <% if guide.user.bloger == true %>
-          <div class="badge badge-blog">B</div>
-        <%end%>
+        <%= image_tag(@bloguer.profile_pic, class: "avatar") %>
+        <div class="badge badge-blog">B</div>
       </div>
 
     </div>
-
-  </div>
-
 
 
 
