@@ -31,7 +31,11 @@
         <i class="fa fa-map-marker" aria-hidden="true"></i> <%= near_guide[1].cards.size %>
       </div>
       <div class="avatar-public" data-toggle="tooltip" data-placement="bottom" title= "<%= "Ce guide a été réalisé et rendu public par "+"#{near_guide[1].user.first_name}"%>">
-        <%= image_tag(near_guide[1].user.picture, class: "avatar") %>
+        <% if near_guide[1].user.bloger == true %>
+          <%= image_tag(near_guide[1].user.bloguers[0].profile_pic, class: "avatar") %>
+        <% else %>
+          <%= image_tag(near_guide[1].user.picture, class: "avatar") %>
+        <% end %>
         <% if near_guide[1].user.bloger == true %>
           <div class="badge badge-blog">B</div>
         <% end %>

@@ -31,7 +31,11 @@
         <i class="fa fa-map-marker" aria-hidden="true"></i> <%= guide.cards.size %>
       </div>
       <div class="avatar-public" data-toggle="tooltip" data-placement="bottom" title= "<%= "Ce guide a été réalisé et rendu public par "+"#{guide.user.first_name}"%>">
-        <%= image_tag(guide.user.picture, class: "avatar") %>
+        <% if guide.user.bloger == true %>
+          <%= image_tag(guide.user.bloguers[0].profile_pic, class: "avatar") %>
+        <% else %>
+          <%= image_tag(guide.user.picture, class: "avatar") %>
+        <% end %>
         <% if guide.user.bloger == true %>
           <div class="badge badge-blog">B</div>
         <%end%>

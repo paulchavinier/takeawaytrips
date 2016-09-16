@@ -1,6 +1,8 @@
 <div class="banner-guide-board">
   <div>
-    <% if @friend.photo.file == nil %>
+    <% if @friend.bloger == true %>
+      <%= image_tag(@friend.bloguers[0].profile_pic, class: "avatar") %>
+    <% elsif @friend.photo.file == nil %>
       <%= image_tag(@friend.picture, class: "avatar") %>
     <% else %>
       <%= image_tag(@friend.photo, class: "avatar") %>
@@ -21,7 +23,7 @@
       <%= image_tag("BLOGUEUR3.png", class: "stylestamp") %>
     </div>
     <div class="text-center">
-      <%= link_to "Aprenez-en plus sur "+@friend.bloguers[0].name, bloguer_path(@friend.bloguers.ids) %>
+      <%= link_to "Apprenez-en plus sur "+@friend.bloguers[0].name, bloguer_path(@friend.bloguers.ids) %>
     </div>
   <% end %>
     <div id="map-board" style="width: 100%; height: 50vh; position: center; box-shadow: 0 1px 2px rgba(0,0,0,0.2);
