@@ -1,4 +1,8 @@
-<% content_for :meta_title, "#{@guide.name} - Le guide Take Away Trips de #{@guide.user.first_name}" %>
+<% if @guide.user.bloger == true %>
+  <% content_for :meta_title, "#{@guide.name} - Le guide Take Away Trips de #{@guide.user.bloguers[0].name}" %>
+<% else %>
+  <% content_for :meta_title, "#{@guide.name} - Le guide Take Away Trips de #{@guide.user.first_name}" %>
+<% end %>
 <% content_for :meta_description, "Avec Take Away Trips, collectez, découvrez et partagez vos meilleures adresses" %>
 <% if @guide.photo.url == nil%>
   <% content_for :meta_image, @guide.gphoto %>
