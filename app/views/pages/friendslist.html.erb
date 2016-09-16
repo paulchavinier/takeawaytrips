@@ -7,8 +7,18 @@ Vos Amis
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 <div class="cardfriend">
 <%= link_to "", friend_guides_list_path(user.uid), class: "linkf" %>
-  <div class="headerfriend" style="background-image: url(<%= image_path (user.picture) %>)">
-  <p><%= full_name = user.first_name + " " + user.last_name%></p>
+  <% if user.photo.file == nil %>
+    <div class="headerfriend" style="background-image: url(<%= image_path (user.picture) %>)">
+  <% else %>
+    <div class="headerfriend" style="background-image: url(<%= image_path (user.photo) %>)">
+  <% end %>
+  <p>
+    <% if user.bloger == true %>
+      <%= full_name = user.bloguers[0].name %>
+    <% else %>
+      <%= full_name = user.first_name + " " + user.last_name %>
+    <% end %>
+  </p>
   </div>
   <div class="footerfriend">
   <div class="guidesize">

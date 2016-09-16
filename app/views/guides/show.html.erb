@@ -24,7 +24,13 @@
     <%end%>
     </li>
     <li>
-    <h4><%= link_to "#{@guide.user.first_name}", friend_guides_list_path(@guide.user.uid) %></h4>
+    <h4>
+      <% if @guide.user.bloger == true %>
+        <%= link_to "Les Guides de #{@guide.user.bloguers[0].name}", friend_guides_list_path(@guide.user.uid) %>
+      <% else %>
+        <%= link_to "Les Guides de #{@guide.user.first_name}", friend_guides_list_path(@guide.user.uid) %>
+      <% end %>
+    </h4>
     </li>
   <% end %>
   </div>
@@ -67,7 +73,11 @@
   <div class="row">
     <div class="col-xs-12 col-md-6">
       <h4 id="total-places">
-        <% name = @guide.user.first_name + " " + @guide.user.last_name %>
+        <% if @guide.user.bloger == true %>
+          <% name = @guide.user.bloguers[0].name %>
+        <% else %>
+          <% name = @guide.user.first_name + " " + @guide.user.last_name %>
+        <% end %>
         <%="Les spots de #{name} (" + @cards.count.to_s + ")" %>
       </h4>
     </div>
@@ -76,21 +86,21 @@
         <h4 id="privacy">
           <% if @guide.privacy == "private" %>
             <% if @guide.user == current_user %>
-              <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Vous seul pouvez consulter ce guide. Vous pouvez changer les règles de partage dans votre Guideboard"></i>
+              <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Vous seul pouvez consulter ce guide. Vous pouvez changer les règles de partage dans la section 'Mes Guides'"></i>
             <% else %>
               <i class="fa fa-lock" aria-hidden="true"></i>
             <% end %>
             <%= "Guide privé" %>
           <% elsif  @guide.privacy == "public"%>
             <% if @guide.user == current_user %>
-            <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Tous les utilisateurs de TAT peuvent consulter ce guide. Vous pouvez changer les règles de partage dans votre Guideboard"></i>
+            <i class="fa fa-globe" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Tous les utilisateurs de TAT peuvent consulter ce guide. Vous pouvez changer les règles de partage dans la section 'Mes Guides'"></i>
             <% else %>
               <i class="fa fa-globe" aria-hidden="true"></i>
             <% end %>
             <%= "Guide public" %>
           <% else @guide.privacy == "facebook" || @guide.privacy == nil %>
             <% if @guide.user == current_user %>
-            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Seulement vos amis et vous peuvent consulter ce guide. Vous pouvez changer les règles de partage dans votre Guideboard"></i>
+            <i class="fa fa-users" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Seulement vos amis et vous peuvent consulter ce guide. Vous pouvez changer les règles de partage dans la section 'Mes Guides'"></i>
             <% else %>
               <i class="fa fa-users" aria-hidden="true"></i>
             <% end %>
