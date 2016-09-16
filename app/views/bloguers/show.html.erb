@@ -89,6 +89,9 @@
       </div>
       <div class="col-xs-12 col-sm-6">
         <div class="blog-guides text-center">
+          <div class="blogueurshow-stamp">
+            <%= image_tag("Blogueur.png", class: "stylestampshow") %>
+          </div>
           <h4><b><%="Les guides TAT de #{@bloguer.name.split.map(&:capitalize).join(' ')}"%></b></h4>
           <%= render 'shared/guidesblog', guides: @guides %>
         </div>
