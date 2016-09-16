@@ -1,6 +1,5 @@
 .blog-header{
-  height: 40vh;
-  background-color: red;
+  height: 45vh;
   position: relative;
 }
 
@@ -22,14 +21,14 @@
   background-size: cover !important;
   position: absolute;
   left: 50px;
-  bottom: 20px;
+  bottom: 60px;
   z-index: 1;
 }
 
 .blog-name{
   position: absolute;
   left: 180px;
-  bottom: 90px;
+  bottom: 135px;
   text-transform: uppercase;
   color: white;
 }
@@ -39,13 +38,13 @@
   font-weight: 500;
 }
 
-@media(max-width:34em){.blog-name h2 {font-size: 20px;}}
-@media(max-width:34em){.blog-name {bottom: 120px;}}
+@media(max-width:34em){.blog-name h2 {font-size: 20px}}
+@media(max-width:34em){.blog-name {bottom: 160px;}}
 
 .blog-intro{
   position: absolute;
   left: 180px;
-  bottom: 65px;
+  bottom: 108px;
   color: white;
   display: flex;
   align-items: center;
@@ -92,7 +91,9 @@
   left: 180px;
   color: white;
   display: flex;
-  align-items: center;
+  padding-top: 10px;
+  overflow-y: scroll;
+  height: 15vh;
 }
 
 .blog-longdescription{
@@ -107,10 +108,31 @@
 }
 
 .blog-bannerbottom{
-  height: 10vh;
+  height: 15vh;
   width: 100%;
   background-size: cover !important;
-  background-color: lightgreen;
   position: absolute;
   bottom: 0px;
+}
+
+.wrapper-blog {
+  background: #F6F6F6;
+  padding: 30px 0;
+}
+
+.blog-itw{
+background: #FFFFFF;
+border-radius: 8px;
+padding: 10px;
+height: 100vh;
+margin-bottom: 10px;
+}
+
+.blog-guides{
+background: #FFFFFF;
+border-radius: 8px;
+padding: 10px;
+overflow-y: scroll;
+height: 100vh;
+margin-bottom: 10px;
 }

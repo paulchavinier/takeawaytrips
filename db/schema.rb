@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913153055) do
+ActiveRecord::Schema.define(version: 20160916142535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,21 @@ ActiveRecord::Schema.define(version: 20160913153055) do
     t.string   "website"
     t.string   "profile_pic"
     t.string   "banner"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "user_id"
+    t.text     "question1"
+    t.text     "answer1"
+    t.text     "question2"
+    t.text     "answer2"
+    t.text     "question3"
+    t.text     "answer3"
+    t.text     "question4"
+    t.text     "answer4"
+    t.text     "question5"
+    t.text     "answer5"
+    t.text     "introduction"
+    t.text     "conclusion"
   end
 
   add_index "bloguers", ["user_id"], name: "index_bloguers_on_user_id", using: :btree

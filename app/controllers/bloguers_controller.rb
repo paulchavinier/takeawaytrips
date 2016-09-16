@@ -12,6 +12,7 @@ class BloguersController < ApplicationController
 
   def show
     @bloguer = Bloguer.find(params[:id])
+    @guides = @bloguer.user.guides
     authorize @bloguer
   end
 
