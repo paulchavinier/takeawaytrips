@@ -126,6 +126,7 @@ border-radius: 8px;
 padding: 10px;
 height: 100vh;
 margin-bottom: 10px;
+overflow-y: scroll;
 }
 
 .blog-guides{
@@ -135,4 +136,15 @@ padding: 10px;
 overflow-y: scroll;
 height: 100vh;
 margin-bottom: 10px;
+}
+
+.blogueurshow-stamp {
+  text-align: center;
+  z-index: 2;
+}
+
+.stylestampshow{
+  height: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
