@@ -24,11 +24,11 @@
   <ul class="list-inline">
     <li>
     <%= link_to friend_guides_list_path(@guide.user.uid), class: "back to guide board" do %>
-      <i class="material-icons">more_horiz</i>
+      <i class="material-icons">view_list</i>
     <%end%>
     </li>
     <li>
-    <h4>
+    <h4 class="hidden-xs">
       <% if @guide.user.bloger == true %>
         <%= link_to "Les Guides de #{@guide.user.bloguers[0].name}", friend_guides_list_path(@guide.user.uid) %>
       <% else %>
