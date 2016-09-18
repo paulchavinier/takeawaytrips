@@ -28,9 +28,9 @@
       <div class="infos-guides">
         <i class="fa fa-map-marker" aria-hidden="true"></i> <%= guide.cards.size %>
       </div>
-      <div class="avatar-public" data-toggle="tooltip" data-placement="bottom" title= "<%= "Ce guide a été réalisé et rendu public par "+"#{guide.user.first_name}"%>">
+      <div class="avatar-public" data-toggle="tooltip" data-placement="bottom" title= "<%= "Ce guide a été réalisé et rendu public par "+"#{@bloguer.name.split.map(&:capitalize).join(' ')}"%>">
         <%= image_tag(@bloguer.profile_pic, class: "avatar") %>
-        <div class="badge badge-blog">B</div>
+        <div class="badge badge-blog" data-toggle="tooltip" data-placement="bottom" title= "Guide de Blogueur">B</div>
       </div>
 
     </div>
