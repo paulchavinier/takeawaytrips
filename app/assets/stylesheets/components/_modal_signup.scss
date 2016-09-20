@@ -28,6 +28,9 @@
   background-size: cover;
   background-position: center top;
 }
+
+@media(max-width:34em){.modallogo {height: 70vh;}}
+
 .modallogo img {
   z-index: 10;
   width: 287px;

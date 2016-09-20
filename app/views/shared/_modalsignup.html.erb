@@ -9,10 +9,10 @@
           <div class="infoconnect">
          <% User.omniauth_providers.each do |provider| %>
               <%= link_to  omniauth_authorize_path(:user, provider), class:"btn buttonfb" do %>
-                <i class="fa fa-facebook-square"></i>Connect with Facebook
+                <i class="fa fa-facebook-square"></i>Connection avec Facebook
               <% end %>
             <% end %>
-            <p><i class="fa fa-info-circle" aria-hidden="true"></i> We dont publish anything on Facebook</p>
+            <p><i class="fa fa-info-circle" aria-hidden="true"></i> Nous ne publierons rien sur Facebook</p>
           </div>
       </div>
   </div>
