@@ -2,7 +2,7 @@ class GuidesController < ApplicationController
   before_action :set_guide, only: [:edit, :update, :destroy, :show, :filteredfriends]
   skip_before_action :authenticate_user!, :only => :show, :if => lambda {
       if params[:id]
-        @guide = Guide.find(params[:id])
+        @guide = Guide.friendly.find(params[:id])
         @guide.privacy == "public"
       else
         false
@@ -131,7 +131,7 @@ class GuidesController < ApplicationController
   end
 
   def set_guide
-    @guide = Guide.find(params[:id])
+    @guide = Guide.friendly.find(params[:id])
     authorize @guide
   end
 
