@@ -13,7 +13,7 @@ skip_before_action :authenticate_user!, :only => :show
   end
 
   def show
-    @bloguer = Bloguer.find(params[:id])
+    @bloguer = Bloguer.friendly.find(params[:id])
     @guides = @bloguer.user.guides
     authorize @bloguer
   end

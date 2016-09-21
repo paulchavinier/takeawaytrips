@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918104849) do
+ActiveRecord::Schema.define(version: 20160921173857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160918104849) do
     t.text     "introduction"
     t.text     "conclusion"
     t.string   "facebook_pic"
+    t.string   "slug"
   end
 
   add_index "bloguers", ["user_id"], name: "index_bloguers_on_user_id", using: :btree
@@ -90,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160918104849) do
     t.string   "place_type"
     t.string   "gphoto"
     t.string   "privacy"
+    t.string   "slug"
   end
 
   add_index "guides", ["user_id"], name: "index_guides_on_user_id", using: :btree

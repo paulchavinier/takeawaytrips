@@ -27,7 +27,7 @@ gem "koala", "~> 2.2"
 gem 'material_icons'
 gem 'pundit'
 gem "letter_opener", group: :development
-
+gem 'friendly_id', '~> 5.1.0'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

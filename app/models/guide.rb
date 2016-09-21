@@ -1,14 +1,18 @@
 class Guide < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   belongs_to :user
   has_many :cards, dependent: :destroy
 
   validates :name, presence: true
   validates :place, presence: true
+  validates :slug, presence: true
   geocoded_by :place
   after_validation :geocode, if: :place_changed?
+
 
   # reverse_geocoded_by :latitude, :longitude,
   #   :country => :location
