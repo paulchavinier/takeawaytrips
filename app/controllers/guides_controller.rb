@@ -54,7 +54,7 @@ class GuidesController < ApplicationController
 
   def show
     @card = Card.new
-    @card.guide_id = params[:id]
+    @card.guide_id = @guide.id
     @category = params[:category]
     if @category
       @cards = @guide.cards.where(category: Card::CATEGORIES_MAPPING[@category])
