@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'results', to: 'pages#results'
   get 'guides/:id/filtered', to: 'guides#filteredfriends', as: 'filtered'
   #get 'friends', to: 'guides#friendslist'
+  get 'cgu', to: 'pages#cgu', as: :cgu
 
   get 'friend_guides_list/:uid', to: 'pages#friend_guides_list', as: :friend_guides_list
   #get 'friend_guides_list/:uid', to: 'guides#friend_guides_list', as: :friend_guides_list
