@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
-  skip_after_action :verify_authorized, only: [:home, :friendslist, :friend_guides_list, :results]
+  skip_before_action :authenticate_user!, only: [:home, :cgu]
+  skip_after_action :verify_authorized, only: [:home, :friendslist, :friend_guides_list, :results, :cgu]
 
   def home
     @guide = Guide.new
@@ -49,6 +49,9 @@ class PagesController < ApplicationController
       @near_guides << [guide_distance, guide]
     end
     @near_guides
+  end
+
+  def cgu
   end
 
   # def friendslist_filtered
