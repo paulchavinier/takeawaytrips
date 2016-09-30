@@ -37,6 +37,7 @@ class PagesController < ApplicationController
     end
   end
 
+
   def results
     @guides = Guide.near(params[:q], 1000).where(privacy: "public")
     @place = params[:q]
