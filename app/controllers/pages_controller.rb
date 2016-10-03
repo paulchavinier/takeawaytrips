@@ -39,15 +39,23 @@ class PagesController < ApplicationController
 
 
   def results
-    @guides = Guide.near(params[:q], 1000).where(privacy: "public")
+    @close_guides = Guide.near(params[:q], 1000).where(privacy: "public")
     @place = params[:q]
     coordinates1 = Geocoder.coordinates(params[:q])
-    @near_guides = []
+    searched_country = Geocoder.search(coordinates1).first.country
+    @country_guides = Guide.where(country: searched_country).where(privacy: "public")
+    @guides = @close_guides + @country_guides
+    @result_guides = []
     @guides.each do |guide|
       coordinates2 = Geocoder.coordinates(guide.place)
       guide_distance = Geocoder::Calculations.distance_between(coordinates1, coordinates2)
-      guide[:distance] = guide_distance
-      @near_guides << [guide_distance, guide]
+      @result_guides << [guide_distance, guide]
+    end
+    @near_guides = []
+    @result_guides.each do |guide|
+        unless @near_guides.include?(guide)
+          @near_guides << guide
+        end
     end
     @near_guides
   end
