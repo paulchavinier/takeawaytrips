@@ -9,7 +9,6 @@ class GuidesController < ApplicationController
       end
     }
 
-
   def index
     @guide = Guide.new
     #@guides = current_user.guides
@@ -38,7 +37,7 @@ class GuidesController < ApplicationController
     @guide.place_type = results.first.types.first
     # results.first.data["address_components"][3]["long_name"]
     # Geocoder.search(@guide.place).first.data["address_components"][3]["long_name"]
-
+    @guide.country = @guide.guide_country
     if @guide.save
       respond_to do |format|
         format.html { redirect_to guide_path(@guide) }
@@ -127,7 +126,7 @@ class GuidesController < ApplicationController
   private
 
   def guide_params
-    params.require(:guide).permit(:name, :description, :place, :latitude, :longitude, :photo, :photo_cache, :gphoto, :privacy)
+    params.require(:guide).permit(:name, :description, :place, :latitude, :longitude, :photo, :photo_cache, :gphoto, :privacy, :country)
   end
 
   def set_guide
