@@ -38,7 +38,9 @@ class Guide < ActiveRecord::Base
     friends_table = self.user.friendslist
     friends_table_uid = []
     friends_table.each do |friend|
-      friends_table_uid << friend.uid
+      if friend.uid != nil
+        friends_table_uid << friend.uid
+      end
     end
     country_match = Guide.where(country: self.country)
     filtered_guides = []
