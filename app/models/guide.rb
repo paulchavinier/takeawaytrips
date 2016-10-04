@@ -38,7 +38,7 @@ class Guide < ActiveRecord::Base
     friends_table = self.user.friendslist
     friends_table_uid = []
     friends_table.each do |friend|
-      if friend.uid != nil
+      if friend != nil
         friends_table_uid << friend.uid
       end
     end
