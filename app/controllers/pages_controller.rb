@@ -27,14 +27,15 @@ class PagesController < ApplicationController
   end
 
   def friendslist
-    @friends = current_user.get_friendslist
-    @users = []
-    while @friends != nil
-      @friends.each do |friend|
-        @users << User.find_by(uid: friend["id"])
-      end
-      @friends = @friends.next_page
-    end
+    @users = current_user.friendslist
+    # @friends = current_user.get_friendslist
+    # @users = []
+    # while @friends != nil
+    #   @friends.each do |friend|
+    #     @users << User.find_by(uid: friend["id"])
+    #   end
+    #   @friends = @friends.next_page
+    # end
   end
 
 

@@ -120,6 +120,9 @@ class GuidesController < ApplicationController
   end
 
   def filteredfriends
+
+
+
     @filteredfriends = @guide.friendlist_filtered
   end
 
