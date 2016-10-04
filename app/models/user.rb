@@ -60,6 +60,18 @@ class User < ActiveRecord::Base
    graph.get_connections("me", "friends")
   end
 
+  def friendslist
+    @friends = self.get_friendslist
+    @users = []
+    while @friends != nil
+      @friends.each do |friend|
+        @users << User.find_by(uid: friend["id"])
+      end
+      @friends = @friends.next_page
+    end
+    @users
+  end
+
   def initials
     "#{self.first_name.first}#{self.last_name.first}"
   end
